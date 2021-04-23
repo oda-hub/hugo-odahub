@@ -1,4 +1,4 @@
-baseURL = "https://doc.odahub.io/"
+baseURL = "https://odahub.io/"
 languageCode = "en-us"
 title = "About ODA"
 theme = "hugo-book"
