@@ -1,9 +1,3 @@
----
-title: "Reasoning engines"
-date: 2021-04-22T20:45:55+02:00
-draft: false
----
-
 # Details about the reasoning engines
 
 Workflows entities in the KG can undergo various transformations. One key transformation is **currying**, understood in the same way as function [currying](https://en.wikipedia.org/wiki/Currying) - since workflow, for our purposes, is very similar to a **function**. **Currying** transforms workflow with parameters with workflow with less parameters (arguments), possibly without any parameters. We assume that **only workflow without parameters can be computed (executed)**. 
