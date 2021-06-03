@@ -1,4 +1,4 @@
-# Workflow Publishing and Discovery with KG: Old-School Astronomer Guide
+# Workflow Publishing and Discovery with KG: Astronomer Guide
 
 |||
 | :-- | :-- |

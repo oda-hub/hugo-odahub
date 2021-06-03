@@ -10,3 +10,12 @@
 [submodule "source/workflow-discovery"]
 	path = source/workflow-discovery
 	url = git@github.com:oda-hub/workflow-discovery
+[submodule "source/doc-issue-handling-workflow"]
+	path = source/doc-issue-handling-workflow
+	url = git@github.com:oda-hub/doc-issue-handling-workflow.git
+[submodule "source/guide-to-create-workflows"]
+	path = source/guide-to-create-workflows
+	url = https://github.com/oda-hub/guide-to-create-workflows/
+[submodule "source/odahub-respec"]
+	path = source/odahub-respec
+	url = git@github.com:volodymyrss/odahub-respec.git
