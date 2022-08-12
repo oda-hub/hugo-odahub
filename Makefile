@@ -6,7 +6,7 @@
 		#cat ../source/odahub-respec/spec.html > ontology-respec/index.html; \
 		#cat ../source/odahub-respec/rdf > ontology-respec/rdf; 
 
-publish: import
+publish: import ontology
 	( \
 		hugo; \
 		cd public/; \
@@ -23,7 +23,14 @@ import:
 	#cat source/guide-to-create-workflows/README.md > content/docs/guide-development.md
 
 
-ontology:
+ontology/ontology.ttl:
+	curl "https://webprotege.obsuks1.unige.ch/download?project=$$(pass oda/webprotege/projectid)&format=ttl" > ontology.zip
+	cp ontology/ontology.ttl ontology/ontology.ttl.backup
+	unzip -p ontology.zip > ontology/ontology.ttl
+	diff ontology/ontology.ttl ontology/ontology.ttl.backup || "an update happened!"
+
+
+ontology: ontology/ontology.ttl
 	TDIR=$$(mktemp -d --suffix widoco) && cd $$TDIR && \
 	wget -c -O /tmp/widoco.jar https://github.com/dgarijo/Widoco/releases/download/v1.4.17/java-17-widoco-1.4.17-jar-with-dependencies.jar; \
 	< $$OLDPWD/ontology/ontology.ttl sed 's@urn:webprotege:ontology:[0-9a-z\-]*@http://odahub.io/ontology@g' > ontology.ttl && \
