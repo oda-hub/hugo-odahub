@@ -1,0 +1,105 @@
+@prefix : <http://odahub.io/ontology#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1> .
+@prefix vann: <http://purl.org/vocab/vann> .
+@prefix fno: <https://w3id.org/function/spec> .
+@base <http://odahub.io/ontology#> .
+
+<http://odahub.io/ontology> rdf:type owl:Ontology ;
+                            dc:title "MMODA Astrophysical Workflow Ontology" ;                        
+                            vann:preferredNamespaceUri "http://odahub.io/ontology" ;
+                            dc:description """Astrophysical Workflows, and corresponding input-output data types (Data Products, Input Parameters, etc) 
+                                used in MMODA project (https://www.astro.unige.ch/mmoda/, https://odahub.io/)"""; 
+                            dc:abstract """IVOA kindly provides various types, but very little is availble about workflow types. 
+                                It is possible to combine function types (e.g. https://fno.io) with data types. 
+                                In this ontology we define supporting types, our own versions of some of the generic types, 
+                                and anything else needed to descrie Astrophysical Analysis Workflows.""";
+                            dc:source "https://github.com/volodymyrss/hugo-odahub.git";
+                            dc:creator <https://github.com/volodymyrss>;
+                            foaf:logo <https://www.astro.unige.ch/mmoda/sites/all/themes/bootstrap_mmoda/logo.png>;
+                            owl:versionIRI "0.1.0" .
+
+#################################################################
+#    Annotation properties
+#################################################################
+
+###  http://purl.org/dc/elements/1.1/title
+<http://purl.org/dc/elements/1.1/title> rdf:type owl:AnnotationProperty .
+
+
+###  http://purl.org/vocab/vann/preferredNamespaceUri
+<http://purl.org/vocab/vann/preferredNamespaceUri> rdf:type owl:AnnotationProperty .
+
+
+#################################################################
+#    Object Properties
+#################################################################
+
+###  http://odahub.io/ontology#isRequesting
+<http://odahub.io/ontology#isRequesting> rdf:type owl:ObjectProperty ;
+                                         rdfs:subPropertyOf owl:topObjectProperty ;
+                                         rdfs:domain <http://odahub.io/ontology#Workflow> ;
+                                         rdfs:range <http://odahub.io/ontology#AstrophysicalObject> ,
+                                                    <http://odahub.io/ontology#SkyCoordinates> .
+
+
+###  http://odahub.io/ontology#isRequestingAstroObject
+<http://odahub.io/ontology#isRequestingAstroObject> rdf:type owl:ObjectProperty ;
+                                                    rdfs:subPropertyOf <http://odahub.io/ontology#isRequesting> ;
+                                                    rdfs:range <http://odahub.io/ontology#AstrophysicalObject> .
+
+
+###  http://odahub.io/ontology#isRequestingParameter
+<http://odahub.io/ontology#isRequestingParameter> rdf:type owl:ObjectProperty ;
+                                                  rdfs:subPropertyOf <http://odahub.io/ontology#isRequesting> .
+
+
+###  http://odahub.io/ontology#isUsing
+<http://odahub.io/ontology#isUsing> rdf:type owl:ObjectProperty ;
+                                    rdfs:subPropertyOf <http://odahub.io/ontology#isRequesting> .
+
+
+#################################################################
+#    Classes
+#################################################################
+
+###  http://odahub.io/ontology#AstrophysicalObject
+<http://odahub.io/ontology#AstrophysicalObject> rdf:type owl:Class ;
+                                                rdfs:label "AstrophysicalObject" .
+
+
+###  http://odahub.io/ontology#AstroqueryModule
+<http://odahub.io/ontology#AstroqueryModule> rdf:type owl:Class ;
+                                             rdfs:subClassOf owl:Thing ;
+                                             rdfs:label "AstroqueryModule" .
+
+
+###  http://odahub.io/ontology#DataProduct
+<http://odahub.io/ontology#DataProduct> rdf:type owl:Class ;
+                                        rdfs:subClassOf owl:Thing ;
+                                        rdfs:label "DataProduct" .
+
+
+###  http://odahub.io/ontology#LightCurveList
+<http://odahub.io/ontology#LightCurveList> rdf:type owl:Class ;
+                                           rdfs:subClassOf <http://odahub.io/ontology#DataProduct> ;
+                                           rdfs:label "LightCurveList" .
+
+
+###  http://odahub.io/ontology#SkyCoordinates
+<http://odahub.io/ontology#SkyCoordinates> rdf:type owl:Class ;
+                                           rdfs:label "SkyCoordinates" .
+
+
+###  http://odahub.io/ontology#Workflow
+<http://odahub.io/ontology#Workflow> rdf:type owl:Class ;
+                                     rdfs:subClassOf owl:Thing ;
+                                     rdfs:label "Workflow" .
+
+
+###  Generated by the OWL API (version 5.1.18) https://github.com/owlcs/owlapi/
