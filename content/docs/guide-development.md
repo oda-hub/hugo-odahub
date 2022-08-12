@@ -11,14 +11,27 @@ One way to create them in ODA is to build **jupyter notebook**.
 
 ## Simple ODA Jupyter Notebook to a workflow
 
+### Write a working repeatable workflow
+
+First you need to make sure your notebook runs in a cloud environment. It needs to be repeatable - i.e. you can run it many times. If it depends on external services - try to make sure the requests are also repeatable - you might need to specify sufficient details. If the notebook does not produce the exactly
+the same result every time - it's unfortunate, but do not worry too much, it might still be reproducible (see motivation on [the difference between reproducibility and repeatability](https://github.com/volodymyrss/reproducibility-motivation/))
 
 * write your notebook, and make sure it runs from top to bottom
 * make a requirements.txt will the modules you need for this notebook
-* parameterize the notebook, by creating cell with the following tag "parameters" (see [papermill manual](https://papermill.readthedocs.io/en/latest/usage-parameterize.html#designate-parameters-for-a-cell)):
+
+### Parametetrize the notebook 
+
+* create a cell with the following tag "parameters" (see [papermill manual](https://papermill.readthedocs.io/en/latest/usage-parameterize.html#designate-parameters-for-a-cell)):
+
+### Annotate the notebook outputs
+
 * define the notebook output, similarly creating cell with tag "outputs". 
   * outputs may be strings, floats, lists
   * outputs may be also strings which contain filenames for valid files. If they do, the whole file will be considered output.
 * if you want to give more detailed description of the notebook input and output, use `terms` from the [ontology](docs/guide-ontology.).
+
+### Try a test service
+
 * install nb2workflow tooling `pip install nb2workflow[cwl,oda] --upgrade`
 * inspect the notebook `nbinspect my-notebook.ipynb`
 * try to run the notebook `nbrun my-notebook.ipynb`
@@ -27,6 +40,10 @@ One way to create them in ODA is to build **jupyter notebook**.
 * try to start the service `nb2service my-notebook.ipynb`
 * publish the workflow to RenkuLab in the dedicated group: https://renkulab.io/gitlab/astronomy/mmoda/
 * the workflow will be automatically installed in [MMODA](https://www.astro.unige.ch/mmoda)!
+
+### Add some verification test cases
+
+we will explain later how.
 
 ## Maintaining semantic coherence in workflow development progression: from jupyter notebooks to python modules, packages, API's
 

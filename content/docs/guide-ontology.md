@@ -16,7 +16,7 @@ The `terms` look like URLs, e.g. https://odahub.io/ontology/#AstrophysicalObject
 ![](../ontology-doc.png)
 
 
-We advise to look into https://odahub.io/ontology/ for the available terms. If it looks like there is nothing suitable there - it may be necessary to introduce new `terms`.
+We advise to look into public ontologies like https://www.ivoa.net/rdf/object-type/2020-10-06/object-type.rdf and https://odahub.io/ontology/ for the available terms. If it looks like there is nothing suitable there - it may be necessary to introduce new `terms`.
 
 *Advanced*: It is also possible to look into an interactive graph explorer http://graphdb.obsuks1.unige.ch/ and https://share.streamlit.io/oda-hub/streamlite-graph/javascript-lib-interaction/main/main.py .
 

@@ -1,12 +1,42 @@
-@prefix : <urn:webprotege:ontology:92641250-7cde-49bb-8a37-d4d853d2e568#> .
+@prefix : <http://odahub.io/ontology#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix xml: <http://www.w3.org/XML/1998/namespace/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix fno: <https://w3id.org/function/spec/> .
+@base <http://odahub.io/ontology#> .
+
+<http://odahub.io/ontology> rdf:type owl:Ontology ;
+                            dc:title "MMODA Astrophysical Workflow Ontology" ;                        
+                            vann:preferredNamespaceUri "http://odahub.io/ontology" ;
+                            dc:description """Astrophysical Workflows, and corresponding input-output data types (Data Products, Input Parameters, etc) 
+                                used in MMODA project (https://www.astro.unige.ch/mmoda/, https://odahub.io/)"""; 
+                            dc:abstract """IVOA kindly provides various data and object types, but very little is availble about workflow types. 
+                                It is possible to combine function types (e.g. https://fno.io) with data types. 
+                                In this ontology we define supporting types, our own versions of some of the generic types, 
+                                and anything else needed to descrie Astrophysical Analysis Workflows.
+                                Please refer to https://odahub.io/docs/guide-ontology/ for instructions on how to contribute.""";
+                            dc:source "https://github.com/volodymyrss/hugo-odahub.git";
+                            dc:creator <https://github.com/volodymyrss>;
+                            dc:creator <https://github.com/andriineronov>;
+                            dc:creator <https://github.com/dsavchenko>;
+                            dc:creator <https://github.com/burnout87>;
+                            foaf:logo <https://www.astro.unige.ch/mmoda/sites/all/themes/bootstrap_mmoda/logo.png>;
+                            owl:versionIRI "0.1.0" .
+
+@prefix : <http://odahub.io/ontology#> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix xml: <http://www.w3.org/XML/1998/namespace> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@base <urn:webprotege:ontology:92641250-7cde-49bb-8a37-d4d853d2e568> .
+@base <http://odahub.io/ontology> .
 
-<urn:webprotege:ontology:92641250-7cde-49bb-8a37-d4d853d2e568> rdf:type owl:Ontology ;
+<http://odahub.io/ontology> rdf:type owl:Ontology ;
                                                                 <http://purl.org/dc/elements/1.1/title> "MMODA Astrophysical Workflows and Data Products" .
 
 #################################################################
@@ -82,6 +112,8 @@
 
 ###  http://odahub.io/ontology#SkyCoordinates
 <http://odahub.io/ontology#SkyCoordinates> rdf:type owl:Class ;
+                                           rdfs:comment """Sky coordinates. Typically represented as a string as known to https://docs.astropy.org/en/stable/api/astropy.coordinates.SkyCoord.html .
+Subclasses may have other ways to express the content."""^^xsd:string ;
                                            rdfs:label "SkyCoordinates" .
 
 

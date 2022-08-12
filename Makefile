@@ -25,17 +25,18 @@ import:
 
 ontology/ontology.ttl:
 	curl "https://webprotege.obsuks1.unige.ch/download?project=$$(pass oda/webprotege/projectid)&format=ttl" > ontology.zip
-	cp ontology/ontology.ttl ontology/ontology.ttl.backup
-	unzip -p ontology.zip > ontology/ontology.ttl
-	diff ontology/ontology.ttl ontology/ontology.ttl.backup || "an update happened!"
+	cp ontology/ontology.ttl ontology/ontology.ttl.backup || touch ontology/ontology.ttl
+	cat ontology/ontology-base.ttl > ontology/ontology.ttl
+	unzip -p ontology.zip | sed 's@urn:webprotege:ontology:[0-9a-z\-]*@http://odahub.io/ontology@g' >> ontology/ontology.ttl
+	diff ontology/ontology.ttl ontology/ontology.ttl.backup || echo "an update happened!"
+	python -c 'import rdflib; print("valid ontology with entries:", len(rdflib.Graph().load(open("ontology/ontology.ttl"), format="turtle")))'
 
 
 ontology: ontology/ontology.ttl
 	TDIR=$$(mktemp -d --suffix widoco) && cd $$TDIR && \
 	wget -c -O /tmp/widoco.jar https://github.com/dgarijo/Widoco/releases/download/v1.4.17/java-17-widoco-1.4.17-jar-with-dependencies.jar; \
-	< $$OLDPWD/ontology/ontology.ttl sed 's@urn:webprotege:ontology:[0-9a-z\-]*@http://odahub.io/ontology@g' > ontology.ttl && \
 	java -jar /tmp/widoco.jar \
-		-ontFile $$PWD/ontology.ttl \
+		-ontFile $$OLDPWD/ontology/ontology.ttl \
 		-outFolder $$OLDPWD/public/ontology \
 		-oops \
 		-getOntologyMetadata \
