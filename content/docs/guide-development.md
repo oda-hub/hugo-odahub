@@ -9,7 +9,7 @@ Generally, we want the workflows to be parametrized. Non-parametrized but strick
 
 One way to create them in ODA is to build **jupyter notebook**.
 
-## Guide to a simple ODA Jupyter Notebook workflow
+## Simple ODA Jupyter Notebook to a workflow
 
 
 * write your notebook, and make sure it runs from top to bottom
@@ -18,14 +18,17 @@ One way to create them in ODA is to build **jupyter notebook**.
 * define the notebook output, similarly creating cell with tag "outputs". 
   * outputs may be strings, floats, lists
   * outputs may be also strings which contain filenames for valid files. If they do, the whole file will be considered output.
+* if you want to give more detailed description of the notebook input and output, use `terms` from the [ontology](docs/guide-ontology.).
 * install nb2workflow tooling `pip install nb2workflow[cwl,oda] --upgrade`
 * inspect the notebook `nbinspect my-notebook.ipynb`
 * try to run the notebook `nbrun my-notebook.ipynb`
   * it will use all default parameters 
   * you can specify parameters as `nbrun --inp-nbins=10 my-notebook.ipynb`, if `nbins` happens to be one of the parameters.
 * try to start the service `nb2service my-notebook.ipynb`
+* publish the workflow to RenkuLab in the dedicated group: https://renkulab.io/gitlab/astronomy/mmoda/
+* the workflow will be automatically installed in [MMODA](https://www.astro.unige.ch/mmoda)!
 
-## Workflows development progression: towards python modules, packages, API's
+## Maintaining semantic coherence in workflow development progression: from jupyter notebooks to python modules, packages, API's
 
 At some point, it may be advisable to move part of code in functions of a **python module** (e.g. `my_functions.py`), stored in the same repository. The functions can be called from the workflow notebook as `from my_functions import my_nice_function; my_nice_function(argument)`.
 
