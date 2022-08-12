@@ -62,7 +62,9 @@
 ###  http://odahub.io/ontology#isRequestingAstroObject
 <http://odahub.io/ontology#isRequestingAstroObject> rdf:type owl:ObjectProperty ;
                                                     rdfs:subPropertyOf <http://odahub.io/ontology#isRequesting> ;
-                                                    rdfs:range <http://odahub.io/ontology#AstrophysicalObject> .
+                                                    rdfs:domain <http://odahub.io/ontology#Workflow> ;
+                                                    rdfs:range <http://odahub.io/ontology#AstrophysicalObject> ;
+                                                    rdfs:comment "This properties indicates that the :Workflow is making internally a call to another :Workflow, which derives some data about an :AstrophysicalObject"^^xsd:string .
 
 
 ###  http://odahub.io/ontology#isRequestingParameter
@@ -72,7 +74,9 @@
 
 ###  http://odahub.io/ontology#isUsing
 <http://odahub.io/ontology#isUsing> rdf:type owl:ObjectProperty ;
-                                    rdfs:subPropertyOf <http://odahub.io/ontology#isRequesting> .
+                                    rdfs:subPropertyOf <http://odahub.io/ontology#isRequesting> ;
+                                    rdfs:domain <http://odahub.io/ontology#Workflow> ;
+                                    rdfs:range <http://odahub.io/ontology#Workflow> .
 
 
 #################################################################
