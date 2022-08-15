@@ -26,5 +26,6 @@ Sometimes, it is necessary to add a new `term`. In principle, Workflow Developer
 
 Ontology Developers can improve the common ontology with http://webprotege.obsuks1.unige.ch .
 
+There is also an experimental edit interface [here](https://odahub.io/ontology/webvowl/index.html#opts=cd=130;dd=10;editorMode=true;filter_disjoint=false;mode_multiColor=true;mode_pnp=true;), the edited result should be stored and uploaded manually.
 
 
