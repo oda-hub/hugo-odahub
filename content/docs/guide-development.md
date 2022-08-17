@@ -42,6 +42,7 @@ You can use a mock [lightcurve notebook](https://renkulab.io/gitlab/astronomy/mm
   * it will use all default parameters 
   * you can specify parameters as `nbrun --inp-nbins=10 my-notebook.ipynb`, if `nbins` happens to be one of the parameters.
 * try to start the service `nb2service my-notebook.ipynb`
+* try containerized service `nb2deploy $PWD test --local`
 </summary>
 
 ### (optional) Add some verification test cases
