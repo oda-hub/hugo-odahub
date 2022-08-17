@@ -56,13 +56,11 @@ we will explain later how to do this.
 </details>
 
 ### Publish your workflow as a test service
-* publish the workflow to RenkuLab in the dedicated group: https://renkulab.io/gitlab/astronomy/mmoda/
-* once some bots do their job, the workflow will be automatically installed in [MMODA](https://www.astro.unige.ch/mmoda)!
+* publish the workflow to RenkuLab in the dedicated group: https://renkulab.io/gitlab/astronomy/mmoda/, and add a "live-workflow" topic.
+* once some bots do their job, the workflow will be automatically installed in [MMODA](https://www.astro.unige.ch/mmoda), and you will recevie and email!
+####  Try to access your new service
 
-
-### Try to access your new service
-
-Assuming `lightcurve-example` from above was used, and the notebook name was `random`, you can run this:
+* Assuming `lightcurve-example` from above was used, and the notebook name was `random`, you can run this:
 
 ```bash
 oda-api get  -i lightcurve-example -p random -a T1_isot=30000
