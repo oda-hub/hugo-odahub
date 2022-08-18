@@ -63,6 +63,8 @@ we will explain later how to do this.
 * Assuming `lightcurve-example` from above was used, and the notebook name was `random`, you can run this:
 
 ```bash
-oda-api get  -i lightcurve-example -p random -a T1_isot=30000
+$ oda-api -u https://dispatcher-staging.obsuks1.unige.ch get -i lightcurve-example -p random -a n_bins=5
 ```
+
+TODO: workflow version, plot here and in renku create
 
