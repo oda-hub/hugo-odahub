@@ -1,3 +1,9 @@
 public
 resources
 .vscode
+
+
+ontology.zip
+ontology/ontology-base.ttl
+ontology/ontology.ttl.backup
+
