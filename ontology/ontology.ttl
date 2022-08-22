@@ -51,6 +51,22 @@
 #    Object Properties
 #################################################################
 
+###  http://odahub.io/ontology#hasDec
+<http://odahub.io/ontology#hasDec> rdf:type owl:ObjectProperty ;
+                                   rdfs:subPropertyOf owl:topObjectProperty ;
+                                   rdfs:domain <http://odahub.io/ontology#SkyCoordinates> ;
+                                   rdfs:range <http://odahub.io/ontology#Declination> ;
+                                   rdfs:label "hasDec" .
+
+
+###  http://odahub.io/ontology#hasRA
+<http://odahub.io/ontology#hasRA> rdf:type owl:ObjectProperty ;
+                                  rdfs:subPropertyOf owl:topObjectProperty ;
+                                  rdfs:domain <http://odahub.io/ontology#SkyCoordinates> ;
+                                  rdfs:range <http://odahub.io/ontology#RightAscention> ;
+                                  rdfs:label "hasRA" .
+
+
 ###  http://odahub.io/ontology#isRequesting
 <http://odahub.io/ontology#isRequesting> rdf:type owl:ObjectProperty ;
                                          rdfs:subPropertyOf owl:topObjectProperty ;
@@ -102,6 +118,29 @@
                                         rdfs:label "DataProduct" .
 
 
+###  http://odahub.io/ontology#Declination
+<http://odahub.io/ontology#Declination> rdf:type owl:Class ;
+                                        rdfs:label "Declination" .
+
+
+###  http://odahub.io/ontology#Gaia
+<http://odahub.io/ontology#Gaia> rdf:type owl:Class ;
+                                 rdfs:subClassOf <http://odahub.io/ontology#Instrument> ;
+                                 rdfs:label "Gaia" .
+
+
+###  http://odahub.io/ontology#GaiaFilter
+<http://odahub.io/ontology#GaiaFilter> rdf:type owl:Class ;
+                                       rdfs:subClassOf owl:Thing ;
+                                       rdfs:label "GaiaFilter" .
+
+
+###  http://odahub.io/ontology#Instrument
+<http://odahub.io/ontology#Instrument> rdf:type owl:Class ;
+                                       rdfs:subClassOf owl:Thing ;
+                                       rdfs:label "Instrument" .
+
+
 ###  http://odahub.io/ontology#LightCurveList
 <http://odahub.io/ontology#LightCurveList> rdf:type owl:Class ;
                                            rdfs:subClassOf <http://odahub.io/ontology#DataProduct> ;
@@ -112,6 +151,12 @@
 <http://odahub.io/ontology#ODAAPILightcurveList> rdf:type owl:Class ;
                                                  rdfs:subClassOf <http://odahub.io/ontology#LightCurveList> ;
                                                  rdfs:label "ODAAPILightcurveList" .
+
+
+###  http://odahub.io/ontology#RightAscention
+<http://odahub.io/ontology#RightAscention> rdf:type owl:Class ;
+                                           rdfs:subClassOf owl:Thing ;
+                                           rdfs:label "RightAscention" .
 
 
 ###  http://odahub.io/ontology#SkyCoordinates
