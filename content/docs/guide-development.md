@@ -24,9 +24,10 @@ You can use a mock [lightcurve notebook](https://renkulab.io/gitlab/astronomy/mm
 ### Parametetrize the notebook 
 
 * create a cell with the following tag "parameters" (see [papermill manual](https://papermill.readthedocs.io/en/latest/usage-parameterize.html#designate-parameters-for-a-cell)):
+  * the names of the declared variables will be used as parameter names in the MMODA service (except the "default" parameters, see below)
   * if not annotated, the types of the inputs parameters are determined based on the parameter default value
   * one can annotate the input parameter by putting comment with the `term` from the [ontology](https://odahub.io/docs/guide-ontology).
-  * several parameters are mandatory in the MMODA platform. These includes:
+  * several default common parameters are always set by the MMODA frontend. These includes:
     | Type annotation | Parameter default name |
     | ---------------- | -------------- |
     | http://odahub.io/ontology#PointOfInterestRA | RA |
@@ -35,7 +36,7 @@ You can use a mock [lightcurve notebook](https://renkulab.io/gitlab/astronomy/mm
     | http://odahub.io/ontology#EndTime | T2 |
     | http://odahub.io/ontology#AstrophysicalObject | src_name |
     
-    if notebook contains parameters anotated with these types, their names will be automatically converted by the dispatcher plugin to the default ones (variable name in the nb doesn't matter). If some of them are ommited, they will be added to the list of workflow parameters automatically.
+    if notebook contains parameters anotated with these types, their names will be automatically converted by the dispatcher plugin to the default ones. If some of them are ommited, they will be added to the list of workflow parameters automatically.
     
 
 ### Annotate the notebook outputs
