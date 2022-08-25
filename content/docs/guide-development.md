@@ -5,7 +5,7 @@ Workflows are all things that can be computed, broadly speaking.
 For reproducibility, we want our workflows to be repeatable: producing the same output every time they are computed. 
 This is easy enough to do in first approximation, but might be harder to achieve than it seems when the workflow relies on external resources. But we track every execution so it is not necessary to be overly concerned about these delicate details at every moment.
 
-Generally, we want the workflows to be parametrized. Non-parametrized but strickly repeatable notebooks are equivalent to their output data.
+Generally, we want the workflows to be parametrized. Non-parametrized but strickly repeatable notebooks are less **reusable** since they always produce the same output data.
 
 One way to create them in ODA is to build **jupyter notebook**.
 
@@ -23,20 +23,28 @@ You can use a mock [lightcurve notebook](https://renkulab.io/gitlab/astronomy/mm
 
 ### Parametetrize the notebook 
 
-* create a cell with the following tag "parameters" (see [papermill manual](https://papermill.readthedocs.io/en/latest/usage-parameterize.html#designate-parameters-for-a-cell)):
-  * the names of the declared variables will be used as parameter names in the MMODA service (except the "default" parameters, see below)
+Create a cell with the following tag "parameters" (see [papermill manual](https://papermill.readthedocs.io/en/latest/usage-parameterize.html#designate-parameters-for-a-cell)):
+  * the names of the declared variables will be used as parameter names in the MMODA service (except the **default** parameters, see below)
   * if not annotated, the types of the inputs parameters are determined based on the parameter default value
   * one can annotate the input parameter by putting comment with the `term` from the [ontology](https://odahub.io/docs/guide-ontology).
-  * several default common parameters are always set by the MMODA frontend. These includes:
-    | Type annotation | Parameter default name |
-    | ---------------- | -------------- |
-    | http://odahub.io/ontology#PointOfInterestRA | RA |
-    | http://odahub.io/ontology#PointOfInterestDEC | DEC |
-    | http://odahub.io/ontology#StartTime | T1 |
-    | http://odahub.io/ontology#EndTime | T2 |
-    | http://odahub.io/ontology#AstrophysicalObject | src_name |
-    
-    if notebook contains parameters anotated with these types, their names will be automatically converted by the dispatcher plugin to the default ones. If some of them are ommited, they will be added to the list of workflow parameters automatically.
+
+#### Default parameters
+
+Several **default** common parameters are always set by the MMODA frontend. These include:
+
+  | Type annotation | Parameter default name |
+  | ---------------- | -------------- |
+  | http://odahub.io/ontology#PointOfInterestRA | RA |
+  | http://odahub.io/ontology#PointOfInterestDEC | DEC |
+  | http://odahub.io/ontology#StartTime | T1 |
+  | http://odahub.io/ontology#EndTime | T2 |
+  | http://odahub.io/ontology#AstrophysicalObject | src_name |
+  
+If notebook contains parameters anotated with these types, their names will be automatically converted by the dispatcher plugin to the default ones. If some of them are ommited, they will be added to the list of workflow parameters automatically.
+
+{{< notice note >}}
+Note that both target (Point of Interest) **source name** and target **source coordinates** are passed to the workflow, and in principle there is no guarantee the coordinates are that of the source. Indeed the exact choice of the coordinates for a given source depends on the energy band, desired precision, etc. For now, we leave is up to the workflow developer to reconcile these parameters.
+{{< /notice >}}
     
 
 ### Annotate the notebook outputs

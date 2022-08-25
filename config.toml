@@ -1,7 +1,7 @@
 baseURL = "https://odahub.io/"
 languageCode = "en-us"
 title = "About ODA"
-theme = "hugo-book"
+theme = ["hugo-notice", "hugo-book"]
 #theme = "hugo-paper"
 
 relativeURLs = true

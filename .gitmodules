@@ -19,3 +19,6 @@
 [submodule "source/odahub-respec"]
 	path = source/odahub-respec
 	url = git@github.com:volodymyrss/odahub-respec.git
+[submodule "themes/hugo-notice"]
+	path = themes/hugo-notice
+	url = https://github.com/martignoni/hugo-notice.git
