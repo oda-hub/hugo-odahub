@@ -24,13 +24,27 @@ You can use a mock [lightcurve notebook](https://renkulab.io/gitlab/astronomy/mm
 ### Parametetrize the notebook 
 
 * create a cell with the following tag "parameters" (see [papermill manual](https://papermill.readthedocs.io/en/latest/usage-parameterize.html#designate-parameters-for-a-cell)):
+  * the names of the declared variables will be used as parameter names in the MMODA service (except the "default" parameters, see below)
+  * if not annotated, the types of the inputs parameters are determined based on the parameter default value
+  * one can annotate the input parameter by putting comment with the `term` from the [ontology](https://odahub.io/docs/guide-ontology).
+  * several default common parameters are always set by the MMODA frontend. These includes:
+    | Type annotation | Parameter default name |
+    | ---------------- | -------------- |
+    | http://odahub.io/ontology#PointOfInterestRA | RA |
+    | http://odahub.io/ontology#PointOfInterestDEC | DEC |
+    | http://odahub.io/ontology#StartTime | T1 |
+    | http://odahub.io/ontology#EndTime | T2 |
+    | http://odahub.io/ontology#AstrophysicalObject | src_name |
+    
+    if notebook contains parameters anotated with these types, their names will be automatically converted by the dispatcher plugin to the default ones. If some of them are ommited, they will be added to the list of workflow parameters automatically.
+    
 
 ### Annotate the notebook outputs
 
 * define the notebook output, similarly creating cell with tag "outputs". 
   * outputs may be strings, floats, lists
   * outputs may be also strings which contain filenames for valid files. If they do, the whole file will be considered output.
-* if you want to give more detailed description of the notebook input and output, use `terms` from the [ontology](docs/guide-ontology.).
+* if you want to give more detailed description of the notebook input and output, use `terms` from the [ontology]([docs/guide-ontology.](https://odahub.io/docs/guide-ontology)).
 
 
 ### Publish your workflow as a test service
