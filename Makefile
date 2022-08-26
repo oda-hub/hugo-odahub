@@ -23,12 +23,19 @@ import:
 	#cat source/guide-to-create-workflows/README.md > content/docs/guide-development.md
 
 
-ontology/ontology.ttl:
+.FORCE:
+
+ontology/ontology.ttl: .FORCE
 	curl "https://webprotege.obsuks1.unige.ch/download?project=$$(pass oda/webprotege/projectid)&format=ttl" > ontology.zip
 	cp ontology/ontology.ttl ontology/ontology.ttl.backup || touch ontology/ontology.ttl
 	cat ontology/ontology-base.ttl > ontology/ontology.ttl
 	unzip -p ontology.zip | sed 's@urn:webprotege:ontology:[0-9a-z\-]*@http://odahub.io/ontology@g' >> ontology/ontology.ttl
 	diff ontology/ontology.ttl ontology/ontology.ttl.backup || echo "an update happened!"
+	python -c 'import rdflib; print("valid ontology with entries:", len(rdflib.Graph().load(open("ontology/ontology.ttl"), format="turtle")))'
+
+ontology/ontology-platforms.ttl: .FORCE
+	curl "https://webprotege.obsuks1.unige.ch/download?project=$$(pass oda/webprotege/platforms-projectid)&format=ttl" > ontology.zip
+	unzip -p ontology.zip | sed 's@urn:webprotege:ontology:[0-9a-z\-]*@http://odahub.io/ontology@g' >> ontology/ontology-platforms.ttl
 	python -c 'import rdflib; print("valid ontology with entries:", len(rdflib.Graph().load(open("ontology/ontology.ttl"), format="turtle")))'
 
 

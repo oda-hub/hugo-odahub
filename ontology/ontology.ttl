@@ -51,6 +51,14 @@
 #    Object Properties
 #################################################################
 
+###  http://odahub.io/ontology#hasCoordinates
+<http://odahub.io/ontology#hasCoordinates> rdf:type owl:ObjectProperty ;
+                                           rdfs:subPropertyOf owl:topObjectProperty ;
+                                           rdfs:domain <http://odahub.io/ontology#AstrophysicalObject> ;
+                                           rdfs:range <http://odahub.io/ontology#SkyCoordinates> ;
+                                           rdfs:label "hasCoordinates" .
+
+
 ###  http://odahub.io/ontology#hasDec
 <http://odahub.io/ontology#hasDec> rdf:type owl:ObjectProperty ;
                                    rdfs:subPropertyOf owl:topObjectProperty ;
@@ -105,6 +113,12 @@
                                                 rdfs:label "AstrophysicalObject" .
 
 
+###  http://odahub.io/ontology#AstrophysicalObjectOfInterest
+<http://odahub.io/ontology#AstrophysicalObjectOfInterest> rdf:type owl:Class ;
+                                                          rdfs:subClassOf <http://odahub.io/ontology#AstrophysicalObject> ;
+                                                          rdfs:label "AstrophysicalObjectOfInterest" .
+
+
 ###  http://odahub.io/ontology#AstroqueryModule
 <http://odahub.io/ontology#AstroqueryModule> rdf:type owl:Class ;
                                              rdfs:subClassOf owl:Thing ;
@@ -121,6 +135,13 @@
 ###  http://odahub.io/ontology#Declination
 <http://odahub.io/ontology#Declination> rdf:type owl:Class ;
                                         rdfs:label "Declination" .
+
+
+###  http://odahub.io/ontology#EndTime
+<http://odahub.io/ontology#EndTime> rdf:type owl:Class ;
+                                    rdfs:subClassOf <http://odahub.io/ontology#TimeInstant> ,
+                                                    <http://odahub.io/ontology#WorkflowParameter> ;
+                                    rdfs:label "EndTime" .
 
 
 ###  http://odahub.io/ontology#Gaia
@@ -153,6 +174,32 @@
                                                  rdfs:label "ODAAPILightcurveList" .
 
 
+###  http://odahub.io/ontology#PointOfInterest
+<http://odahub.io/ontology#PointOfInterest> rdf:type owl:Class ;
+                                            rdfs:subClassOf <http://odahub.io/ontology#SkyCoordinates> ;
+                                            rdfs:label "PointOfInterest" .
+
+
+###  http://odahub.io/ontology#PointOfInterestDEC
+<http://odahub.io/ontology#PointOfInterestDEC> rdf:type owl:Class ;
+                                               rdfs:subClassOf <http://odahub.io/ontology#Declination> ,
+                                                               <http://odahub.io/ontology#WorkflowParameter> ;
+                                               rdfs:label "PointOfInterestDEC" .
+
+
+###  http://odahub.io/ontology#PointOfInterestRA
+<http://odahub.io/ontology#PointOfInterestRA> rdf:type owl:Class ;
+                                              rdfs:subClassOf <http://odahub.io/ontology#RightAscention> ,
+                                                              <http://odahub.io/ontology#WorkflowParameter> ;
+                                              rdfs:label "PointOfInterestRA" .
+
+
+###  http://odahub.io/ontology#Quantity
+<http://odahub.io/ontology#Quantity> rdf:type owl:Class ;
+                                     rdfs:subClassOf owl:Thing ;
+                                     rdfs:label "Quantity" .
+
+
 ###  http://odahub.io/ontology#RightAscention
 <http://odahub.io/ontology#RightAscention> rdf:type owl:Class ;
                                            rdfs:subClassOf owl:Thing ;
@@ -161,15 +208,35 @@
 
 ###  http://odahub.io/ontology#SkyCoordinates
 <http://odahub.io/ontology#SkyCoordinates> rdf:type owl:Class ;
+                                           rdfs:subClassOf <http://odahub.io/ontology#Quantity> ,
+                                                           <http://odahub.io/ontology#WorkflowParameter> ;
                                            rdfs:comment """Sky coordinates. Typically represented as a string as known to https://docs.astropy.org/en/stable/api/astropy.coordinates.SkyCoord.html .
 Subclasses may have other ways to express the content."""^^xsd:string ;
                                            rdfs:label "SkyCoordinates" .
+
+
+###  http://odahub.io/ontology#StartTime
+<http://odahub.io/ontology#StartTime> rdf:type owl:Class ;
+                                      rdfs:subClassOf <http://odahub.io/ontology#TimeInstant> ,
+                                                      <http://odahub.io/ontology#WorkflowParameter> ;
+                                      rdfs:label "StartTime" .
+
+
+###  http://odahub.io/ontology#TimeInstant
+<http://odahub.io/ontology#TimeInstant> rdf:type owl:Class ;
+                                        rdfs:subClassOf <http://odahub.io/ontology#Quantity> ;
+                                        rdfs:label "TimeInstant" .
 
 
 ###  http://odahub.io/ontology#Workflow
 <http://odahub.io/ontology#Workflow> rdf:type owl:Class ;
                                      rdfs:subClassOf owl:Thing ;
                                      rdfs:label "Workflow" .
+
+
+###  http://odahub.io/ontology#WorkflowParameter
+<http://odahub.io/ontology#WorkflowParameter> rdf:type owl:Class ;
+                                              rdfs:label "WorkflowParameter" .
 
 
 #################################################################
