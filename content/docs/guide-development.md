@@ -78,13 +78,21 @@ TODO: workflow version, plot here and in renku create
 
 ### (optional) Try a test service
 
-* install nb2workflow tooling `pip install nb2workflow[cwl,oda] --upgrade`
+* install nb2workflow tooling `pip install nb2workflow[cwl,oda,rdf,mmoda] --upgrade`
 * inspect the notebook `nbinspect my-notebook.ipynb`
 * try to run the notebook `nbrun my-notebook.ipynb`
   * it will use all default parameters 
   * you can specify parameters as `nbrun --inp-nbins=10 my-notebook.ipynb`, if `nbins` happens to be one of the parameters.
-* try to start the service `nb2service my-notebook.ipynb`
-* try containerized service `nb2deploy $PWD test --local`
+ try to start the service `nb2service my-notebook.ipynb`
+
+{{< notice note >}}
+if you experience issues testing the service due to some "import error" or other strange messages try containerized service:
+
+* `nb2deploy $PWD test --local`
+* then, look onto http://0.0.0.0:8000 for some metadata about the service
+* try to run some simple queries in http://0.0.0.0:8000/apidocs/
+{{< /notice >}}
+
 
 ### (optional) Add some verification test cases
 

@@ -43,6 +43,10 @@
 #    Annotation properties
 #################################################################
 
+###  http://purl.org/dc/elements/1.1/description
+<http://purl.org/dc/elements/1.1/description> rdf:type owl:AnnotationProperty .
+
+
 ###  http://purl.org/dc/elements/1.1/title
 <http://purl.org/dc/elements/1.1/title> rdf:type owl:AnnotationProperty .
 
@@ -134,7 +138,27 @@
 
 ###  http://odahub.io/ontology#Declination
 <http://odahub.io/ontology#Declination> rdf:type owl:Class ;
+                                        rdfs:subClassOf <http://odahub.io/ontology#Quantity> ;
                                         rdfs:label "Declination" .
+
+
+###  http://odahub.io/ontology#DeclinationDegrees
+<http://odahub.io/ontology#DeclinationDegrees> rdf:type owl:Class ;
+                                               rdfs:subClassOf <http://odahub.io/ontology#Declination> ;
+                                               rdfs:label "DeclinationDegrees" .
+
+
+###  http://odahub.io/ontology#Degree
+<http://odahub.io/ontology#Degree> rdf:type owl:Class ;
+                                   rdfs:subClassOf <http://odahub.io/ontology#Unit> ;
+                                   rdfs:label "Degree" .
+
+
+###  http://odahub.io/ontology#DiscoveryWorkflow
+<http://odahub.io/ontology#DiscoveryWorkflow> rdf:type owl:Class ;
+                                              rdfs:subClassOf <http://odahub.io/ontology#Workflow> ;
+                                              <http://purl.org/dc/elements/1.1/description> "workflow which takes some dataset (crucially, unavailable at the time of the Workflow publishing) and produces some Evidence or a Decision"^^xsd:string ;
+                                              rdfs:label "DiscoveryWorkflow" .
 
 
 ###  http://odahub.io/ontology#EndTime
@@ -142,6 +166,13 @@
                                     rdfs:subClassOf <http://odahub.io/ontology#TimeInstant> ,
                                                     <http://odahub.io/ontology#WorkflowParameter> ;
                                     rdfs:label "EndTime" .
+
+
+###  http://odahub.io/ontology#EndTimeISOT
+<http://odahub.io/ontology#EndTimeISOT> rdf:type owl:Class ;
+                                        rdfs:subClassOf <http://odahub.io/ontology#EndTime> ,
+                                                        <http://odahub.io/ontology#TimeInstantISOT> ;
+                                        rdfs:label "EndTimeISOT" .
 
 
 ###  http://odahub.io/ontology#Gaia
@@ -202,8 +233,14 @@
 
 ###  http://odahub.io/ontology#RightAscention
 <http://odahub.io/ontology#RightAscention> rdf:type owl:Class ;
-                                           rdfs:subClassOf owl:Thing ;
+                                           rdfs:subClassOf <http://odahub.io/ontology#Quantity> ;
                                            rdfs:label "RightAscention" .
+
+
+###  http://odahub.io/ontology#RightAscentionDegrees
+<http://odahub.io/ontology#RightAscentionDegrees> rdf:type owl:Class ;
+                                                  rdfs:subClassOf <http://odahub.io/ontology#RightAscention> ;
+                                                  rdfs:label "RightAscentionDegrees" .
 
 
 ###  http://odahub.io/ontology#SkyCoordinates
@@ -222,10 +259,29 @@ Subclasses may have other ways to express the content."""^^xsd:string ;
                                       rdfs:label "StartTime" .
 
 
+###  http://odahub.io/ontology#StartTimeISOT
+<http://odahub.io/ontology#StartTimeISOT> rdf:type owl:Class ;
+                                          rdfs:subClassOf <http://odahub.io/ontology#StartTime> ,
+                                                          <http://odahub.io/ontology#TimeInstantISOT> ;
+                                          rdfs:label "StartTimeISOT" .
+
+
 ###  http://odahub.io/ontology#TimeInstant
 <http://odahub.io/ontology#TimeInstant> rdf:type owl:Class ;
                                         rdfs:subClassOf <http://odahub.io/ontology#Quantity> ;
                                         rdfs:label "TimeInstant" .
+
+
+###  http://odahub.io/ontology#TimeInstantISOT
+<http://odahub.io/ontology#TimeInstantISOT> rdf:type owl:Class ;
+                                            rdfs:subClassOf <http://odahub.io/ontology#TimeInstant> ;
+                                            rdfs:label "TimeInstantISOT" .
+
+
+###  http://odahub.io/ontology#Unit
+<http://odahub.io/ontology#Unit> rdf:type owl:Class ;
+                                 rdfs:subClassOf owl:Thing ;
+                                 rdfs:label "Unit" .
 
 
 ###  http://odahub.io/ontology#Workflow
