@@ -55,3 +55,6 @@ ontology: ontology/ontology.ttl
 	cp $$OLDPWD/public/ontology/index-en.html $$OLDPWD/public/ontology/index.html ; \
 	echo "do!" && \
 	echo rm -rfv $$TDIR
+
+public/oda-sites.ttl: .FORCE
+	curl https://www.astro.unige.ch/mmoda/dispatch-data/gw/odakb/query -d query='prefix oda: <http://odahub.io/ontology#>  CONSTRUCT WHERE {?a a <http://odahub.io/ontology#MMODASite>; ?b ?c . }' > public/oda-sites.ttl
