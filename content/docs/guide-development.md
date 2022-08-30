@@ -78,7 +78,7 @@ TODO: workflow version, plot here and in renku create
 
 ### (optional) Try a test service
 
-* install nb2workflow tooling `pip install nb2workflow[cwl,oda,rdf,mmoda] --upgrade`
+* install nb2workflow tooling `pip install nb2workflow[cwl,oda,rdf,mmoda] --upgrade`. Note that his command should be the only one you need to install the necessary dependencies for the workflow engine. You may of course also need some domain-specific packages .
 * inspect the notebook `nbinspect my-notebook.ipynb`
 * try to run the notebook `nbrun my-notebook.ipynb`
   * it will use all default parameters 
@@ -91,7 +91,16 @@ if you experience issues testing the service due to some "import error" or other
 * `nb2deploy $PWD test --local`
 * then, look onto http://0.0.0.0:8000 for some metadata about the service
 * try to run some simple queries in http://0.0.0.0:8000/apidocs/
+
+If you still experience issues with this approach try to develop the workflow directly in [renkulab]()
+
+
 {{< /notice >}}
+
+### Developing service in Renku
+
+TODO: explain how to run server
+
 
 
 ### (optional) Add some verification test cases
