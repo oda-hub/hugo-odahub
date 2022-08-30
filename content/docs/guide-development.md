@@ -69,7 +69,7 @@ Note that both target (Point of Interest) **source name** and target **source co
 * Assuming `lightcurve-example` from above was used, and the notebook name was `random`, you can run this:
 
 ```bash
-$ oda-api -u https://dispatcher-staging.obsuks1.unige.ch get -i lightcurve-example -p random -a n_bins=5
+$ oda-api -u staging get -i lightcurve-example -p random -a n_bins=5
 ```
 
 TODO: workflow version, plot here and in renku create
@@ -86,15 +86,15 @@ TODO: workflow version, plot here and in renku create
  try to start the service `nb2service my-notebook.ipynb`
 
 {{< notice note >}}
-if you experience issues testing the service due to some "import error" or other strange messages try containerized service:
+if you experience issues testing the service due to some "import error" or other strange messages try containerized service (note that it will not work in Renku):
 
 * `nb2deploy $PWD test --local`
 * then, look onto http://0.0.0.0:8000 for some metadata about the service
 * try to run some simple queries in http://0.0.0.0:8000/apidocs/
+{{< /notice >}}
 
-If you still experience issues with this approach try to develop the workflow directly in [renkulab]()
-
-
+{{< notice note >}}
+If you still experience issues with local environment, try to develop the workflow directly in [renkulab]() - note that some commands, `like nb2deploy`, will not work in this case.
 {{< /notice >}}
 
 ### Developing service in Renku
