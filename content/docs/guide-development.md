@@ -69,7 +69,7 @@ Note that both target (Point of Interest) **source name** and target **source co
 * Assuming `lightcurve-example` from above was used, and the notebook name was `random`, you can run this:
 
 ```bash
-$ oda-api -u staging get -i lightcurve-example -p random -a n_bins=5
+$ oda-api -u https://dispatcher-staging.odahub.io get -i lightcurve-example -p random -a n_bins=5
 ```
 
 TODO: workflow version, plot here and in renku create
@@ -78,7 +78,7 @@ TODO: workflow version, plot here and in renku create
 
 ### (optional) Try a test service
 
-* install nb2workflow tooling `pip install nb2workflow[cwl,oda,rdf,mmoda] --upgrade`. Note that his command should be the only one you need to install the necessary dependencies for the workflow engine. You may of course also need some domain-specific packages .
+* install nb2workflow tooling `pip install 'nb2workflow[cwl,service,rdf,mmoda]>=1.3.30' --upgrade`. Note that his command should be the only one you need to install the necessary dependencies for the workflow engine. You may of course also need some domain-specific packages .
 * inspect the notebook `nbinspect my-notebook.ipynb`
 * try to run the notebook `nbrun my-notebook.ipynb`
   * it will use all default parameters 

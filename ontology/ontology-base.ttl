@@ -28,3 +28,5 @@
                             foaf:logo <https://www.astro.unige.ch/mmoda/sites/all/themes/bootstrap_mmoda/logo.png>;
                             owl:versionIRI "0.1.0" .
 
+<http://odahub.io/ontology#LightCurve> rdfs:subClassOf <http://www.ivoa.net/rdf/product-type#timeseries> .
+

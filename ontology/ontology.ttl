@@ -193,6 +193,12 @@
                                        rdfs:label "Instrument" .
 
 
+###  http://odahub.io/ontology#LightCurve
+<http://odahub.io/ontology#LightCurve> rdf:type owl:Class ;
+                                       rdfs:subClassOf <http://odahub.io/ontology#DataProduct> ;
+                                       rdfs:label "LightCurve" .
+
+
 ###  http://odahub.io/ontology#LightCurveList
 <http://odahub.io/ontology#LightCurveList> rdf:type owl:Class ;
                                            rdfs:subClassOf <http://odahub.io/ontology#DataProduct> ;
