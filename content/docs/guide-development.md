@@ -55,7 +55,7 @@ Note that both target (Point of Interest) **source name** and target **source co
 * if you want to give more detailed description of the notebook input and output, use `terms` from the [ontology]([docs/guide-ontology.](https://odahub.io/docs/guide-ontology)).
 
 
-## Adding annotations the entire notebook
+### Adding annotations the entire notebook
 
 Annotations can apply to parameters or entire notebook. In both cases they are kept in the notebook cell tagged `parameters`.
 For example:
