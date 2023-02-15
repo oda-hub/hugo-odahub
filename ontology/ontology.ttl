@@ -109,6 +109,12 @@
                                     rdfs:range <http://odahub.io/ontology#Workflow> .
 
 
+###  http://odahub.io/ontology#limits
+<http://odahub.io/ontology#limits> rdf:type owl:ObjectProperty ;
+                                   rdfs:domain <http://odahub.io/ontology#WorkflowParameter> ;
+                                   rdfs:label "limits" .
+
+
 #################################################################
 #    Classes
 #################################################################
