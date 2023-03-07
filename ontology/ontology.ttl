@@ -111,8 +111,12 @@
 
 ###  http://odahub.io/ontology#limits
 <http://odahub.io/ontology#limits> rdf:type owl:ObjectProperty ;
-                                   rdfs:domain <http://odahub.io/ontology#WorkflowParameter> ;
                                    rdfs:label "limits" .
+
+
+###  http://odahub.io/ontology#oda%3Alower_limit
+<http://odahub.io/ontology#oda%3Alower_limit> rdf:type owl:ObjectProperty ;
+                                              rdfs:label "oda:lower_limit" .
 
 
 #################################################################

@@ -29,3 +29,11 @@ Ontology Developers can improve the common ontology with http://webprotege.obsuk
 There is also an experimental edit interface [here](https://odahub.io/ontology/webvowl/index.html#opts=cd=130;dd=10;editorMode=true;filter_disjoint=false;mode_multiColor=true;mode_pnp=true;), the edited result should be stored and uploaded manually.
 
 
+## Ontology locations and versions
+
+As ODA ontology is evolving, it is version-controlled.
+Also, at any given time, there are variants of the ODA ontology of different degrees of maturity.
+
+The principal ontology is stored in git here https://github.com/oda-hub/hugo-odahub/blob/master/ontology/ontology.ttl and published as https://odahub.io/ontology/ontology.ttl.
+
+Development ontology for dispatcher testing may be available here https://raw.githubusercontent.com/oda-hub/dispatcher-app/master/tests/oda-ontology.ttl and needs to be eventually synchronized with the main ontology, in principle before the dependent production services (e.g. a particular dispatcher version) are deployed.
