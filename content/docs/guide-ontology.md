@@ -31,7 +31,7 @@ There is also an experimental edit interface [here](https://odahub.io/ontology/w
 
 ## Ontology locations and versions
 
-As ODA ontology is evolving, it is version-controlled.
+As ODA ontology is evolving, it is version-controlled. The version is based on git revision, and (should be) tracked in the ontology description.
 Also, at any given time, there are variants of the ODA ontology of different degrees of maturity.
 
 The principal ontology is stored in git here https://github.com/oda-hub/hugo-odahub/blob/master/ontology/ontology.ttl and published as https://odahub.io/ontology/ontology.ttl.
