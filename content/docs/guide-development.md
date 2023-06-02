@@ -19,7 +19,7 @@ the same result every time - it's unfortunate, but do not worry too much, it mig
 * write your notebook, and make sure it runs from top to bottom
 * make a requirements.txt will the modules you need for this notebook
 
-You can use a mock [lightcurve notebook](https://renkulab.io/gitlab/astronomy/mmoda/lightcurve-example) as an example.
+You can use mock [notebooks](https://renkulab.io/gitlab/astronomy/mmoda/mmoda-nb2workflow-example/-/tree/master/notebooks) as examples.
 
 ### Parametetrize the notebook 
 
