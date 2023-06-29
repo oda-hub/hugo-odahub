@@ -117,17 +117,30 @@ https://renkulab.io/
 
 TODO: explain how to run server
 
+### Developing plugins for Renku
 
-### Renku plugin for the visualization of the local graph
+Renku provides a number of hooks that can be used to add additional customized metadata. It provides also the possibility to add CLI commands.
 
-Starting from the knowledge graph extracted from a renku project, this is queried to retrieve the needed information to generate an interactive graphical representation of the graph itself.
+[https://renku.readthedocs.io/en/stable/renku-python/docs/reference/plugins.html](https://renku.readthedocs.io/en/stable/renku-python/docs/reference/plugins.html)
+
+Two plugins have been developed
+
+#### Renku plugin for the visualization of the local graph
+
+Starting from the knowledge graph, this is used to generate an interactive graphical representation of the graph itself.
 
 The plugin provides two CLI commands:
   * `display` to generate a representation of the graph over an output image
   * `show-graph` to start an interactive visualization of the graph over the browser
 
-In addition, the plugin offers a dynamic k visualization of the graph during a renku session.
+In addition, the plugin offers a dynamic visualization of the graph during a renku session.
 
+More is explained at the repo page: [https://github.com/oda-hub/renku-graph-vis/](https://github.com/oda-hub/renku-graph-vis/)
+
+
+#### Renku plugin for the visualization of the local graph
+
+By this plugin the calls to a number of astroquery methods are itnercepted and the spcific annotations are generated. Those will be added to  the knowledge graph: [https://github.com/oda-hub/renku-aqs-annotation](https://github.com/oda-hub/renku-aqs-annotation)
 
 
 
