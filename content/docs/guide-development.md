@@ -118,6 +118,18 @@ https://renkulab.io/
 TODO: explain how to run server
 
 
+### Renku plugin for the visualization of the local graph
+
+Starting from the knowledge graph extracted from a renku project, this is queried to retrieve the needed information to generate an interactive graphical representation of the graph itself.
+
+The plugin provides two CLI commands:
+  * `display` to generate a representation of the graph over an output image
+  * `show-graph` to start an interactive visualization of the graph over the browser
+
+In addition, the plugin offers a dynamic k visualization of the graph during a renku session.
+
+
+
 
 ### (optional) Add some verification test cases
 
