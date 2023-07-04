@@ -117,9 +117,9 @@ https://renkulab.io/
 
 TODO: explain how to run server
 
-### Renku plugin development
+### Developing service in Renku
 
-Renku provides a number of hooks that can be used to add additional customized metadata. This has been exploited to develop plugins useful within the context of the worklows development. Those aim to provide a sets of funcitonailities for:
+Renku gives the possibility to develop customized function. This has been exploited to develop plugins useful within the context of the worklows development. Those aim to provide a sets of funcitonailities for:
 
 * `renku-graph-vis`: this offers an interactive (and non) visualization of the knowledge graph:
 * `renku-aqs-annotation`: to create dedicated annotations for the execution of astroquery functions and add those to the knowledge graph
@@ -135,6 +135,8 @@ The plugin provides two CLI commands:
 In addition, the plugin offers a dynamic visualization of the graph during a renku session.
 
 More is explained at the repo page: [https://github.com/oda-hub/renku-graph-vis/](https://github.com/oda-hub/renku-graph-vis/)
+
+![](renkulab_graph.png)
 
 
 ### Tracking access to astronomical archives in the  knowledge graph by using `renku-aqs-annotation` plugin
