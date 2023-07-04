@@ -123,9 +123,12 @@ Renku provides a number of hooks that can be used to add additional customized m
 
 [https://renku.readthedocs.io/en/stable/renku-python/docs/reference/plugins.html](https://renku.readthedocs.io/en/stable/renku-python/docs/reference/plugins.html)
 
-Two plugins have been developed
+Two plugins have been developed, those aim to provide a sets of funcitonailities for:
 
-#### Renku plugin for the visualization of the local graph
+* offering an interactive (and non) visualization of the knowledge graph
+* create dedicated annotations for the execution of astroquery functions and add those to the knowledge graph
+
+### Renku plugin for the visualization of the local graph
 
 Starting from the knowledge graph, this is used to generate an interactive graphical representation of the graph itself.
 
@@ -138,9 +141,9 @@ In addition, the plugin offers a dynamic visualization of the graph during a ren
 More is explained at the repo page: [https://github.com/oda-hub/renku-graph-vis/](https://github.com/oda-hub/renku-graph-vis/)
 
 
-#### Renku plugin for the visualization of the local graph
+### Renku plugin for the annotation of `astroquery` functions
 
-By this plugin the calls to a number of astroquery methods are itnercepted and the spcific annotations are generated. Those will be added to  the knowledge graph: [https://github.com/oda-hub/renku-aqs-annotation](https://github.com/oda-hub/renku-aqs-annotation)
+By this plugin the calls to a number of `astroquery` methods are intercepted and the spcific annotations are generated. Those will be added to  the knowledge graph: [https://github.com/oda-hub/renku-aqs-annotation](https://github.com/oda-hub/renku-aqs-annotation)
 
 
 
