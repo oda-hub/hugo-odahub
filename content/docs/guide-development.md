@@ -117,7 +117,7 @@ https://renkulab.io/
 
 TODO: explain how to run server
 
-### Developing service in Renku
+### Developing plugins in Renku
 
 Renku gives the possibility to develop customized function. This has been exploited to develop plugins useful within the context of the worklows development. Those aim to provide a sets of funcitonailities for:
 
