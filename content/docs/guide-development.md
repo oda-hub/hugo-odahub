@@ -117,18 +117,14 @@ https://renkulab.io/
 
 TODO: explain how to run server
 
-### Developing plugins for Renku
+### Renku plugin development
 
-Renku provides a number of hooks that can be used to add additional customized metadata. It provides also the possibility to add CLI commands.
+Renku provides a number of hooks that can be used to add additional customized metadata. This has been exploited to develop plugins useful within the context of the worklows development. Those aim to provide a sets of funcitonailities for:
 
-[https://renku.readthedocs.io/en/stable/renku-python/docs/reference/plugins.html](https://renku.readthedocs.io/en/stable/renku-python/docs/reference/plugins.html)
+* `renku-graph-vis`: this offers an interactive (and non) visualization of the knowledge graph:
+* `renku-aqs-annotation`: to create dedicated annotations for the execution of astroquery functions and add those to the knowledge graph
 
-Two plugins have been developed, those aim to provide a sets of funcitonailities for:
-
-* offering an interactive (and non) visualization of the knowledge graph
-* create dedicated annotations for the execution of astroquery functions and add those to the knowledge graph
-
-### Renku plugin for the visualization of the local graph
+### Visualizing project Knowledge Graph with `renku-graph-vis` plugin
 
 Starting from the knowledge graph, this is used to generate an interactive graphical representation of the graph itself.
 
@@ -141,7 +137,7 @@ In addition, the plugin offers a dynamic visualization of the graph during a ren
 More is explained at the repo page: [https://github.com/oda-hub/renku-graph-vis/](https://github.com/oda-hub/renku-graph-vis/)
 
 
-### Renku plugin for the annotation of `astroquery` functions
+### Tracking access to astronomical archives in the  knowledge graph by using `renku-aqs-annotation` plugin
 
 By this plugin the calls to a number of `astroquery` methods are intercepted and the spcific annotations are generated. Those will be added to  the knowledge graph: [https://github.com/oda-hub/renku-aqs-annotation](https://github.com/oda-hub/renku-aqs-annotation)
 
