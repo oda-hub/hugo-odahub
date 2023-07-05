@@ -117,12 +117,10 @@ https://renkulab.io/
 
 TODO: explain how to run server
 
-### Developing plugins in Renku
+To support the development of workflows in Renku, a set of dedicated funcitonailities, provided as Renku plugins, are made available. In particular those aim to:
 
-Renku gives the possibility to develop customized function. This has been exploited to develop plugins useful within the context of the worklows development. Those aim to provide a sets of funcitonailities for:
-
-* `renku-graph-vis`: this offers an interactive (and non) visualization of the knowledge graph:
-* `renku-aqs-annotation`: to create dedicated annotations for the execution of astroquery functions and add those to the knowledge graph
+* Offer an interactive (and non) visualization of the project Knowledge Graph (`renku-graph-vis` plugin)
+* Create dedicated annotations for the execution of `astroquery` functions and add those to the project Knowledge Graph (`renku-aqs-annotation` plugin)
 
 ### Visualizing project Knowledge Graph with `renku-graph-vis` plugin
 
@@ -132,18 +130,27 @@ The plugin provides two CLI commands:
   * `display` to generate a representation of the graph over an output image
   * `show-graph` to start an interactive visualization of the graph over the browser
 
-In addition, the plugin offers a dynamic visualization of the graph during a renku session.
+In addition, the plugin offers a dynamic visualization of the graph during an interactive renku session.
 
 More is explained at the repo page: [https://github.com/oda-hub/renku-graph-vis/](https://github.com/oda-hub/renku-graph-vis/)
 
 ![](renkulab_graph.png)
 
 
-### Tracking access to astronomical archives in the  knowledge graph by using `renku-aqs-annotation` plugin
+### Tracking access to astronomical archives in the project Knowledge Graph by using `renku-aqs-annotation` plugin
 
-By this plugin the calls to a number of `astroquery` methods are intercepted and the spcific annotations are generated. Those will be added to  the knowledge graph: [https://github.com/oda-hub/renku-aqs-annotation](https://github.com/oda-hub/renku-aqs-annotation)
+By this plugin the calls to a number of `astroquery` methods are intercepted and spcific annotations are generated. Those will be then added to the project Knowledge Graph: [https://github.com/oda-hub/renku-aqs-annotation](https://github.com/oda-hub/renku-aqs-annotation)
 
+### Installation
 
+Those functionalities are available by installing the two plugins. This can be done either via pip:
+
+```bash
+pip install renku_graph_vis
+pip install renku_aqs_annotation
+```
+
+Or can be made available within a Renku session, by adding those in the list of requirements of the Renku project.
 
 ### (optional) Add some verification test cases
 
