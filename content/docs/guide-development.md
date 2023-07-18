@@ -134,14 +134,19 @@ The plugin provides two CLI commands:
 
 In addition, the plugin offers a dynamic visualization of the graph during an interactive renku session.
 
-More is explained at the repo page: [https://github.com/oda-hub/renku-graph-vis/](https://github.com/oda-hub/renku-graph-vis/)
+The primary benefit introduced is the ability to have a live overview of the ongoing development, during an interactive Renku session. This can be seen within the animation below, where the graph is automatically updated with information about the execution of a notebook upon its completion.
 
-![](renkulab_graph.png)
+![](renkulab_execution_example_2.gif)
 
+More technical details are presented in the README of the repo page: [https://github.com/oda-hub/renku-graph-vis/](https://github.com/oda-hub/renku-graph-vis/)
 
 ### Tracking access to astronomical archives and services in the project Knowledge Graph by using `renku-aqs-annotation` plugin
 
-By this plugin the calls to a number of `astroquery` methods are intercepted and spcific annotations are generated. Those will be then added to the project Knowledge Graph: [https://github.com/oda-hub/renku-aqs-annotation](https://github.com/oda-hub/renku-aqs-annotation)
+By this plugin the calls to a number of `astroquery` methods are intercepted and specific annotations are generated. Those will be then added to the project Knowledge Graph: [https://github.com/oda-hub/renku-aqs-annotation](https://github.com/oda-hub/renku-aqs-annotation)
+
+In the image below, the information added by the plugin to the project Knowledge Graph is highlighted:
+
+![](details_astroquery_annotations_1.png)
 
 ### Installation
 
