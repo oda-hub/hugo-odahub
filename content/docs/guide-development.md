@@ -138,6 +138,10 @@ The primary benefit introduced is the ability to have a live overview of the ong
 
 ![](renkulab_execution_example_2.gif)
 
+Additionally, an ontology can be integrated into the graph, providing valuable insights into the types of entities inside it. In the image below, it can be seen that the `SimbadClass` node is an instance of the `AstroqueryModule` class, while `Mrk 421` is an instance of the `AstrophysicalObject` class.
+
+![](details_astroquery_annotations_2.png)
+
 More technical details are presented in the README of the repo page: [https://github.com/oda-hub/renku-graph-vis/](https://github.com/oda-hub/renku-graph-vis/)
 
 ### Tracking access to astronomical archives and services in the project Knowledge Graph by using `renku-aqs-annotation` plugin
