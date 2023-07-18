@@ -139,7 +139,7 @@ More is explained at the repo page: [https://github.com/oda-hub/renku-graph-vis/
 ![](renkulab_graph.png)
 
 
-### Tracking access to astronomical archives in the project Knowledge Graph by using `renku-aqs-annotation` plugin
+### Tracking access to astronomical archives and services in the project Knowledge Graph by using `renku-aqs-annotation` plugin
 
 By this plugin the calls to a number of `astroquery` methods are intercepted and spcific annotations are generated. Those will be then added to the project Knowledge Graph: [https://github.com/oda-hub/renku-aqs-annotation](https://github.com/oda-hub/renku-aqs-annotation)
 
