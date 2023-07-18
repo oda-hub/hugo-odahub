@@ -143,14 +143,14 @@ By this plugin the calls to a number of `astroquery` methods are intercepted and
 
 ### Installation
 
-Those functionalities are available by installing the two plugins. This can be done either via pip:
+In order to have access to those functionalities, the relative plugins should be installed. This can be done either via pip:
 
 ```bash
 pip install renku_graph_vis
 pip install renku_aqs_annotation
 ```
 
-Or can be made available within a Renku session, by adding those in the list of requirements of the Renku project.
+Or can be made available within a Renku session, by adding those in the list of requirements of the Renku project, within your `requirements.txt` file.
 
 ### (optional) Add some verification test cases
 
