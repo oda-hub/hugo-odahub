@@ -142,9 +142,9 @@ More technical details are presented in the README of the repo page: [https://gi
 
 ### Tracking access to astronomical archives and services in the project Knowledge Graph by using `renku-aqs-annotation` plugin
 
-By this plugin the calls to a number of `astroquery` methods are intercepted and specific annotations are generated. Those will be then added to the project Knowledge Graph: [https://github.com/oda-hub/renku-aqs-annotation](https://github.com/oda-hub/renku-aqs-annotation)
+By this plugin the calls amongst the most important `astroquery` methods are intercepted and specific annotations are generated. Those will be then added to the project Knowledge Graph: [https://github.com/oda-hub/renku-aqs-annotation](https://github.com/oda-hub/renku-aqs-annotation)
 
-In the image below, the information added by the plugin to the project Knowledge Graph is highlighted:
+In the image below, the information to the project Knowledge Graph is highlighted. In particular, it can be seen that during a papermill run of the `test-notebook.ipynb` notebook (that produced `out.ipynb` as an output notebook) a call to the astroquery method `query_object`, via the `Simbadclass`, has been detected. This, is requesting the object `Mrk 421`.
 
 ![](details_astroquery_annotations_1.png)
 
