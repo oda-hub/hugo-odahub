@@ -138,7 +138,7 @@ The primary benefit introduced is the ability to have a live overview of the ong
 
 ![](renkulab_execution_example_2.gif)
 
-This visualization also includes the ODA ontology, providing valuable insights into the types of entities within it that are known to the ontology.. The image below displays a graph where the ODA ontology has been imported, and it can be seen that the `SimbadClass` node is an instance of the `AstroqueryModule` class, while `Mrk 421` is an instance of the `AstrophysicalObject` class.
+This visualization also includes the ODA ontology, providing valuable insights into the types of entities within it that are known to the ontology, and therefore helping during the workflow development. The image below displays a graph where the ODA ontology has been imported, and it can be seen that the `SimbadClass` node is an instance of the `AstroqueryModule` class, while `Mrk 421` is an instance of the `AstrophysicalObject` class.
 
 ![](details_astroquery_annotations_2.png)
 
