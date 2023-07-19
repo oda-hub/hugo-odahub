@@ -119,7 +119,7 @@ TODO: explain how to run server
 
 To support the development of workflows in Renku, a set of dedicated funcitonailities, provided as Renku plugins, are made available. In particular those aim to:
 
-* Offer an interactive (and non) visualization of the project Knowledge Graph (`renku-graph-vis` plugin)
+* Offer an interactive visualization of the project Knowledge Graph (`renku-graph-vis` plugin)
 * Create dedicated annotations calls to `astroquery` functions and add those to the project Knowledge Graph (`renku-aqs-annotation` plugin)
 
 Those two set of features are provided within different plugins.
