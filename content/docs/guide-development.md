@@ -120,7 +120,7 @@ TODO: explain how to run server
 To support the development of workflows in Renku, a set of dedicated funcitonailities, provided as Renku plugins, are made available. In particular those aim to:
 
 * Offer an interactive (and non) visualization of the project Knowledge Graph (`renku-graph-vis` plugin)
-* Create dedicated annotations for the execution of `astroquery` functions and add those to the project Knowledge Graph (`renku-aqs-annotation` plugin)
+* Create dedicated annotations calls to `astroquery` functions and add those to the project Knowledge Graph (`renku-aqs-annotation` plugin)
 
 Those two set of features are provided within different plugins.
 
@@ -134,15 +134,25 @@ The plugin provides two CLI commands:
 
 In addition, the plugin offers a dynamic visualization of the graph during an interactive renku session.
 
-The primary benefit introduced is the ability to have a live overview of the ongoing development, during an interactive Renku session. This can be seen within the animation below, where the graph is automatically updated with information about the execution of a notebook upon its completion.
+The primary benefit introduced is the ability to have a live overview of the ongoing development within an interactive Renku session. This can be seen within the animation below, where the graph is automatically updated with information about the execution of a notebook upon its completion.
 
 ![](renkulab_execution_example_2.gif)
 
-Additionally, an ontology can be integrated into the graph, providing valuable insights into the types of entities inside it. In the image below, it can be seen that the `SimbadClass` node is an instance of the `AstroqueryModule` class, while `Mrk 421` is an instance of the `AstrophysicalObject` class.
+Additionally, an ontology can be integrated into the graph, providing valuable insights into the types of entities inside it. The image below displays a graph where the ODA ontology has been imported, and it can be seen that the `SimbadClass` node is an instance of the `AstroqueryModule` class, while `Mrk 421` is an instance of the `AstrophysicalObject` class.
 
 ![](details_astroquery_annotations_2.png)
 
 More technical details are presented in the README of the repo page: [https://github.com/oda-hub/renku-graph-vis/](https://github.com/oda-hub/renku-graph-vis/)
+
+#### Plugin Installation
+
+In order to have access to those functionalities, the relative plugins should be installed. This can be done either via pip:
+
+```bash
+pip install renku_graph_vis
+```
+
+Or can be made available within a Renku session, by adding those in the list of requirements of the Renku project, within your `requirements.txt` file.
 
 ### Tracking access to astronomical archives and services in the project Knowledge Graph by using `renku-aqs-annotation` plugin
 
@@ -152,12 +162,11 @@ In the image below, the information added to the project Knowledge Graph is high
 
 ![](details_astroquery_annotations_1.png)
 
-### Installation
+#### Plugin Installation
 
 In order to have access to those functionalities, the relative plugins should be installed. This can be done either via pip:
 
 ```bash
-pip install renku_graph_vis
 pip install renku_aqs_annotation
 ```
 
