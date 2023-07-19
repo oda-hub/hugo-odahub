@@ -146,7 +146,7 @@ More technical details are presented in the README of the repo page: [https://gi
 
 #### Plugin Installation
 
-In order to have access to those functionalities, the relative plugins should be installed. This can be done either via pip:
+The plugin can be installed either via pip:
 
 ```bash
 pip install renku_graph_vis
@@ -164,7 +164,7 @@ In the image below, the information added to the project Knowledge Graph is high
 
 #### Plugin Installation
 
-In order to have access to those functionalities, the relative plugins should be installed. This can be done either via pip:
+The plugin can be installed either via pip:
 
 ```bash
 pip install renku_aqs_annotation
