@@ -117,12 +117,12 @@ https://renkulab.io/
 
 TODO: explain how to run server
 
-To support the development of workflows in Renku, a set of dedicated funcitonailities, provided as Renku plugins, are made available. In particular those aim to:
+To support the development of workflows in Renku, a set of dedicated funcitonailities, provided as Renku plugins, are made available. Specifically, these plugins aim to achieve the following:
 
-* Offer an interactive visualization of the project Knowledge Graph (`renku-graph-vis` plugin)
-* Intercept calls to `astroquery` functions and store them to the project Knowledge Graph (`renku-aqs-annotation` plugin)
+* Offer an interactive visualization of the project's Knowledge Graph (`renku-graph-vis` plugin)
+* Intercept calls to `astroquery` functions and store them in the project's Knowledge Graph (`renku-aqs-annotation` plugin)
 
-Those two set of features are provided within different plugins.
+These two sets of features are offered through separate plugins.
 
 ### Visualizing project Knowledge Graph with `renku-graph-vis` plugin
 
@@ -156,7 +156,7 @@ Alternatively, it can be made available within a Renku session by adding it in t
 
 ### Tracking access to astronomical archives and services in the project Knowledge Graph by using `renku-aqs-annotation` plugin
 
-This plugin intercepts several key `astroquery` methods and stores annotations to the project Knowledge Graph: [https://github.com/oda-hub/renku-aqs-annotation](https://github.com/oda-hub/renku-aqs-annotation)
+This plugin intercepts several key `astroquery` methods and stores annotations containing information about the calls to these methods (like the arguments used in the call) to the project's Knowledge Graph: [https://github.com/oda-hub/renku-aqs-annotation](https://github.com/oda-hub/renku-aqs-annotation)
 
 In the image below, the information added to the project Knowledge Graph is highlighted. Specifically, it can be seen that during a papermill run of the `test-notebook.ipynb` notebook (that produced `out.ipynb` as an output notebook) a call to the astroquery method `query_object`, via the `Simbadclass`, has been detected. This notebook is requesting the object `Mrk 421` object. The hightlighed labels on the edges provide information about the relationship between the two nodes: during the `papermill` execution, a call to the `query_object` method is executed (`call` label) and in turn, this requests the Astrophysical Object `Mrk 421`.
 
