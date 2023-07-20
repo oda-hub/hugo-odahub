@@ -52,7 +52,7 @@ Note that both target (Point of Interest) **source name** and target **source co
 * define the notebook output, similarly creating cell with tag "outputs". 
   * outputs may be strings, floats, lists
   * outputs may be also strings which contain filenames for valid files. If they do, the whole file will be considered output.
-* if you want to give more detailed description of the notebook input and output, use `terms` from the [ontology]([docs/guide-ontology.](https://odahub.io/docs/guide-ontology)).
+* if you want to give more detailed description of the notebook input and output, use `terms` from the [ontology](docs/guide-ontology).
 
 
 ### Adding annotations the entire notebook
