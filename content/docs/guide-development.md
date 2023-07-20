@@ -120,13 +120,13 @@ TODO: explain how to run server
 To support the development of workflows in Renku, a set of dedicated funcitonailities, provided as Renku plugins, are made available. In particular those aim to:
 
 * Offer an interactive visualization of the project Knowledge Graph (`renku-graph-vis` plugin)
-* Intercept calls to `astroquery` functions and add those to the project Knowledge Graph (`renku-aqs-annotation` plugin)
+* Intercept calls to `astroquery` functions and store them to the project Knowledge Graph (`renku-aqs-annotation` plugin)
 
 Those two set of features are provided within different plugins.
 
 ### Visualizing project Knowledge Graph with `renku-graph-vis` plugin
 
-This plugin provides an interactive graphical representation of the renku repository knowledge graph, possibly from within the renku session.
+This plugin provides an interactive graphical representation of the renku repository's knowledge graph, possibly from within the renku session.
 
 The plugin provides two CLI commands:
   * `display` to generate a representation of the graph over an output image
@@ -146,19 +146,19 @@ More technical details are presented in the README of the repo page: [https://gi
 
 #### Plugin Installation
 
-The plugin can be installed either via pip:
+The plugin can be installed via pip:
 
 ```bash
 pip install renku_graph_vis
 ```
 
-Alternatively, it can be made available within a Renku session, by adding it in the list of requirements of the Renku project, within your `requirements.txt` file.
+Alternatively, it can be made available within a Renku session by adding it in the list of requirements of the Renku project, within your `requirements.txt` file.
 
 ### Tracking access to astronomical archives and services in the project Knowledge Graph by using `renku-aqs-annotation` plugin
 
 This plugin intercepts several key `astroquery` methods and stores annotations to the project Knowledge Graph: [https://github.com/oda-hub/renku-aqs-annotation](https://github.com/oda-hub/renku-aqs-annotation)
 
-In the image below, the information added to the project Knowledge Graph is highlighted. Specifically, it can be seen that during a papermill run of the `test-notebook.ipynb` notebook (that produced `out.ipynb` as an output notebook) a call to the astroquery method `query_object`, via the `Simbadclass`, has been detected. This notebook is requesting the object `Mrk 421` object. The hightlighed labels on the edges provide information about the relationship between the two nodes: during the `papermill` execution, a call to the query_object method is executed (`call` label) and in turn, this requests the Astrophysical Object `Mrk 421`.
+In the image below, the information added to the project Knowledge Graph is highlighted. Specifically, it can be seen that during a papermill run of the `test-notebook.ipynb` notebook (that produced `out.ipynb` as an output notebook) a call to the astroquery method `query_object`, via the `Simbadclass`, has been detected. This notebook is requesting the object `Mrk 421` object. The hightlighed labels on the edges provide information about the relationship between the two nodes: during the `papermill` execution, a call to the `query_object` method is executed (`call` label) and in turn, this requests the Astrophysical Object `Mrk 421`.
 
 ![](details_astroquery_annotations_1.png)
 
@@ -170,7 +170,7 @@ The plugin can be installed either via pip:
 pip install renku_aqs_annotation
 ```
 
-Just like the `renku_graph_vis` plugin, the `renku_aqs_annotation` plugin can be made available within a Renku session by adding it to the list of requirements in your requirements.txt file for the Renku project.
+Just like the `renku_graph_vis` plugin, the `renku_aqs_annotation` plugin can be made available within a Renku session by adding it to the list of requirements in your `requirements.txt`` file for the Renku project.
 
 ### (optional) Add some verification test cases
 
