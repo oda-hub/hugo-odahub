@@ -87,8 +87,6 @@ $ oda-api -u https://dispatcher-staging.odahub.io get -i lightcurve-example -p r
 
 TODO: workflow version, plot here and in renku create
 
-
-
 ### (optional) Try a test service
 
 * install nb2workflow tooling `pip install 'nb2workflow[cwl,service,rdf,mmoda]>=1.3.30' --upgrade`. Note that his command should be the only one you need to install the necessary dependencies for the workflow engine. You may of course also need some domain-specific packages .
@@ -112,10 +110,15 @@ If you still experience issues with local environment, try to develop the workfl
 
 ### Developing service in Renku
 
+The [renkulab](https://renkulab.io/) platform provides a conveninet way to develop a service using renku.
 
-https://renkulab.io/
+A session can be started from a project directly from the platform, or using a dedicated link. For the `lightcurve-example` project a new session can be started with the following [URL](https://renkulab.io/projects/astronomy/mmoda/lightcurve-example/sessions/new?autostart=1&commit=bec2a57b8e7d0e17644cc37d07901c8a7e09139e&branch=master).
 
-TODO: explain how to run server
+More details on how to start a new session on renkulab can be found on the [offical documentation](https://renku.readthedocs.io/en/stable/tutorials/first_steps/02_start_an_interactive_session.html).
+
+A new project can be created on the renkulab platform, or also using the following [URL](https://renkulab.io/projects/new?data=eyJ1cmwiOiJodHRwczovL2dpdGh1Yi5jb20vb2RhLWh1Yi9jb250cmlidXRlZC1wcm9qZWN0LXRlbXBsYXRlcyIsInJlZiI6Im1haW4iLCJ0ZW1wbGF0ZSI6IkN1c3RvbS9tbW9kYSJ9). Using this link a new project, with a given session template, can be created after having filled in some basic information.
+
+More details on how to create a new project on renkulab can be found on the [offical documentation](https://renku.readthedocs.io/en/stable/tutorials/first_steps/01_create_project.html).
 
 To support the development of workflows in Renku, a set of dedicated funcitonailities, provided as Renku plugins, are made available. Specifically, these plugins aim to achieve the following:
 
