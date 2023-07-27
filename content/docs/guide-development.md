@@ -125,7 +125,7 @@ To support the development of workflows in Renku, a set of dedicated funcitonail
 
 ### Visualizing project Knowledge Graph with `renku-graph-vis` plugin
 
-This plugin provides an interactive graphical representation of the renku repository's knowledge graph, possibly from within the renku session.
+This plugin provides a graphical representation of the renku repository's knowledge graph, possibly from within the renku session.
 
 The plugin provides two CLI commands:
   * `display` to generate a representation of the graph over an output image
