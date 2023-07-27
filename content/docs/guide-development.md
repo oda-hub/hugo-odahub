@@ -122,7 +122,6 @@ To support the development of workflows in Renku, a set of dedicated funcitonail
 * Offer an interactive visualization of the project's Knowledge Graph (`renku-graph-vis` plugin)
 * Intercept calls to `astroquery` functions and store them in the project's Knowledge Graph (`renku-aqs-annotation` plugin)
 
-These two sets of features are offered through separate plugins.
 
 ### Visualizing project Knowledge Graph with `renku-graph-vis` plugin
 
