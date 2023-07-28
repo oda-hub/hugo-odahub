@@ -70,10 +70,10 @@ reference_energy = 20 # oda:keV
 
 ### Publish your workflow as a test service
 * publish the workflow to RenkuLab in the dedicated group: https://renkulab.io/gitlab/astronomy/mmoda/
-* add a "live-workflow" topic.
+* add a "live-workflow" topic (see screenshots below)
 
-![](../live-workflow-tag-set.png)
-![](../live-workflow-tag.png)
+![](live-workflow-tag-set.png)
+![](live-workflow-tag.png)
 
 
 * once some bots do their job, the workflow will be automatically installed in [MMODA](https://www.astro.unige.ch/mmoda) (by default, on a staging instance), and you will recieve an email!
