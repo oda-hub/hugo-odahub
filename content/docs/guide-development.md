@@ -1,17 +1,24 @@
-# Workflow development Guide
+# MMODA workflow development Guide
 
-Workflows are all things that can be computed, broadly speaking. 
+The MMODA platform provides access to the Astronomical Open Research Data Analysis Serfives (Astro-ORDAS). Good fraction of these services follow a simple scheme: they are  
+* accessing publicly available external astronomical data archives to fetch data relevant to specific source or source catalog and
+* transform the fetched data using a workflow based on a Python notebook, to drive a data product
+* display a preview of the data product on the MMODA frontend and/or return the data product to the user
 
-For reproducibility, we want our workflows to be repeatable: producing the same output every time they are computed. 
-This is easy enough to do in first approximation, but might be harder to achieve than it seems when the workflow relies on external resources. But we track every execution so it is not necessary to be overly concerned about these delicate details at every moment.
+The users of MMODA are encouraged to become its developers and add new AstroORDAS. This help page provides a step-by step instructions on how to add new services to MMODA.
 
-Generally, we want the workflows to be parametrized. Non-parametrized but strickly repeatable notebooks are less **reusable** since they always produce the same output data.
-
-One way to create them in ODA is to build **jupyter notebook**.
+Workflows are all things that can be computed, broadly speaking. For reproducibility, we want our workflows to be repeatable: producing the same output every time they are computed. This looks easy enough in first approximation, but might be harder to achieve than it seems when the workflow relies on external data and compute resources  and has to yield an "up-and-running" ORDAS in an ever-evolving compute environment. This help page is also aimed at helping the developers in improving the reproducibility and reusability of their workflows converted to services.
 
 ## Simple ODA Jupyter Notebook to a workflow
 
-### Write a working repeatable workflow
+### 1) Write a working repeatable workflow
+
+Suppose you have a **jupyter notebook** that derives some useful information on an astronomical source (for example, a blazar Mrk 421) from data found in an astronomical data archive (in our example, it will be [GAIA Data Release 3](https://www.cosmos.esa.int/web/gaia/dr3). 
+Generally, we want the workflows to be parametrized. Non-parametrized but strickly repeatable notebooks are less **reusable** since they always produce the same output data.
+
+One way to create them in ODA is to build .
+
+
 
 First you need to make sure your notebook runs in a cloud environment. It needs to be repeatable - i.e. you can run it many times. If it depends on external services - try to make sure the requests are also repeatable - you might need to specify sufficient details. If the notebook does not produce the exactly
 the same result every time - it's unfortunate, but do not worry too much, it might still be reproducible (see motivation on [the difference between reproducibility and repeatability](https://github.com/volodymyrss/reproducibility-motivation/))
