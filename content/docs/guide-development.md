@@ -45,7 +45,7 @@ If the notebook contains parameters anotated with these types, their names will 
 
 ![image](https://github.com/oda-hub/hugo-odahub/blob/master/content/docs/tmp2.png)
 
-Note that both target (Point of Interest) **source name** and target **source coordinates** are passed to the workflow, and in principle there is no guarantee the coordinates are that of the source. We leave is up to the workflow developer to reconcile these parameters. Please explain the logic in the associated help page of the service.
+Note that both **source name** and  **source coordinates** are passed to the workflow, and in principle there is no guarantee the coordinates are that of the source. We leave is up to the workflow developer to reconcile these parameters. Please explain the logic in the associated help page of the service.
 
 #### Adding annotations the entire notebook
 
@@ -72,8 +72,7 @@ The outputs may be strings, floats, lists, numpy arrays, astropy tables etc. The
 
 The parameterized workflow formulated as a Python notebook can be converted into a service provided by [MMODA](https://www.astro.unige.ch/mmoda/)  by a bot that scans a specific location `astronomy/mmoda` in the project directory on the  [renkulab.io](https://renkulab.io/) collaborative platform. Creating a new project in this directory will make it visible for the bot. In our example of Fermi/LAT lightcurve workflow, it is in the [fermi](https://renkulab.io/projects/astronomy/mmoda/fermi) subdirectory of `astronomy/mmoda`.
 
-First you need to make sure your notebook runs in a cloud environment. It needs to be repeatable - i.e. you can run it many times. If it depends on external services - try to make sure the requests are also repeatable - you might need to specify sufficient details. If the notebook does not produce the exactly
-the same result every time - it's unfortunate, but do not worry too much, it might still be reproducible (see motivation on [the difference between reproducibility and repeatability](https://github.com/volodymyrss/reproducibility-motivation/))
+To proceed along this way, you first you need to make sure your notebook runs correctly in the  [renkulab.io](https://renkulab.io/) environment. You can start a new project in the `astronomy/mmoda` 
 
 * write your notebook, and make sure it runs from top to bottom
 * make a requirements.txt will the modules you need for this notebook
@@ -81,7 +80,8 @@ the same result every time - it's unfortunate, but do not worry too much, it mig
 You can use mock [notebooks](https://renkulab.io/gitlab/astronomy/mmoda/mmoda-nb2workflow-example/-/tree/master/notebooks) as examples.
 
 
-
+It needs to be repeatable - i.e. you can run it many times. If it depends on external services - try to make sure the requests are also repeatable - you might need to specify sufficient details. If the notebook does not produce the exactly
+the same result every time - it's unfortunate, but do not worry too much, it might still be reproducible (see motivation on [the difference between reproducibility and repeatability](https://github.com/volodymyrss/reproducibility-motivation/))
 
 
 ### Publish your workflow as a test service
