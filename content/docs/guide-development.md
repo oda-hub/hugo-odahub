@@ -72,7 +72,37 @@ The outputs may be strings, floats, lists, numpy arrays, astropy tables etc. The
 
 The parameterized workflow formulated as a Python notebook can be converted into a service provided by [MMODA](https://www.astro.unige.ch/mmoda/)  by a bot that scans a specific location `astronomy/mmoda` in the project directory on the  [renkulab.io](https://renkulab.io/) collaborative platform. Creating a new project in this directory will make it visible for the bot. In our example of Fermi/LAT lightcurve workflow, it is in the [fermi](https://renkulab.io/projects/astronomy/mmoda/fermi) subdirectory of `astronomy/mmoda`.
 
-To proceed along this way, you first you need to make sure your notebook runs correctly in the  [renkulab.io](https://renkulab.io/) environment. You can start a new project in the `astronomy/mmoda` 
+To proceed along this way, you first you need to make sure your notebook runs correctly in the  [renkulab.io](https://renkulab.io/) environment. You can start a new project in the `astronomy/mmoda` by clicking on the "Creat new project" button.
+
+![image](https://github.com/oda-hub/hugo-odahub/blob/master/content/docs/tmp4.png)
+
+You will need to choose the name of the new project. This name will be the name of your service appearing at the MMODA frontend and discoverable via MMODA API. Place your project in the `astronomy/mmoda` namespace by specifying this in the "Namespace" field as shown below:
+
+![image](https://github.com/oda-hub/hugo-odahub/blob/master/content/docs/tmp5.png)
+
+Choose the "Python 3" template for the project and then click "Create project" button:
+
+![image](https://github.com/oda-hub/hugo-odahub/blob/master/content/docs/tmp6.png)
+
+To start working on the newly created project, you can launch an interactive Jupyte lab session by clicking on the "Start" button:
+
+![image](https://github.com/oda-hub/hugo-odahub/blob/master/content/docs/tmp7.png)
+
+Once in the Jupyter lab environment, you can update the project by uploading the notebook that you intend to promote to a service:
+
+![image](https://github.com/oda-hub/hugo-odahub/blob/master/content/docs/tmp8.png)
+
+Your notebook most probably imports some python packages that are not installed by default in a generic Python environment on renkulab.io. To add necessary packages, you need to update the `requirements.txt` file with the packages you need:
+
+![image](https://github.com/oda-hub/hugo-odahub/blob/master/content/docs/tmp9.png)
+
+In the example of Fermi/LAT analysis we are considering, packages `astropy`, `matplotlib` and `astroquery` packages will be needed. They can be added in the requirements.txt file as shown above.
+
+Once you are done with uploading your notebook and adding missing Python packages into the requirements.txt file, you can commit changes to your project by going to the GitLab tab in the Jupyter lab interface. You will see files that have been added or modified appearing as such in the dedicated sub-panel as shown below:
+
+![image](https://github.com/oda-hub/hugo-odahub/blob/master/content/docs/tmp10.png)
+
+Promote these files to the "Staged" state by clicking at the "+" signs next to them and commit changes to your project by clicking at the "Commit" buttong just below the file list. 
 
 * write your notebook, and make sure it runs from top to bottom
 * make a requirements.txt will the modules you need for this notebook
