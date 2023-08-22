@@ -100,8 +100,6 @@ In the example of Fermi/LAT analysis we are considering, packages `astropy`, `ma
 
 Once you are done with uploading your notebook and adding missing Python packages into the requirements.txt file, you can commit changes to your project by going to the GitLab tab in the Jupyter lab interface. You will see files that have been added or modified appearing as such in the dedicated sub-panel as shown below:
 
-![image](https://github.com/oda-hub/hugo-odahub/blob/master/content/docs/tmp10.png)
-
 Promote these files to the "Staged" state by clicking at the "+" signs next to them and commit changes to your project by clicking at the "Commit" buttong just below the file list. 
 
 * write your notebook, and make sure it runs from top to bottom
