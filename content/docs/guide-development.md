@@ -1,6 +1,6 @@
 # [MMODA](https://www.astro.unige.ch/mmoda) workflow development Guide
 
-The [MMODA](https://www.astro.unige.ch/mmoda) platform provides access to the Astronomical Open Research Data Analysis Services (ORDAS). Good fraction of these services follow a simple scheme: they  
+The [MMODA](https://www.astro.unige.ch/mmoda) platform provides access to the Astronomical Open Research Data Analysis Services (ORDAS). Good fraction of these services follow a simple scheme, they:  
 * access publicly available external astronomical data archives to fetch data relevant to specific source or source catalog,
 * transform the fetched data using a workflow based on a Python notebook, to drive a data product and
 The users of [MMODA](https://www.astro.unige.ch/mmoda) are encouraged to become its developers and add new ORDAS. This help page provides a step-by step instructions on how to add new services to MMODA.
