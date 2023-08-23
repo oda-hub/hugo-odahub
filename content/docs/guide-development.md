@@ -19,7 +19,7 @@ The first essential step in promoting the notebook to an ORDAS is to make the wo
 ### How to designate input parameters and output cells of the notebook 
 
 In [MMODA](https://www.astro.unige.ch/mmoda) we use the approach of [papermill](https://papermill.readthedocs.io/en/latest/usage-parameterize.html#designate-parameters-for-a-cell)) to **tag** the notebook cells that contain the input parameters and the outputs. In your notebook, you may create two dedicated cells with the "parameters" and "outputs" tags. In the Jupyter Lab environment this can be done by clicking on the cogwheel sign on the right top, red arrow in the image below, and adding new tag as pointed by the second red arrow:
-![image](https://github.com/oda-hub/hugo-odahub/blob/master/content/docs/tmp1.png)
+![image](tmp1.png)
 
 ### How to define input parameters in the dedicated parameters cell 
 
@@ -42,7 +42,7 @@ Several **default** common parameters are always set by the [MMODA](https://www.
   
 The default parameters are common to all workflows in the [MMODA](https://www.astro.unige.ch/mmoda) ecosystem. They appear at the top of the [MMODA](https://www.astro.unige.ch/mmoda) frontend as shown below:
 
-![image](https://github.com/oda-hub/hugo-odahub/blob/master/content/docs/tmp2.png)
+![image](tmp2.png)
 
 If the notebook contains parameters anotated with these types, their names will be automatically considered as the parameters appearing in the common parameter field of all services. If some of them are ommited, they will be added to the list of workflow parameters automatically. 
 
@@ -64,7 +64,7 @@ reference_energy = 20 # oda:keV
 
 A cell tagged "outputs" defines the data product(s) that will be provided by the service:
 
-![image](https://github.com/oda-hub/hugo-odahub/blob/master/content/docs/tmp3.png)
+![image](tmp3.png)
 
 
 The outputs may be strings, floats, lists, numpy arrays, astropy tables etc. They may be also strings which contain filenames for valid files. If they do, the whole file will be considered as the output.  Similar to the "parameters" cell, the "outputs" cell should contain the definitions of the output variables followed by equality that assigns values to them and a comment that defines their type (for example, the variable `lightcurve_astropy_table` in the example shown above takes the value `lightcurve` which is an astropy table. the comment field `# http://odahub.io/ontology#ODAAstropyTable` specifies this in terms of the MMODA [ontology](https://odahub.io/ontology/). If you want to give more detailed description of the notebook input and output, use `terms` from the pre-defined ontology described  [here]([docs/guide-ontology.](https://odahub.io/docs/guide-ontology)).
@@ -82,34 +82,34 @@ The parameterized workflow formulated as a Python notebook can be converted into
 
 To proceed along this way, you first you need to make sure your notebook runs correctly in the  [renkulab.io](https://renkulab.io/) environment. You can start a new project in the `astronomy/mmoda` by clicking on the "Creat new project" button.
 
-![image](https://github.com/oda-hub/hugo-odahub/blob/master/content/docs/tmp4.png)
+![image](tmp4.png)
 
 You will need to choose the name of the new project. This name will be the name of your service appearing at the [MMODA](https://www.astro.unige.ch/mmoda) frontend and discoverable via [MMODA](https://www.astro.unige.ch/mmoda) API. Place your project in the `astronomy/mmoda` namespace by specifying this in the "Namespace" field as shown below:
 
-![image](https://github.com/oda-hub/hugo-odahub/blob/master/content/docs/tmp5.png)
+![image](tmp5.png)
 
 Choose the "Python 3" template for the project and then click "Create project" button:
 
-![image](https://github.com/oda-hub/hugo-odahub/blob/master/content/docs/tmp6.png)
+![image](tmp6.png)
 
 To start working on the newly created project, you can launch an interactive Jupyter lab session by clicking on the "Start" button:
 
-![image](https://github.com/oda-hub/hugo-odahub/blob/master/content/docs/tmp7.png)
+![image](tmp7.png)
 
 Once in the Jupyter lab environment, you can update the project by uploading the notebook that you intend to promote to a service:
 
-![image](https://github.com/oda-hub/hugo-odahub/blob/master/content/docs/tmp8.png)
+![image](tmp8.png)
 
 Your notebook most probably imports some python packages that are not installed by default in a generic Python environment on [renkulab.io](https://renkulab.io). To add necessary packages, you need to update the `requirements.txt` and possibly `environment.yml` files with the packages you need:
 
-![image](https://github.com/oda-hub/hugo-odahub/blob/master/content/docs/tmp9.png)
+![image](tmp9.png)
 
 In the example of Fermi/LAT analysis we are considering, packages `astropy`, `matplotlib` and `astroquery` packages will be needed. They can be added in the requirements.txt file as shown above.
 
 Once you are done with uploading your notebook and adding missing Python packages into the requirements.txt file, you can commit changes to your project by going to the GitLab tab in the Jupyter lab interface. You will see files that have been added or modified appearing as such in the dedicated sub-panel as shown below:
 
 
-![image](https://github.com/oda-hub/hugo-odahub/blob/master/content/docs/tmp10_1.png)
+![image](tmp10_1.png)
 
 Promote these files to the "Staged" state by clicking at the "+" signs next to them and commit changes to your project by clicking at the "Commit" buttong just below the file list. Next, push the comitted changes to the Gitlab by pressing the "push" button (see the screenshot above).  
 
@@ -143,23 +143,23 @@ If you still experience issues with local environment, try to develop the workfl
 If you project is in the `/astronomy/mmoda/` namespace, it is straightforward to convert it into a service. All you need to do is to add a `live-workflow` as a topic at the project Gitlab that you can access by clicking on the "GitLab" button at  the main project page on renkulab.io:
 
 
-![image](https://github.com/oda-hub/hugo-odahub/blob/master/content/docs/tmp11.png)
+![image](tmp11.png)
 
 At the GitLab webpage, go to the "Settings" section, the "Topic" field is in the "General" settings:
 
-![image](https://github.com/oda-hub/hugo-odahub/blob/master/content/docs/tmp12.png)
+![image](tmp12.png)
 
 Note that you may add multiple topics in this field. In the example of Fermi/LAT shown above, there is an additional topic "MM Gamma-rays" that helps [MMODA](https://www.astro.unige.ch/mmoda) users to classify workflows by the messenger and waveband types. The additional topic will appear in the name of the tab of your workflow on [MMODA](https://www.astro.unige.ch/mmoda) frontend. The topics associated to your project are visible right below the project name on the Gitlab pages:
 
-![image](https://github.com/oda-hub/hugo-odahub/blob/master/content/docs/tmp13.png)
+![image](tmp13.png)
 
 Once the project is associated to the `live-workflow` topic, it becomes visible to a bot that periodically scans the Gitlabs of the projects in the `astronomy/mmoda` domain, looking for new or modified "live" workflows that propose themselves as online services for MMODA. The bot will try to convert your notebook into a service and if this works, it will automatically add the new service  [MMODA](https://www.astro.unige.ch/mmoda) (by default, on to its staging instance). You will recieve an email similar to this:
 
-![image](https://github.com/oda-hub/hugo-odahub/blob/master/content/docs/tmp14.png)
+![image](tmp14.png)
 
 You may now connect to the [MMODA](https://www.astro.unige.ch/mmoda) frontend to test the functionalities of your service, check the correctness of appearance and format of the input parameters that you have specified in the `parameters` cell of the notebook, check the formatting and correctness of the data products that are produced upon pressing the "Submit" button on the frontend etc:
 
-![image](https://github.com/oda-hub/hugo-odahub/blob/master/content/docs/tmp15_1.png)
+![image](tmp15_1.png)
 
 Note that some of the input parameters in the example of the Fermi/LAT [Lightcurve.ipynb](https://renkulab.io/projects/astronomy/mmoda/fermi/files/blob/Lightcurve.ipynb) notebook appear as multiple choice parameters with pre-defined values, while others are query fields. For some of the parameters, units are specified just below the query window. The names of the parameters are the names of the variables defined in the `parameters` cell of the notebook (see the screenshot of the parameters cell above in section (1) of this help page. 
 
