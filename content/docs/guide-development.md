@@ -10,7 +10,7 @@ The users of [MMODA](https://www.astro.unige.ch/mmoda) are encouraged to become 
 
 Workflows are all things that can be computed, broadly speaking. For reproducibility, we want our workflows to be repeatable: producing the same output every time they are computed. This looks easy enough in first approximation, but might be harder to achieve than it seems when the workflow relies on external data and compute resources  and has to yield an "up-and-running" ORDAS in an ever-evolving compute environment. This help page is also aimed at helping the developers in ensuring reproducibility and reusability of their workflows converted to ORDAS.
 
-## 1) Write a working repeatable parameterized workflow
+## 1) Build a repeatable parameterized workflow
 
 Suppose you have a [**jupyter notebook**](https://renkulab.io/projects/astronomy/mmoda/fermi/files/blob/Lightcurve.ipynb) that derives some useful information (a lightcurve in the GeV gamma-ray band) on an astronomical source  from data found in an astronomical data archive (in our example, it will be [Fermi LAT data archive](https://fermi.gsfc.nasa.gov/ssc/data/access/)). 
 
