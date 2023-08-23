@@ -165,7 +165,7 @@ Note that some of the input parameters in the example of the Fermi/LAT [Lightcur
 
 If the `outputs` cell of your notebook contains multiple data products, they will be shown as a list at the [MMODA](https://www.astro.unige.ch/mmoda) frontend, as shown above. The names of the list items correspond to the names of the variables defined in the `outputs` cell. Each item of the list can be previewed or downloaded by clicking on the "View" button. The preview will depend on the type of the data product that has been specified after the comment  hash `#` tag in the `outputs` cell. 
 
-You can look at different examples of the notebooks converted to services in the `astronomy/mmoda` domain on renkulab.io, to see how to format the inputs and outputs. You can also experiment with further possibilities exploring the [ontology](https://odahub.io/ontology/) of the [MMODA](https://www.astro.unige.ch/mmoda) parameters and data products. 
+You can explore different examples of the notebooks converted to services in the `astronomy/mmoda` domain on renkulab.io, to see how to format the inputs and outputs. If unsure, first take a look on [this simple repository](https://renkulab.io/projects/astronomy/mmoda/mmoda-nb2workflow-example). You can also experiment with further possibilities exploring the [ontology](https://odahub.io/ontology/) of the [MMODA](https://www.astro.unige.ch/mmoda) parameters and data products. 
 
 
 <!--  ####  Try to access your new service
