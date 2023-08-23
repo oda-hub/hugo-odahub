@@ -100,7 +100,7 @@ Once in the Jupyter lab environment, you can update the project by uploading the
 
 ![image](https://github.com/oda-hub/hugo-odahub/blob/master/content/docs/tmp8.png)
 
-Your notebook most probably imports some python packages that are not installed by default in a generic Python environment on [renkulab.io](https://renkulab.io). To add necessary packages, you need to update the `requirements.txt` file with the packages you need:
+Your notebook most probably imports some python packages that are not installed by default in a generic Python environment on [renkulab.io](https://renkulab.io). To add necessary packages, you need to update the `requirements.txt` and possibly `environment.yml` files with the packages you need:
 
 ![image](https://github.com/oda-hub/hugo-odahub/blob/master/content/docs/tmp9.png)
 
