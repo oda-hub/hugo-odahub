@@ -92,7 +92,7 @@ Choose the "Python 3" template for the project and then click "Create project" b
 
 ![image](https://github.com/oda-hub/hugo-odahub/blob/master/content/docs/tmp6.png)
 
-To start working on the newly created project, you can launch an interactive Jupyte lab session by clicking on the "Start" button:
+To start working on the newly created project, you can launch an interactive Jupyter lab session by clicking on the "Start" button:
 
 ![image](https://github.com/oda-hub/hugo-odahub/blob/master/content/docs/tmp7.png)
 
