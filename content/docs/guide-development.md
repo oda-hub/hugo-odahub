@@ -174,13 +174,15 @@ You can explore different examples of the notebooks converted to services in the
 $ oda-api -u https://dispatcher-staging.odahub.io get -i lightcurve-example -p random -a n_bins=5
 ```-->
 
+### Support the workflow development via renku plugin  
+
 To support the development of workflows in Renku, a set of dedicated funcitonailities, provided as Renku plugins, are made available. Specifically, these plugins aim to achieve the following:
 
 * Offer an interactive visualization of the project's Knowledge Graph (`renku-graph-vis` plugin)
 * Intercept calls to `astroquery` functions and store them in the project's Knowledge Graph (`renku-aqs-annotation` plugin)
 
 
-### Visualizing project Knowledge Graph with `renku-graph-vis` plugin
+#### Visualizing project Knowledge Graph with `renku-graph-vis` plugin
 
 This plugin provides a graphical representation of the renku repository's knowledge graph, possibly from within the renku session.
 
@@ -200,7 +202,7 @@ This visualization also includes the ODA ontology, providing valuable insights i
 
 More technical details are presented in the README of the repo page: [https://github.com/oda-hub/renku-graph-vis/](https://github.com/oda-hub/renku-graph-vis/)
 
-#### Plugin Installation
+##### Installation
 
 The plugin can be installed via pip:
 
@@ -210,7 +212,7 @@ pip install renku_graph_vis
 
 Alternatively, it can be made available within a Renku session by adding it in the list of requirements of the Renku project, within your `requirements.txt` file.
 
-### Tracking access to astronomical archives and services in the project Knowledge Graph by using `renku-aqs-annotation` plugin
+#### Tracking access to astronomical archives and services in the project Knowledge Graph by using `renku-aqs-annotation` plugin
 
 This plugin intercepts several key `astroquery` methods and stores annotations containing information about the calls to these methods (like the arguments used in the call) to the project's Knowledge Graph: [https://github.com/oda-hub/renku-aqs-annotation](https://github.com/oda-hub/renku-aqs-annotation)
 
@@ -218,7 +220,7 @@ In the image below, the information added to the project Knowledge Graph is high
 
 ![](details_astroquery_annotations_1.png)
 
-#### Plugin Installation
+##### Installation
 
 The plugin can be installed either via pip:
 
