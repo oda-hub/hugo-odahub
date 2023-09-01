@@ -178,7 +178,7 @@ $ oda-api -u https://dispatcher-staging.odahub.io get -i lightcurve-example -p r
 
 To support the development of workflows in Renku, a set of dedicated funcitonailities, provided as Renku plugins, are made available. Specifically, these plugins aim to achieve the following:
 
-* Offer an interactive visualization of the project's Knowledge Graph (`renku-graph-vis` plugin)
+* Offer a visualization of the project's Knowledge Graph (`renku-graph-vis` plugin)
 * Intercept calls to `astroquery` functions and store them in the project's Knowledge Graph (`renku-aqs-annotation` plugin)
 
 
@@ -190,7 +190,9 @@ The plugin provides two CLI commands:
   * `display` to generate a representation of the graph over an output image
   * `show-graph` to start an interactive visualization of the graph over the browser
 
-In addition, the plugin offers a dynamic visualization of the graph during an interactive renku session.
+Furthermore, the plugin provides an interactive graph visualization feature for real-time monitoring during a renku session. To initiate or access the live graph visualization during your session, simply click on the Graph icon located on the main page, as shown in the image below.
+
+![](renkulab_overview_example_1.png)
 
 The primary benefit introduced is the ability to have a live overview of the ongoing development within an interactive Renku session. This can be seen within the animation below, where the graph is automatically updated with information about the execution of a notebook upon its completion.
 
