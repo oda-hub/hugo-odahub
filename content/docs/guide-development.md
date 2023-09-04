@@ -46,7 +46,7 @@ The default parameters are common to all workflows in the [MMODA](https://www.as
 
 If the notebook contains parameters anotated with these types, their names will be automatically considered as the parameters appearing in the common parameter field of all services. If some of them are ommited, they will be added to the list of workflow parameters automatically. 
 
-Note that both **source name** and  **source coordinates** are passed to the workflow, and in principle there is no guarantee the coordinates are that of the source. We leave is up to the workflow developer to reconcile these parameters. Please explain the logic in the associated help page of the service.
+Note that both **source name** and  **source coordinates** are passed to the workflow, and in principle there is no guarantee the coordinates are that of the source. We leave it up to the workflow developer to reconcile these parameters. Please explain the logic in the associated help page of the service.
 
 ### Adding annotations the entire notebook
 
