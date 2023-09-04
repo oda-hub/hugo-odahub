@@ -66,7 +66,6 @@ A cell tagged "outputs" defines the data product(s) that will be provided by the
 
 ![image](tmp3.png)
 
-
 The outputs may be strings, floats, lists, numpy arrays, astropy tables etc. They may be also strings which contain filenames for valid files. If they do, the whole file will be considered as the output.  Similar to the "parameters" cell, the "outputs" cell should contain the definitions of the output variables followed by equality that assigns values to them and a comment that defines their type (for example, the variable `lightcurve_astropy_table` in the example shown above takes the value `lightcurve` which is an astropy table. the comment field `# http://odahub.io/ontology#ODAAstropyTable` specifies this in terms of the MMODA [ontology](https://odahub.io/ontology/). If you want to give more detailed description of the notebook input and output, use `terms` from the pre-defined ontology described  [here]([docs/guide-ontology.](https://odahub.io/docs/guide-ontology)).
 
 ### Quering external astronomical data archives from a notebook
@@ -107,7 +106,6 @@ Your notebook most probably imports some python packages that are not installed 
 In the example of Fermi/LAT analysis we are considering, packages `astropy`, `matplotlib` and `astroquery` packages will be needed. They can be added in the requirements.txt file as shown above.
 
 Once you are done with uploading your notebook and adding missing Python packages into the requirements.txt file, you can commit changes to your project by going to the GitLab tab in the Jupyter lab interface. You will see files that have been added or modified appearing as such in the dedicated sub-panel as shown below:
-
 
 ![image](tmp10_1.png)
 
@@ -176,7 +174,63 @@ You can explore different examples of the notebooks converted to services in the
 $ oda-api -u https://dispatcher-staging.odahub.io get -i lightcurve-example -p random -a n_bins=5
 ```-->
 
+### Support the workflow development via renku plugin  
 
+To support the development of workflows in Renku, a set of dedicated funcitonailities, provided as Renku plugins, are made available. Specifically, these plugins aim to achieve the following:
+
+* Offer a visualization of the project's Knowledge Graph (`renku-graph-vis` plugin)
+* Intercept calls to `astroquery` functions and store them in the project's Knowledge Graph (`renku-aqs-annotation` plugin)
+
+
+#### Visualizing project Knowledge Graph with `renku-graph-vis` plugin
+
+This plugin provides a graphical representation of the renku repository's knowledge graph, possibly from within the renku session.
+
+The plugin provides two CLI commands:
+  * `display` to generate a representation of the graph over an output image
+  * `show-graph` to start an interactive visualization of the graph over the browser
+
+Furthermore, the plugin provides an interactive graph visualization feature for real-time monitoring during a renku session. To initiate or access the live graph visualization during your session, simply click on the Graph icon located on the main page, as shown in the image below.
+
+![](renkulab_overview_example_1.png)
+
+The primary benefit introduced is the ability to have a live overview of the ongoing development within an interactive Renku session. This can be seen within the animation below, where the graph is automatically updated with information about the execution of a notebook upon its completion.
+
+![](renkulab_execution_example_3.gif)
+
+This visualization also includes the ODA ontology, providing valuable insights into the types of entities within it that are known to the ontology, and therefore helping during the workflow development. The image below displays a graph where the ODA ontology has been imported, and it can be seen that the `SimbadClass` node is an instance of the `AstroqueryModule` class, while `Mrk 421` is an instance of the `AstrophysicalObject` class.
+
+![](details_astroquery_annotations_2.png)
+
+More technical details are presented in the README of the repo page: [https://github.com/oda-hub/renku-graph-vis/](https://github.com/oda-hub/renku-graph-vis/)
+
+##### Installation
+
+The plugin can be installed via pip:
+
+```bash
+pip install renku_graph_vis
+```
+
+Alternatively, it can be made available within a Renku session by adding it in the list of requirements of the Renku project, within your `requirements.txt` file.
+
+#### Tracking access to astronomical archives and services in the project Knowledge Graph by using `renku-aqs-annotation` plugin
+
+This plugin intercepts several key `astroquery` methods and stores annotations containing information about the calls to these methods (like the arguments used in the call) to the project's Knowledge Graph: [https://github.com/oda-hub/renku-aqs-annotation](https://github.com/oda-hub/renku-aqs-annotation)
+
+In the image below, the information added to the project Knowledge Graph is highlighted. Specifically, it can be seen that during a papermill run of the `test-notebook.ipynb` notebook (that produced `out.ipynb` as an output notebook) a call to the astroquery method `query_object`, via the `Simbadclass`, has been detected. This notebook is requesting the object `Mrk 421` object. The hightlighed labels on the edges provide information about the relationship between the two nodes: during the `papermill` execution, a call to the `query_object` method is executed (`call` label) and in turn, this requests the Astrophysical Object `Mrk 421`.
+
+![](details_astroquery_annotations_1.png)
+
+##### Installation
+
+The plugin can be installed either via pip:
+
+```bash
+pip install renku_aqs_annotation
+```
+
+Just like the `renku_graph_vis` plugin, the `renku_aqs_annotation` plugin can be made available within a Renku session by adding it to the list of requirements in your `requirements.txt`` file for the Renku project.
 
 ### Inform [MMODA](https://www.astro.unige.ch/mmoda) team and suggest automatic test cases to ensure service stability 
 
