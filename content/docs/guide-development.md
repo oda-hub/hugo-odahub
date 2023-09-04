@@ -151,7 +151,11 @@ Note that you may add multiple topics in this field. In the example of Fermi/LAT
 
 ![image](tmp13.png)
 
-Once the project is associated to the `live-workflow` topic, it becomes visible to a bot that periodically scans the Gitlabs of the projects in the `astronomy/mmoda` domain, looking for new or modified "live" workflows that propose themselves as online services for MMODA. The bot will try to convert your notebook into a service and if this works, it will automatically add the new service  [MMODA](https://www.astro.unige.ch/mmoda) (by default, on to its staging instance). You will recieve an email similar to this:
+Once the project is associated to the `live-workflow` topic, it becomes visible to a bot that periodically scans the Gitlabs of the projects in the `astronomy/mmoda` domain, looking for new or modified "live" workflows that propose themselves as online services for MMODA. The bot will try to convert your notebook into a service and if this works, it will automatically add the new service  [MMODA](https://www.astro.unige.ch/mmoda) (by default, on to its staging instance). You can monitor the progress of the bot work if you visit the "COntinuous Integration / Continuous Development" (CI/CD) section of the GitLab page of your project. It will show that a pipeline is in progress, both on the build of the updated renkulab project container image and on the "External" MMODA side:
+
+![image](tmp20.png)
+
+Once the deployment is finished, you will recieve an email similar to this:
 
 ![image](tmp14.png)
 
