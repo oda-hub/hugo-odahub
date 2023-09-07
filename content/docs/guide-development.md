@@ -82,7 +82,10 @@ It can happen that your analysis workflow is expected to produce no data product
 
 Don't worry if you do not succeed to foresee all possible exceptions at the initial development stage. If unforeseen exceptions would occur when the service is already deployed and available to users, each time an unforeseen exception occurs, you will be notified and invited to patch your notebook to handle this exception (perhaps raising a new `RuntimeError()` case in the appropriate cell).
 
+### How to add a test to the notebook
 
+It is a good practice to test the developed notebook. This allows to make sure that the code remains valid in the future.
+A test is implemented as another notebook, except that name of the notebook starts with "test_". The notebook should call other notebooks and check that the output matches expectations. See an example of such a test [here](https://gitlab.renkulab.io/astronomy/mmoda/mmoda-nb2workflow-example/-/blob/master/notebooks/test_lightcurve.ipynb). 
 
  ## 2) Make the notebook available for deployment on [MMODA](https://www.astro.unige.ch/mmoda/) via [renkulab.io](https://renkulab.io/)
 
