@@ -81,7 +81,7 @@ It can happen that your analysis workflow is expected to produce no data product
 
 ![image](tmp21.png)
 
-Don't worry if you do not succeed to foresee all possible exceptions at the initial development stage. If unforeseen exceptions would occur when the service is already deployed and availabel to users, each time an unforeseen exception occurs, you will be notified and invided to patch your notebook to handle this excpetion (perhaps arring a new `RuntimeError()` case in the appropriate cell).
+Don't worry if you do not succeed to foresee all possible exceptions at the initial development stage. If unforeseen exceptions would occur when the service is already deployed and available to users, each time an unforeseen exception occurs, you will be notified and invited to patch your notebook to handle this exception (perhaps raising a new `RuntimeError()` case in the appropriate cell).
 
 
 
