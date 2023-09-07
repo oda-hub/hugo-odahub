@@ -175,7 +175,7 @@ You may now connect to the [MMODA](https://www.astro.unige.ch/mmoda) frontend to
 
 ![image](tmp15_1.png)
 
-Note that some of the input parameters in the example of the Fermi/LAT [Lightcurve.ipynb](https://renkulab.io/projects/astronomy/mmoda/fermi/files/blob/Lightcurve.ipynb) notebook appear as multiple choice parameters with pre-defined values, while others are query fields. For some of the parameters, units are specified just below the query window. The names of the parameters are the names of the variables defined in the `parameters` cell of the notebook (see the screenshot of the parameters cell above in section (1) of this help page. 
+Note that some of the input parameters in the example of the Fermi/LAT [Lightcurve.ipynb](https://renkulab.io/projects/astronomy/mmoda/fermi/files/blob/Lightcurve.ipynb) notebook appear as multiple choice parameters with pre-defined values, while others are query fields. For some of the parameters, units are specified just below the query window. The names of the parameters are the names of the variables defined in the `parameters` cell of the notebook (see the screenshot of the parameters cell above in section (1) of this help page. Have a look in the example how this is regulated with parameter annotations.
 
 If the `outputs` cell of your notebook contains multiple data products, they will be shown as a list at the [MMODA](https://www.astro.unige.ch/mmoda) frontend, as shown above. The names of the list items correspond to the names of the variables defined in the `outputs` cell. Each item of the list can be previewed or downloaded by clicking on the "View" button. The preview will depend on the type of the data product that has been specified after the comment  hash `#` tag in the `outputs` cell. 
 
