@@ -197,6 +197,7 @@ To support the development of workflows in Renku, a set of dedicated funcitonail
 * Offer a visualization of the project's Knowledge Graph (`renku-graph-vis` plugin)
 * Intercept calls to `astroquery` functions and store them in the project's Knowledge Graph (`renku-aqs-annotation` plugin)
 
+See below how to install these plugins, which are not available by default.
 
 #### Visualizing project Knowledge Graph with `renku-graph-vis` plugin
 
@@ -222,7 +223,7 @@ More technical details are presented in the README of the repo page: [https://gi
 
 ##### Installation
 
-The plugin can be installed via pip:
+The plugin can be installed via pip on your own environment:
 
 ```bash
 pip install renku_graph_vis
@@ -240,7 +241,7 @@ In the image below, the information added to the project Knowledge Graph is high
 
 ##### Installation
 
-The plugin can be installed either via pip:
+The plugin can be installed either via pip on your own evironment:
 
 ```bash
 pip install renku_aqs_annotation
