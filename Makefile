@@ -25,14 +25,17 @@ import:
 
 .FORCE:
 
-ontology/ontology.ttl: .FORCE
+ontology-from-webprotege:
 	curl "https://webprotege.obsuks1.unige.ch/download?project=$$(pass oda/webprotege/projectid)&format=ttl" > ontology.zip
 	cp ontology/ontology.ttl ontology/ontology.ttl.backup || touch ontology/ontology.ttl
 	cat ontology/ontology-base.ttl > ontology/ontology.ttl
 	unzip -p ontology.zip | sed 's@urn:webprotege:ontology:[0-9a-z\-]*@http://odahub.io/ontology@g' >> ontology/ontology.ttl
+
+
+ontology/ontology.ttl: .FORCE
 	< ontology/ontology.ttl sed 's/owl:versionIRI ".*"/owl:versionIRI "'$(shell cd ontology; git describe --always --tags)'"/' > ontology/ontology-versionned.ttl
 	mv -fv ontology/ontology-versionned.ttl ontology/ontology.ttl 
-	(cd ontology; git commit -a -m "update from upstream"; git push)
+	(cd ontology; git commit -a -m "update version"; git push)
 	diff ontology/ontology.ttl ontology/ontology.ttl.backup || echo "an update happened!"
 	python -c 'import rdflib; print("valid ontology with entries:", len(rdflib.Graph().load(open("ontology/ontology.ttl"), format="turtle")))'
 
