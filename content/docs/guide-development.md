@@ -9,7 +9,7 @@ The users of [MMODA](https://www.astro.unige.ch/mmoda) are encouraged to become 
 
 Workflows are all things that can be computed, broadly speaking. For reproducibility, we want our workflows to be repeatable: producing the same output every time they are computed. This looks easy enough in first approximation, but might be harder to achieve than it seems when the workflow relies on external data and compute resources  and has to yield an "up-and-running" ORDAS in an ever-evolving compute environment. This help page is also aimed at helping the developers in ensuring reproducibility and reusability of their workflows converted to ORDAS.
 
-## 1) Build a repeatable parameterized workflow
+## Build a repeatable parameterized workflow
 
 Suppose you have a [**jupyter notebook**](https://renkulab.io/projects/astronomy/mmoda/fermi/files/blob/Lightcurve.ipynb) that derives some useful information (a lightcurve in the GeV gamma-ray band) on an astronomical source  from data found in an astronomical data archive (in our example, it will be [Fermi LAT data archive](https://fermi.gsfc.nasa.gov/ssc/data/access/)). 
 
@@ -87,7 +87,7 @@ Don't worry if you do not succeed to foresee all possible exceptions at the init
 It is a good practice to test the developed notebook. This allows to make sure that the code remains valid in the future.
 A test is implemented as another notebook, except that name of the notebook starts with "test_". The notebook should call other notebooks and check that the output matches expectations. See an example of such a test [here](https://gitlab.renkulab.io/astronomy/mmoda/mmoda-nb2workflow-example/-/blob/master/notebooks/test_lightcurve.ipynb). 
 
- ## 2) Make the notebook available for deployment on [MMODA](https://www.astro.unige.ch/mmoda/) via [renkulab.io](https://renkulab.io/)
+ ## Make the notebook available for deployment on [MMODA](https://www.astro.unige.ch/mmoda/) via [renkulab.io](https://renkulab.io/)
 
 The parameterized workflow formulated as a Python notebook can be converted into a service provided by [MMODA](https://www.astro.unige.ch/mmoda/)  by a bot that scans a specific location `astronomy/mmoda` in the project directory on the  [renkulab.io](https://renkulab.io/) collaborative platform. Creating a new project in this directory will make it visible for the bot. In our example of Fermi/LAT lightcurve workflow, it is in the [fermi](https://renkulab.io/projects/astronomy/mmoda/fermi) subdirectory of `astronomy/mmoda`.
 
@@ -149,7 +149,7 @@ If you still experience issues with local environment, try to develop the workfl
 {{< /notice >}} -->
 
 
-## 3) Publish your workflow as an [MMODA](https://www.astro.unige.ch/mmoda) service
+## Publish your workflow as an [MMODA](https://www.astro.unige.ch/mmoda) service
 If you project is in the `/astronomy/mmoda/` namespace, it is straightforward to convert it into a service. All you need to do is to add a `live-workflow` as a topic at the project Gitlab that you can access by clicking on the "GitLab" button at  the main project page on renkulab.io:
 
 
@@ -175,7 +175,7 @@ You may now connect to the [MMODA](https://www.astro.unige.ch/mmoda) frontend to
 
 ![image](tmp15_1.png)
 
-Note that some of the input parameters in the example of the Fermi/LAT [Lightcurve.ipynb](https://renkulab.io/projects/astronomy/mmoda/fermi/files/blob/Lightcurve.ipynb) notebook appear as multiple choice parameters with pre-defined values, while others are query fields. For some of the parameters, units are specified just below the query window. The names of the parameters are the names of the variables defined in the `parameters` cell of the notebook (see the screenshot of the parameters cell above in section (1) of this help page. Have a look in the example how this is regulated with parameter annotations.
+Note that some of the input parameters in the example of the Fermi/LAT [Lightcurve.ipynb](https://renkulab.io/projects/astronomy/mmoda/fermi/files/blob/Lightcurve.ipynb) notebook appear as multiple choice parameters with pre-defined values, while others are query fields. For some of the parameters, units are specified just below the query window. The names of the parameters are the names of the variables defined in the `parameters` cell of the notebook (see the screenshot of the parameters cell in the [section above](#build-a-repeatable-parameterized-workflow) of this help page. Have a look in the example how this is regulated with parameter annotations.
 
 If the `outputs` cell of your notebook contains multiple data products, they will be shown as a list at the [MMODA](https://www.astro.unige.ch/mmoda) frontend, as shown above. The names of the list items correspond to the names of the variables defined in the `outputs` cell. Each item of the list can be previewed or downloaded by clicking on the "View" button. The preview will depend on the type of the data product that has been specified after the comment  hash `#` tag in the `outputs` cell. 
 
