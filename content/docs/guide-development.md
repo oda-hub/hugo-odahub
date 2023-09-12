@@ -87,7 +87,7 @@ Don't worry if you do not succeed to foresee all possible exceptions at the init
 It is a good practice to test the developed notebook. This allows to make sure that the code remains valid in the future.
 A test is implemented as another notebook, except that name of the notebook starts with "test_". The notebook should call other notebooks and check that the output matches expectations. See an example of such a test [here](https://gitlab.renkulab.io/astronomy/mmoda/mmoda-nb2workflow-example/-/blob/master/notebooks/test_lightcurve.ipynb). 
 
- ## Make the notebook available for deployment on [MMODA](https://www.astro.unige.ch/mmoda/) via [renkulab.io](https://renkulab.io/)
+ ## Make the notebook available for deployment on **MMODA** via **renkulab.io**
 
 The parameterized workflow formulated as a Python notebook can be converted into a service provided by [MMODA](https://www.astro.unige.ch/mmoda/)  by a bot that scans a specific location `astronomy/mmoda` in the project directory on the  [renkulab.io](https://renkulab.io/) collaborative platform. Creating a new project in this directory will make it visible for the bot. In our example of Fermi/LAT lightcurve workflow, it is in the [fermi](https://renkulab.io/projects/astronomy/mmoda/fermi) subdirectory of `astronomy/mmoda`.
 
@@ -149,8 +149,8 @@ If you still experience issues with local environment, try to develop the workfl
 {{< /notice >}} -->
 
 
-## Publish your workflow as an [MMODA](https://www.astro.unige.ch/mmoda) service
-If you project is in the `/astronomy/mmoda/` namespace, it is straightforward to convert it into a service. All you need to do is to add a `live-workflow` as a topic at the project Gitlab that you can access by clicking on the "GitLab" button at  the main project page on renkulab.io:
+## Publish your workflow as an **MMODA** service
+If you project is in the `/astronomy/mmoda/` namespace, it is straightforward to convert it into a [MMODA](https://www.astro.unige.ch/mmoda) service. All you need to do is to add a `live-workflow` as a topic at the project Gitlab that you can access by clicking on the "GitLab" button at  the main project page on renkulab.io:
 
 
 ![image](tmp11.png)
@@ -249,7 +249,7 @@ pip install renku_aqs_annotation
 
 Just like the `renku_graph_vis` plugin, the `renku_aqs_annotation` plugin can be made available within a Renku session by adding it to the list of requirements in your `requirements.txt`` file for the Renku project.
 
-### Inform [MMODA](https://www.astro.unige.ch/mmoda) team and suggest automatic test cases to ensure service stability 
+### Inform **MMODA** team and suggest automatic test cases to ensure service stability 
 
 Please contact [MMODA](https://www.astro.unige.ch/mmoda) team (see contact form) to inform that you have created a new Open Research Data Analysis Service (ORDAS). We will check the functionalities and stability of your service, and we can inform the user community on availability of this new service. We will also ask you to suggest automatic tests of service operations that will be performed from time to time, to  make sure your service does not break with future updates or because of unavailability of external services providing the input data for your analysis workflow. We can also add acknowledgements to the data providers and to you as the workflow developer. 
 
