@@ -26,6 +26,9 @@ The variables defined in the dedicated "parameters" cell, will be the input para
   * the names of the declared variables will be used as parameter names in the [MMODA](https://www.astro.unige.ch/mmoda) service (except the **default** parameters, see below). For example, the `Source_region_radius` variable will be visible in the frontend as a query parameter with the same name. It will appear with a default value assigned to it (`2.` in the example notebook). 
   * if not annotated, the types of the inputs parameters are determined based on the parameter default value (would be `float` for the `Source_region_radius` parameter).
   * otherwise, it is possible to customize the parameter by adding annotation the input parameter with an MMODA [ontology](https://odahub.io/docs/guide-ontology) item as a comment (after the hash sign, `#http://odahub.io/ontology#AngleDegrees` in the reference example of the `Source_region_radius` parameter. This may be useful for checking the validity of the user inputs. For example, the sky angle in degrees (defined by the `#http://odahub.io/ontology#AngleDegrees`) should be a float number and can take values between 0 and 360. 
+  * it also possible to directly express additional restrictions on the parameter value by using annotation properties `oda:lower_limit`, `oda:upper_limit`, `oda:allowed_value`. For example, to define an angle with maximum value of 10deg, the annotation will be `# oda:AngleDegrees; oda:upper_limit 10.` Another example is a string parameter with possible values of "b", "g", "r": `oda:String; oda:allowed_value 'b','g','r'.`
+  * to explicitly express units of the parameter, one can use predefined `oda:ExpressedInUnit` subclasses, like `# oda:Float; oda:GeV` or annotation property, like `# oda:Float; oda:unit unit:GeV`.
+  
 
 ### Default parameters
 
