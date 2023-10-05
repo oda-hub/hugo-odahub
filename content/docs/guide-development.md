@@ -28,7 +28,7 @@ The variables defined in the dedicated "parameters" cell, will be the input para
   * otherwise, it is possible to customize the parameter by adding annotation the input parameter with an MMODA [ontology](https://odahub.io/docs/guide-ontology) item as a comment (after the hash sign, `#http://odahub.io/ontology#AngleDegrees` in the reference example of the `Source_region_radius` parameter. This may be useful for checking the validity of the user inputs. For example, the sky angle in degrees (defined by the `#http://odahub.io/ontology#AngleDegrees`) should be a float number and can take values between 0 and 360. 
   * it also possible to directly express additional restrictions on the parameter value by using annotation properties `oda:lower_limit`, `oda:upper_limit`, `oda:allowed_value`. For example, to define an angle with maximum value of 10deg, the annotation will be `# oda:AngleDegrees; oda:upper_limit 10.` Another example is a string parameter with possible values of "b", "g", "r": `oda:String; oda:allowed_value 'b','g','r'.`
   * to explicitly express units of the parameter, one can use predefined `oda:ExpressedInUnit` subclasses, like `# oda:Float; oda:GeV` or annotation property, like `# oda:Float; oda:unit unit:GeV`.
-  
+
 
 ### Default parameters
 
@@ -183,6 +183,9 @@ Note that some of the input parameters in the example of the Fermi/LAT [Lightcur
 If the `outputs` cell of your notebook contains multiple data products, they will be shown as a list at the [MMODA](https://www.astro.unige.ch/mmoda) frontend, as shown above. The names of the list items correspond to the names of the variables defined in the `outputs` cell. Each item of the list can be previewed or downloaded by clicking on the "View" button. The preview will depend on the type of the data product that has been specified after the comment  hash `#` tag in the `outputs` cell. 
 
 You can explore different examples of the notebooks converted to services in the `astronomy/mmoda` domain on renkulab.io, to see how to format the inputs and outputs. If unsure, first take a look on [this simple repository](https://renkulab.io/projects/astronomy/mmoda/mmoda-nb2workflow-example). You can also experiment with further possibilities exploring the [ontology](https://odahub.io/ontology/) of the [MMODA](https://www.astro.unige.ch/mmoda) parameters and data products. 
+
+By default, all notebooks residing in the root of the repository (except the ones named as `test_*.ipynb`) will be converted to separate data-products. If notebooks are in the subdirectory, one needs to add the configuration file `mmoda.yaml` with
+`notebook_path: "subfolder/path"`. It's also possible to include only some notebooks by putting into `mmoda.yaml` e.g. `filename_pattern: "prefix_.*"` to define the notebook name regex pattern.
 
 
 <!--  ####  Try to access your new service
