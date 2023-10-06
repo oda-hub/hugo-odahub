@@ -187,6 +187,11 @@ You can explore different examples of the notebooks converted to services in the
 By default, all notebooks residing in the root of the repository (except the ones named as `test_*.ipynb`) will be converted to separate data-products. If notebooks are in the subdirectory, one needs to add the configuration file `mmoda.yaml` with
 `notebook_path: "subfolder/path"`. It's also possible to include only some notebooks by putting into `mmoda.yaml` e.g. `filename_pattern: "prefix_.*"` to define the notebook name regex pattern.
 
+To add a help for the workflow one have to create a file `mmoda_help_page.md` in the root of the repository. This file will be converted by the bot to the help page, associated with the corresponding instrument tab in the MMODA platform interface.
+
+![gaia-help-button](gaia-help-button.png)
+![gaia-help-page](gaia-help-page.png)
+
 
 <!--  ####  Try to access your new service
 
