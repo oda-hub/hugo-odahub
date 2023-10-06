@@ -70,6 +70,8 @@ A cell tagged "outputs" defines the data product(s) that will be provided by the
 
 The outputs may be strings, floats, lists, numpy arrays, astropy tables etc. They may be also strings which contain filenames for valid files. If they do, the whole file will be considered as the output.  Similar to the "parameters" cell, the "outputs" cell should contain the definitions of the output variables followed by equality that assigns values to them and a comment that defines their type (for example, the variable `lightcurve_astropy_table` in the example shown above takes the value `lightcurve` which is an astropy table. the comment field `# http://odahub.io/ontology#ODAAstropyTable` specifies this in terms of the MMODA [ontology](https://odahub.io/ontology/). If you want to give more detailed description of the notebook input and output, use `terms` from the pre-defined ontology described  [here]([docs/guide-ontology.](https://odahub.io/docs/guide-ontology)).
 
+There is also one special type of the output annotation `# http://odahub.io/ontology#WorkflowResultComment`. An output variable of string type, annotated with it will be returned as a comment, shown in yellow field upon completion of the job.
+
 ### Quering external astronomical data archives from a notebook
 
 It is very likely that your analysis workflow needs to access astronomical data retrievable from an external archive. A good practice is to avoid placing  large volumes of data direcly into the container where the analysis notebook runs (this would overload the [renkulab.io](https://renkulab.io) platform which we use for new service deployment).  A better approach is to query the relevant data using online services, for example, [Table Access Protocol (TAP)](https://www.ivoa.net/documents/TAP/) services, or services available through the [astroquery](https://astroquery.readthedocs.io/en/latest/index.html) Python module. In our example case of Fermi/LAT analysis, we use the [astroquery.fermi](https://astroquery.readthedocs.io/en/latest/fermi/fermi.html) module to query the archive of publicly available Fermi/LAT data from [Fermi Science Support Center](https://fermi.gsfc.nasa.gov/ssc/) in the Cell 4 of the notebook [Lightcurve.ipynb](https://renkulab.io/projects/astronomy/mmoda/fermi/files/blob/Lightcurve.ipynb). 
@@ -189,8 +191,10 @@ By default, all notebooks residing in the root of the repository (except the one
 
 To add a help for the workflow one have to create a file `mmoda_help_page.md` in the root of the repository. This file will be converted by the bot to the help page, associated with the corresponding instrument tab in the MMODA platform interface.
 
-![gaia-help-button](gaia-help-button.png)
-![gaia-help-page](gaia-help-page.png)
+![Help button screenshot](fermi-help-button.png)
+![Help page screenshot](fermi-help-page.png)
+
+The file `aknowledgemets.md` is used to edit the acknowledgements text, which is shown at the bottom of the products window. The default text refers to the renku repository, in which the workflow was created.
 
 
 <!--  ####  Try to access your new service
