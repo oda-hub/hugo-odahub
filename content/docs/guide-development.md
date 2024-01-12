@@ -75,6 +75,19 @@ It is very likely that your analysis workflow needs to access astronomical data 
 Of course, relying on external data archives and data access services may pose a problem for reproducibility of results and potentially for the service operational stability. The external services may have downtime period, they may be upgraded and change their API etc. We leave it to the developer to make sure the requests to external services are operational and reproducible. We encourage the developers to supply tests that will be automatically executed from time to time during service operations and are supposed to always yield exactly the same results. If this is not so, this may signal a problem with non-availability of some external services, in this cases you, as the service developer, will be alerted and invited to investigate the origin of the problem.  It may also happen that the notebook would not produce the exactly
 the same result every time but still be reproducible (see motivation on [the difference between reproducibility and repeatability](https://github.com/volodymyrss/reproducibility-motivation/)). 
 
+### Reporting progress for long running tasks
+
+In case your computation task runs considerable amount of time and can be splitted into stages
+consider reporting task progress using ODA API class ProggressReporter:
+```
+from oda_api.api import ProgressReporter
+pr = ProgressReporter()
+pr.report_progress(stage='simulation', progress=0, substage='step 1')
+# implement step 1
+pr.report_progress(stage='simulation', progress=50, substage='step 2')
+# implement step 2
+```   
+
  ## 2) Make the notebook available for deployment on [MMODA](https://www.astro.unige.ch/mmoda/) via [renkulab.io](https://renkulab.io/)
 
 The parameterized workflow formulated as a Python notebook can be converted into a service provided by [MMODA](https://www.astro.unige.ch/mmoda/)  by a bot that scans a specific location `astronomy/mmoda` in the project directory on the  [renkulab.io](https://renkulab.io/) collaborative platform. Creating a new project in this directory will make it visible for the bot. In our example of Fermi/LAT lightcurve workflow, it is in the [fermi](https://renkulab.io/projects/astronomy/mmoda/fermi) subdirectory of `astronomy/mmoda`.
