@@ -77,7 +77,7 @@ the same result every time but still be reproducible (see motivation on [the dif
 
 ### Reporting progress for long running tasks
 
-In case your computation task runs considerable amount of time and can be splitted into stages
+In case your computation task runs considerable amount of time and can be split into stages
 consider reporting task progress using ODA API class ProggressReporter:
 ```
 from oda_api.api import ProgressReporter
