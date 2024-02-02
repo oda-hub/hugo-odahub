@@ -25,3 +25,6 @@
 [submodule "ontology"]
 	path = ontology
 	url = https://github.com/oda-hub/ontology/
+[submodule "oda-hub.github.io"]
+	path = oda-hub.github.io
+	url = git@github.com:oda-hub/oda-hub.github.io.git
