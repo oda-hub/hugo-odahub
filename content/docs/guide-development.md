@@ -92,7 +92,20 @@ Don't worry if you do not succeed to foresee all possible exceptions at the init
 It is a good practice to test the developed notebook. This allows to make sure that the code remains valid in the future.
 A test is implemented as another notebook, except that name of the notebook starts with "test_". The notebook should call other notebooks and check that the output matches expectations. See an example of such a test [here](https://gitlab.renkulab.io/astronomy/mmoda/mmoda-nb2workflow-example/-/blob/master/notebooks/test_lightcurve.ipynb). 
 
- ## Make the notebook available for deployment on **MMODA** via **renkulab.io**
+### Reporting progress for long running tasks
+
+In case your computation task runs considerable amount of time and can be split into stages
+consider reporting task progress using ODA API class ProgressReporter:
+```
+from oda_api.api import ProgressReporter
+pr = ProgressReporter()
+pr.report_progress(stage='simulation', progress=0, substage='step 1')
+# implement step 1
+pr.report_progress(stage='simulation', progress=50, substage='step 2')
+# implement step 2
+```   
+
+ ## Make the notebook available for deployment on [MMODA](https://www.astro.unige.ch/mmoda/) via [renkulab.io](https://renkulab.io/)
 
 The parameterized workflow formulated as a Python notebook can be converted into a service provided by [MMODA](https://www.astro.unige.ch/mmoda/)  by a bot that scans a specific location `astronomy/mmoda` in the project directory on the  [renkulab.io](https://renkulab.io/) collaborative platform. Creating a new project in this directory will make it visible for the bot. In our example of Fermi/LAT lightcurve workflow, it is in the [fermi](https://renkulab.io/projects/astronomy/mmoda/fermi) subdirectory of `astronomy/mmoda`.
 
