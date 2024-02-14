@@ -24,6 +24,8 @@ jobs:
         git config --global user.email "bot@odahub.io"
         git config --global user.name "ODA Bot"
 
+    - name: Prepare Ontology
+      run: make -B ontology/ontology.ttl
 
     - name: Compile Ontology
       run: make -B ontology
