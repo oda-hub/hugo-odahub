@@ -19,5 +19,11 @@ jobs:
     - name: Install dependencies
       run: sudo apt-get install -y build-essential hugo      
 
+    - name: Configure git
+      run: |
+        git config --global user.email "bot@odahub.io"
+        git config --global user.name "ODA Bot"
+
+
     - name: Compile all
       run: make -B
