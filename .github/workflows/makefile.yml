@@ -31,4 +31,6 @@ jobs:
       run: make -B ontology-web
 
     - name: Compile Site
-      run: make 
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
+      run: make publish
