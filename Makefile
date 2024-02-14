@@ -9,8 +9,10 @@
 publish:  ontology
 	( \
 		hugo; \
-		cd public/; \
-		cp ontology/index-en.html ontology/index.html ; \
+		cp public/ontology/index-en.html public/ontology/index.html ; \
+		git clone git@github.com:oda-hub/oda-hub.github.io/; \
+		rsync -av public/ oda-hub.github.io/; \
+		cd oda-hub.github.io/; \
 	       	git add *; \
 		git commit -a -m "update"; \
 		git push)
