@@ -35,6 +35,7 @@ ontology-from-webprotege:
 
 
 ontology/ontology.ttl: .FORCE
+	git clone https://github.com:oda-hub/ontology/
 	< ontology/ontology.ttl sed 's/owl:versionIRI ".*"/owl:versionIRI "'$(shell cd ontology; git describe --always --tags)'"/' > ontology/ontology-versionned.ttl
 	mv -fv ontology/ontology-versionned.ttl ontology/ontology.ttl 
 	# (cd ontology; git commit -a -m "update version"; git push)

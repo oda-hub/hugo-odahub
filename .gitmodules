@@ -13,6 +13,3 @@
 [submodule "themes/hugo-notice"]
 	path = themes/hugo-notice
 	url = https://github.com/martignoni/hugo-notice.git
-[submodule "ontology"]
-	path = ontology
-	url = https://github.com/oda-hub/ontology/
