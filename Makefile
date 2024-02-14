@@ -3,7 +3,7 @@ publish:
 		hugo && \
 		cp public/ontology/index-en.html public/ontology/index.html && \
 		rm -rfv oda-hub.github.io && \
-		git clone git@github.com:oda-hub/oda-hub.github.io/&& \
+		git clone https://github.com/oda-hub/oda-hub.github.io/&& \
 		rsync -av public/ oda-hub.github.io/ && \
 		cd oda-hub.github.io/ && \
 	    git add * && \
