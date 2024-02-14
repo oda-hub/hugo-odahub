@@ -32,12 +32,12 @@ jobs:
 
     - name: Compile and Publish Site
       env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
+        PUSH_SECRET: ${{ secrets.PUSH_SECRET }} 
       run: |
         hugo
         cp public/ontology/index-en.html public/ontology/index.html
         rm -rfv oda-hub.github.io
-        git clone https://mmoda-bot:$GITHUB_TOKEN@github.com/oda-hub/oda-hub.github.io/
+        git clone https://mmoda-bot:$PUSH_SECRET@github.com/oda-hub/oda-hub.github.io/
         rsync -av public/ oda-hub.github.io/
         cd oda-hub.github.io/
         git add *
