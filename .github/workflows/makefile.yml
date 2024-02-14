@@ -25,10 +25,10 @@ jobs:
         git config --global user.name "ODA Bot"
 
     - name: Prepare Ontology
-      run: make -B ontology/ontology.ttl
+      run: make -B ontology
 
     - name: Compile Ontology
-      run: make -B ontology
+      run: make -B ontology-web
 
     - name: Compile Site
       run: make 

@@ -34,7 +34,7 @@ ontology-from-webprotege:
 	unzip -p ontology.zip | sed 's@urn:webprotege:ontology:[0-9a-z\-]*@http://odahub.io/ontology@g' >> ontology/ontology.ttl
 
 
-ontology/ontology.ttl: .FORCE
+ontology: .FORCE
 	git clone https://github.com/oda-hub/ontology/
 	< ontology/ontology.ttl sed 's/owl:versionIRI ".*"/owl:versionIRI "'$(shell cd ontology; git describe --always --tags)'"/' > ontology/ontology-versionned.ttl
 	mv -fv ontology/ontology-versionned.ttl ontology/ontology.ttl 
@@ -49,7 +49,7 @@ ontology/ontology-platforms.ttl: .FORCE
 
 
 # ontology: ontology/ontology.ttl
-ontology:
+ontology-web:
 	TDIR=$$(mktemp -d --suffix widoco) && cd $$TDIR && \
 	wget -q -c -O /tmp/widoco.jar https://github.com/dgarijo/Widoco/releases/download/v1.4.17/java-17-widoco-1.4.17-jar-with-dependencies.jar; \
 	java -jar /tmp/widoco.jar \
