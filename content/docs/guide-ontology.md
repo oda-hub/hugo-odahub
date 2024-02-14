@@ -36,6 +36,4 @@ External ontology changes should be suggested in [here](https://github.com/oda-h
 As ODA ontology is evolving, it is version-controlled. The version is based on git revision, and (should be) tracked in the ontology description.
 Also, at any given time, there are variants of the ODA ontology of different degrees of maturity.
 
-The principal ontology is stored in git here https://github.com/oda-hub/hugo-odahub/blob/master/ontology/ontology.ttl and published as https://odahub.io/ontology/ontology.ttl.
-
-Development ontology for dispatcher testing may be available here https://raw.githubusercontent.com/oda-hub/dispatcher-app/master/tests/oda-ontology.ttl and needs to be eventually synchronized with the main ontology, in principle before the dependent production services (e.g. a particular dispatcher version) are deployed.
+The principal ontology is stored in git here https://github.com/oda-hub/ontology/blob/main/ontology.ttl and published as https://odahub.io/ontology/ontology.ttl.
