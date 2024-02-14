@@ -6,6 +6,6 @@
 | Contribute-At | https://github.com/oda-hub/hugo-odahub |
 
 
-See [Development Guide](docs/guide-development)
+To learn how to add a workflow to MMODA, see [Development Guide](docs/guide-development).
 
-See [Ontology Guide](docs/guide-ontology)
+To understand a bit better the ontology of MMODA, see [Ontology Guide](docs/guide-ontology).
