@@ -1,11 +1,3 @@
-		#mkdir -pv ontology; \
-		#cat ../../renku/owl-doc/odaowl-static.html > ontology/index.html; \
-		#cat ../../renku/owl-doc/rdf.ttl > ontology/rdf.ttl; \
-		#rsync -avu ../../renku/owl-doc/lode/ ontology/lode/; \
-		#mkdir -pv ontology-respec; \
-		#cat ../source/odahub-respec/spec.html > ontology-respec/index.html; \
-		#cat ../source/odahub-respec/rdf > ontology-respec/rdf; 
-
 publish:  ontology
 	( \
 		hugo && \
@@ -40,6 +32,7 @@ ontology: .FORCE
 	mv -fv ontology/ontology-versionned.ttl ontology/ontology.ttl 
 	# (cd ontology; git commit -a -m "update version"; git push)
 	diff ontology/ontology.ttl ontology/ontology.ttl.backup || echo "an update happened!"
+	python -m pip install rdflib
 	python -c 'import rdflib; print("valid ontology with entries:", len(rdflib.Graph().parse(open("ontology/ontology.ttl"), format="turtle")))'
 
 ontology/ontology-platforms.ttl: .FORCE
