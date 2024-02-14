@@ -1,4 +1,4 @@
-publish:  ontology
+publish: 
 	( \
 		hugo && \
 		cp public/ontology/index-en.html public/ontology/index.html && \
