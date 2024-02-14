@@ -37,9 +37,9 @@ ontology-from-webprotege:
 ontology/ontology.ttl: .FORCE
 	< ontology/ontology.ttl sed 's/owl:versionIRI ".*"/owl:versionIRI "'$(shell cd ontology; git describe --always --tags)'"/' > ontology/ontology-versionned.ttl
 	mv -fv ontology/ontology-versionned.ttl ontology/ontology.ttl 
-	(cd ontology; git commit -a -m "update version"; git push)
+	# (cd ontology; git commit -a -m "update version"; git push)
 	diff ontology/ontology.ttl ontology/ontology.ttl.backup || echo "an update happened!"
-	python -c 'import rdflib; print("valid ontology with entries:", len(rdflib.Graph().load(open("ontology/ontology.ttl"), format="turtle")))'
+	python -c 'import rdflib; print("valid ontology with entries:", len(rdflib.Graph().parse(open("ontology/ontology.ttl"), format="turtle")))'
 
 ontology/ontology-platforms.ttl: .FORCE
 	curl "https://webprotege.obsuks1.unige.ch/download?project=$$(pass oda/webprotege/platforms-projectid)&format=ttl" > ontology.zip
@@ -47,7 +47,7 @@ ontology/ontology-platforms.ttl: .FORCE
 	python -c 'import rdflib; print("valid ontology with entries:", len(rdflib.Graph().load(open("ontology/#ontology-platforms.ttl"), format="turtle")))'
 
 
-#ontology: ontology/ontology.ttl
+# ontology: ontology/ontology.ttl
 ontology:
 	TDIR=$$(mktemp -d --suffix widoco) && cd $$TDIR && \
 	wget -c -O /tmp/widoco.jar https://github.com/dgarijo/Widoco/releases/download/v1.4.17/java-17-widoco-1.4.17-jar-with-dependencies.jar; \
