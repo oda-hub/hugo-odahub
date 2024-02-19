@@ -131,7 +131,7 @@ Once in the Jupyter lab environment, you can update the project by uploading the
 
 Your notebook most probably imports some python packages that are not installed by default in a generic Python environment on [renkulab.io](https://renkulab.io). To add necessary packages, you need to update the `requirements.txt` and possibly `environment.yml` files with the packages you need:
 
-![image](tmp9.png)
+![image](tmp9_1.png)
 
 In the example of Fermi/LAT analysis we are considering, packages `astropy`, `matplotlib` and `astroquery` packages will be needed. They can be added in the requirements.txt file as shown above.
 
