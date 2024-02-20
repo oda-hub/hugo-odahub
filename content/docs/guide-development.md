@@ -131,13 +131,13 @@ Once in the Jupyter lab environment, you can update the project by uploading the
 
 Your notebook most probably imports some python packages that are not installed by default in a generic Python environment on [renkulab.io](https://renkulab.io). To add necessary packages, you need to update the `requirements.txt` and possibly `environment.yml` files with the packages you need:
 
-![image](tmp9.png)
+![image](tmp9_1.png)
 
 In the example of Fermi/LAT analysis we are considering, packages `astropy`, `matplotlib` and `astroquery` packages will be needed. They can be added in the requirements.txt file as shown above.
 
 Once you are done with uploading your notebook and adding missing Python packages into the requirements.txt file, you can commit changes to your project by going to the GitLab tab in the Jupyter lab interface. You will see files that have been added or modified appearing as such in the dedicated sub-panel as shown below:
 
-![image](tmp10_1.png)
+![image](tmp10_2.png)
 
 Promote these files to the "Staged" state by clicking at the "+" signs next to them and commit changes to your project by clicking at the "Commit" buttong just below the file list. Next, push the comitted changes to the Gitlab by pressing the "push" button (see the screenshot above).  
 
@@ -275,7 +275,7 @@ The plugin can be installed either via pip on your own evironment:
 pip install renku_aqs_annotation
 ```
 
-Just like the `renku_graph_vis` plugin, the `renku_aqs_annotation` plugin can be made available within a Renku session by adding it to the list of requirements in your `requirements.txt`` file for the Renku project.
+Just like the `renku_graph_vis` plugin, the `renku_aqs_annotation` plugin can be made available within a Renku session by adding it to the list of requirements in your `requirements.txt` file for the Renku project.
 
 ### Inform **MMODA** team and suggest automatic test cases to ensure service stability 
 
