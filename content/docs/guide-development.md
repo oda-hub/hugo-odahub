@@ -177,7 +177,7 @@ At the GitLab webpage, go to the "Settings" section, the "Topic" field is in the
 
 ![image](tmp12.png)
 
-Note that you may add multiple topics in this field. In the example of Fermi/LAT shown above, there is an additional topic "MM Gamma-rays" that helps [MMODA](https://www.astro.unige.ch/mmoda) users to classify workflows by the messenger and waveband types. The additional topic will appear in the name of the tab of your workflow on [MMODA](https://www.astro.unige.ch/mmoda) frontend. The topics associated to your project are visible right below the project name on the Gitlab pages:
+Note that you may add multiple topics in this field. In the example of Fermi/LAT shown above, there is an additional topic "MM Gamma-rays" that helps [MMODA](https://www.astro.unige.ch/mmoda) users to classify workflows by the messenger and waveband types. Any topic which starts with "MM " (note the space) will be shown as a messenger label in MMODA, excluding the "MM " prefix. The additional topic will appear in the name of the tab of your workflow on [MMODA](https://www.astro.unige.ch/mmoda) frontend. The topics associated to your project are visible right below the project name on the Gitlab pages:
 
 ![image](tmp13.png)
 
