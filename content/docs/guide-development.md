@@ -52,7 +52,7 @@ Note that both **source name** and  **source coordinates** are passed to the wor
 
 ### Adding annotations the entire notebook
 
-Annotations can apply to parameters or entire notebook. In both cases they are kept in the notebook cell tagged `parameters`.
+Annotations can apply to parameters or entire notebook. In both cases they are kept in the notebook cell tagged `parameters`. 
 For example:
 
 ```
@@ -62,7 +62,42 @@ For example:
 source_name = "Crab" # oda:AstrophysicalObject
 reference_energy = 20 # oda:keV
 ```   
- ### How to annotate the notebook outputs
+
+### Adding an external resource annotations
+
+In case your notebook relies on some external resources, such as S3 storage or compute cluster this should be reflected in the annotations in the notebook cell tagged `parameters`. Below is the list of the resource annotations supported currently:
+
+`oda:S3` - S3 storage</br>
+`oda:Dask` - Dask compute cluster</br>
+
+All kinds of resources may have `resourceBindingEnvVarName` property. If the resource is available the corresponding enviroment variable stores json with the credentials needed to access the resource.
+
+For example, in the code below we declare the S3 storage:
+
+```
+# oda:usesRequiredResource oda:MyS3 .
+# oda: MyS3 a oda:S3 .
+# oda: MyS3 oda:resourceBindingEnvVarName "MY_S3_CREDENTIALS" .
+```  
+Below in the code we can initialize the session to the S3 using the credentials provided by means of the environment variable:
+
+```
+import json
+import os
+from minio import Minio
+
+credentials_env = os.environ.get('MY_S3_CREDENTIALS')
+if credentials_env:
+	credentials=json.loads(credentials_env)
+	client = Minio(
+            endpoint=credentials["endpoint"],
+            access_key=credentials["access_key"],
+            secret_key=credentials["secret_key"],
+        )
+
+``` 
+
+### How to annotate the notebook outputs
 
 A cell tagged "outputs" defines the data product(s) that will be provided by the service:
 
