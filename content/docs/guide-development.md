@@ -79,7 +79,7 @@ For example, in the code below we declare the S3 storage:
 # oda: MyS3 a oda:S3 .
 # oda: MyS3 oda:resourceBindingEnvVarName "MY_S3_CREDENTIALS" .
 ```  
-Below in the code we can initialize the session to the S3 using the credentials provided by means of the environment variable:
+In the code below we initialize the S3 storage session using the credentials provided by means of the environment variable:
 
 ```
 import json
@@ -94,6 +94,31 @@ if credentials_env:
             access_key=credentials["access_key"],
             secret_key=credentials["secret_key"],
         )
+
+``` 
+
+In the example below we declare dask cluster resource requirements in the parameter cell
+
+```
+# oda:usesRequiredResource oda:MyDaskCluster .
+# oda: MyDaskCluster a oda:Dask .
+# oda: MyDaskCluster oda:memory_per_process "2G" .
+# oda: MyDaskCluster oda:n_processes "16" .
+# oda: MyDaskCluster oda:resourceBindingEnvVarName "MY_DASK_CREDENTIALS" .
+``` 
+
+Here `memory_per_process` and `n_processes` define minimal requirements to the resource. 
+
+In the code below we open the dask cluster session
+
+```
+import json
+from dask.distributed import Client
+
+credentials_env = os.environ.get('MY_DASK_CREDENTIALS')
+if credentials_env:
+	credentials=json.loads(credentials_env)
+	client = Client(address=credentials["address"])
 
 ``` 
 
