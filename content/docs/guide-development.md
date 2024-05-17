@@ -63,7 +63,7 @@ source_name = "Crab" # oda:AstrophysicalObject
 reference_energy = 20 # oda:keV
 ```   
 
-### Adding an external resource annotations
+### Adding external resource annotations
 
 In case your notebook relies on some external resources, such as S3 storage or compute cluster this should be reflected in the annotations in the notebook cell tagged `parameters`. Below is the list of the resource annotations supported currently:
 
