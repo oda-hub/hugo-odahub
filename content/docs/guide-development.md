@@ -65,7 +65,7 @@ reference_energy = 20 # oda:keV
 
 ### Adding external resource annotations
 
-In case your notebook relies on some external resources, such as S3 storage or compute cluster this should be reflected in the annotations in the notebook cell tagged `parameters`. Below is the list of the resource annotations supported currently:
+In case your notebook explicitly calls some external resources, such as S3 storage or compute cluster this should be reflected in the annotations in the notebook cell tagged `parameters`. Below is the list of the resource annotations supported currently:
 
 `oda:S3` - S3 storage</br>
 `oda:Dask` - Dask compute cluster</br>
