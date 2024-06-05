@@ -122,6 +122,26 @@ if credentials_env:
 
 ``` 
 
+### Adding token annotations
+
+In case your notebook uses token to access some resources this should be reflected in the annotations in the notebook cell tagged `parameters` in the following way:
+
+```
+# oda:oda_token_access oda:InOdaContext .
+``` 
+The above expression enables the standard mechanism to supply token using oda context variable. Then the token can be accessed from the code in the following way:
+
+```
+from oda_api.api import get_context
+token = get_context()['token']
+```  
+However, we recommend instead using `oda_api.token` API, which also provides token validation and token discovery method as options
+
+```
+from oda_api.token import discover_token
+token = discover_token(allow_invalid=True, token_discovery_methods=None)
+```  
+
 ### How to annotate the notebook outputs
 
 A cell tagged "outputs" defines the data product(s) that will be provided by the service:
