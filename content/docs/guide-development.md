@@ -135,12 +135,24 @@ The above expression enables the standard mechanism to supply token using oda co
 from oda_api.api import get_context
 token = get_context()['token']
 ```  
-However, we recommend instead using `oda_api.token` API, which also provides token validation and token discovery method as options
+However, we recommend instead using higer level  `oda_api.token` API, which also provides token validation and token discovery method as options. The code above is eqivalent to the following higher level code
 
 ```
-from oda_api.token import discover_token
-token = discover_token(allow_invalid=True, token_discovery_methods=None)
+from oda_api.token import discover_token, TokenLocation
+token = discover_token(allow_invalid=True, token_discovery_methods=[TokenLocation.CONTEXT_FILE])
 ```  
+Below is the entire list of token locations supported:
+
+```
+class TokenLocation(Enum):
+    ODA_ENV_VAR = "environment variable ODA_TOKEN"
+    FILE_CUR_DIR = ".oda-token file in current directory"
+    FILE_HOME = ".oda-token file in home"
+    CONTEXT_FILE = "context file current directory"
+```
+
+By default, token validation is enabled and the attempts are made to load the token from all the supported locations in the order they appear in the TokenLocation class.
+
 
 ### How to annotate the notebook outputs
 
