@@ -151,8 +151,7 @@ class TokenLocation(Enum):
     CONTEXT_FILE = "context file current directory"
 ```
 
-By default, token validation is enabled and the attempts are made to load the token from all the supported locations in the order they appear in the TokenLocation class.
-
+By default, token validation is enabled and the attempts are made to load the token from all the supported locations in the order they appear in the TokenLocation class. Note that token locations other than `TokenLocation.CONTEXT_FILE` are left for compatibility only. They don't have corresponding annotations in ontology.
 
 ### How to annotate the notebook outputs
 
