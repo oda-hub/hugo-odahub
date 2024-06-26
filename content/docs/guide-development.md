@@ -67,8 +67,9 @@ reference_energy = 20 # oda:keV
 
 In case your notebook explicitly calls some external resources, such as S3 storage or compute cluster this should be reflected in the annotations in the notebook cell tagged `parameters`. Below is the list of the resource annotations supported currently:
 
-`oda:S3` - S3 storage</br>
-`oda:Dask` - Dask compute cluster</br>
+`oda:S3` - S3 storage
+
+`oda:Dask` - Dask compute cluster
 
 All kinds of resources may have `resourceBindingEnvVarName` property. If the resource is available the corresponding enviroment variable stores json with the credentials needed to access the resource.
 
@@ -120,7 +121,31 @@ if credentials_env:
 	credentials=json.loads(credentials_env)
 	client = Client(address=credentials["address"])
 
-``` 
+```
+
+### How to upload a file to be used for the notebook execution
+
+In order to use a file during the notebook execution, the two possible annotations (from the MMODA [ontology](https://odahub.io/ontology/)) are available:
+
+* `oda:POSIXPath`
+* `oda:FileURL`
+
+#### `oda:PosixPATH`
+
+This is used to reference a file locally available in the repository. For example:
+
+```python
+img_file_path = 'image.png' # oda:POSIXPath
+```
+
+#### `oda:FileURL`
+
+This is instead to have a url of a file. For example:
+
+```python
+img_file_url = 'https://www.isdc.unige.ch/integral/images/medium/integralTransparent.png' # oda:FileURL
+```
+
 
 ### How to annotate the notebook outputs
 
@@ -253,7 +278,9 @@ You may now connect to the [MMODA](https://www.astro.unige.ch/mmoda) frontend to
 
 ![image](tmp15_1.png)
 
-Note that some of the input parameters in the example of the Fermi/LAT [Lightcurve.ipynb](https://renkulab.io/projects/astronomy/mmoda/fermi/files/blob/Lightcurve.ipynb) notebook appear as multiple choice parameters with pre-defined values, while others are query fields. For some of the parameters, units are specified just below the query window. The names of the parameters are the names of the variables defined in the `parameters` cell of the notebook (see the screenshot of the parameters cell in the [section above](#build-a-repeatable-parameterized-workflow) of this help page. Have a look in the example how this is regulated with parameter annotations.
+Note that some of the input parameters in the example of the Fermi/LAT [Lightcurve.ipynb](https://renkulab.io/projects/astronomy/mmoda/fermi/files/blob/Lightcurve.ipynb) notebook appear as multiple choice parameters with pre-defined values, while others are query fields. For some of the parameters, units are specified just below the query window. The names of the parameters are the names of the variables defined in the `parameters` cell of the notebook (see the screenshot of the parameters cell in the [section above](#build-a-repeatable-parameterized-workflow) of this help page). Have a look in the example how this is regulated with parameter annotations. Finally, when annoting an argument either as a `PosixPATH` or as a `FileURL`, as a result, on the [MMODA](https://www.astro.unige.ch/mmoda) frontend a selector for choosing either a file to upload, or input url file link  will be displayed, as displayed in the example below:
+
+![image](tmp15_2.png)
 
 If the `outputs` cell of your notebook contains multiple data products, they will be shown as a list at the [MMODA](https://www.astro.unige.ch/mmoda) frontend, as shown above. The names of the list items correspond to the names of the variables defined in the `outputs` cell. Each item of the list can be previewed or downloaded by clicking on the "View" button. The preview will depend on the type of the data product that has been specified after the comment  hash `#` tag in the `outputs` cell. 
 
