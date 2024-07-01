@@ -125,7 +125,7 @@ if credentials_env:
 
 ### How to upload a file to be used for the notebook execution
 
-In order to use a file during the notebook execution, the two possible annotations (from the MMODA [ontology](https://odahub.io/ontology/)) are available:
+In order to use a file during the notebook execution, two possible annotations (from the MMODA [ontology](https://odahub.io/ontology/)) are available:
 
 * `oda:POSIXPath`
 * `oda:FileURL`
@@ -278,7 +278,7 @@ You may now connect to the [MMODA](https://www.astro.unige.ch/mmoda) frontend to
 
 ![image](tmp15_1.png)
 
-Note that some of the input parameters in the example of the Fermi/LAT [Lightcurve.ipynb](https://renkulab.io/projects/astronomy/mmoda/fermi/files/blob/Lightcurve.ipynb) notebook appear as multiple choice parameters with pre-defined values, while others are query fields. For some of the parameters, units are specified just below the query window. The names of the parameters are the names of the variables defined in the `parameters` cell of the notebook (see the screenshot of the parameters cell in the [section above](#build-a-repeatable-parameterized-workflow) of this help page). Have a look in the example how this is regulated with parameter annotations. Finally, when annoting an argument either as a `PosixPATH` or as a `FileURL`, as a result, on the [MMODA](https://www.astro.unige.ch/mmoda) frontend a selector for choosing either a file to upload, or input url file link  will be displayed, as displayed in the example below:
+Note that some of the input parameters in the example of the Fermi/LAT [Lightcurve.ipynb](https://renkulab.io/projects/astronomy/mmoda/fermi/files/blob/Lightcurve.ipynb) notebook appear as multiple choice parameters with pre-defined values, while others are query fields. For some of the parameters, units are specified just below the query window. The names of the parameters are the names of the variables defined in the `parameters` cell of the notebook (see the screenshot of the parameters cell in the [section above](#build-a-repeatable-parameterized-workflow) of this help page). Have a look in the example how this is regulated with parameter annotations. Finally, when annoting an argument either as a `oda:PosixPATH` or as a `oda:FileURL`, as a result, on the [MMODA](https://www.astro.unige.ch/mmoda) frontend a selector for choosing either a file to upload, or directly input the url of a file,  will be displayed, as shown in the example below:
 
 ![image](tmp15_2.png)
 
