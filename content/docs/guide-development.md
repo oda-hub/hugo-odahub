@@ -140,7 +140,7 @@ img_file_path = 'image.png' # oda:POSIXPath
 It is advisable to put an example file in the repository matching the default file name ( `'image.png'`  in the example above) to allow easy testing of the notebook.
 #### `oda:FileURL`
 
-This is instead to have a url of a file. For example:
+This annotation is instead used when the notebook expects parameter to be a URL of a file. For example:
 
 ```python
 img_file_url = 'https://www.isdc.unige.ch/integral/images/medium/integralTransparent.png' # oda:FileURL
