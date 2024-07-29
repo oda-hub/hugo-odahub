@@ -67,9 +67,8 @@ reference_energy = 20 # oda:keV
 
 In case your notebook explicitly calls some external resources, such as S3 storage or compute cluster this should be reflected in the annotations in the notebook cell tagged `parameters`. Below is the list of the resource annotations supported currently:
 
-`oda:S3` - S3 storage
-
-`oda:Dask` - Dask compute cluster
+`oda:S3` - S3 storage</br>
+`oda:Dask` - Dask compute cluster</br>
 
 All kinds of resources may have `resourceBindingEnvVarName` property. If the resource is available the corresponding enviroment variable stores json with the credentials needed to access the resource.
 
