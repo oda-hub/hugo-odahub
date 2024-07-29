@@ -125,7 +125,7 @@ if credentials_env:
 
 ### How to upload a file to be used for the notebook execution
 
-In order to define an file as one of the input notebook parameters, two possible annotations (from the MMODA [ontology](https://odahub.io/ontology/)) are available:
+In order to define a file as one of the input notebook parameters, two possible annotations (from the MMODA [ontology](https://odahub.io/ontology/)) are available:
 
 * `oda:POSIXPath`
 * `oda:FileURL`
