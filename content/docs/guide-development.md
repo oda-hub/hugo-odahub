@@ -130,7 +130,7 @@ In order to define a file as one of the input notebook parameters, two possible 
 * `oda:POSIXPath`
 * `oda:FileURL`
 
-#### `oda:PosixPATH`
+#### `oda:POSIXPath`
 
 This is used to reference a file locally available in the repository. For example:
 
