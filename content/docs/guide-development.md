@@ -131,12 +131,12 @@ In order to define a file as one of the input notebook parameters, two possible 
 
 #### `oda:POSIXPath`
 
-This is used to reference a file locally available in the repository. For example:
+This is used to reference a file locally available in the repository to be uploaded from the filesystem of the browser. For example:
 
 ```python
 img_file_path = 'image.png' # oda:POSIXPath
 ```
-It is advisable to put an example file in the repository matching the default file name ( `'image.png'`  in the example above) to allow easy testing of the notebook.
+In the frontend, an uplload widget will be displayed. It is advisable to put an example file in the repository matching the default file name ( `'image.png'`  in the example above) to allow easy testing of the notebook.
 #### `oda:FileURL`
 
 This annotation is instead used when the notebook expects parameter to be a URL of a file. For example:
@@ -144,7 +144,7 @@ This annotation is instead used when the notebook expects parameter to be a URL 
 ```python
 img_file_url = 'https://www.isdc.unige.ch/integral/images/medium/integralTransparent.png' # oda:FileURL
 ```
-
+In the frontend, we will display a text box where the URL can be edited.
 
 ### How to annotate the notebook outputs
 
