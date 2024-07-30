@@ -139,9 +139,9 @@ However, we recommend instead using higer level  `oda_api.token` API, which also
 
 ```
 from oda_api.token import discover_token, TokenLocation
-token = discover_token(allow_invalid=True, token_discovery_methods=[TokenLocation.CONTEXT_FILE])
+token = discover_token(allow_invalid=True)
 ```  
-Below is the entire list of token locations supported:
+Below is the entire list of token locations supported in order of priority.
 
 ```
 class TokenLocation(Enum):
@@ -151,7 +151,7 @@ class TokenLocation(Enum):
     CONTEXT_FILE = "context file current directory"
 ```
 
-By default, token validation is enabled and the attempts are made to load the token from all the supported locations in the order they appear in the TokenLocation class. Note that token locations other than `TokenLocation.CONTEXT_FILE` are left for compatibility only. They don't have corresponding annotations in ontology.
+By default, token validation is enabled and the attempts are made to load the token from all the supported locations in the order they appear in the TokenLocation class. Note that token locations other than `TokenLocation.CONTEXT_FILE` are useful to test the notebook or run it iteratively, but they don't have any corresponding annotations in the ontology.
 
 ### How to annotate the notebook outputs
 
