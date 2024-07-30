@@ -120,7 +120,31 @@ if credentials_env:
 	credentials=json.loads(credentials_env)
 	client = Client(address=credentials["address"])
 
-``` 
+```
+
+### How to upload a file to be used for the notebook execution
+
+In order to define a file as one of the input notebook parameters, two possible annotations (from the MMODA [ontology](https://odahub.io/ontology/)) are available:
+
+* `oda:POSIXPath`
+* `oda:FileURL`
+
+#### `oda:POSIXPath`
+
+This is used to reference a file locally available in the repository to be uploaded from the filesystem of the browser. For example:
+
+```python
+img_file_path = 'image.png' # oda:POSIXPath
+```
+In the frontend, an upload widget will be displayed. It is advisable to put an example file in the repository matching the default file name ( `'image.png'`  in the example above) to allow easy testing of the notebook.
+#### `oda:FileURL`
+
+This annotation is instead used when the notebook expects parameter to be a URL of a file. For example:
+
+```python
+img_file_url = 'https://www.isdc.unige.ch/integral/images/medium/integralTransparent.png' # oda:FileURL
+```
+In the frontend, we will display a text box where the URL can be edited.
 
 ### How to annotate the notebook outputs
 
@@ -253,11 +277,13 @@ You may now connect to the [MMODA](https://www.astro.unige.ch/mmoda) frontend to
 
 ![image](tmp15_1.png)
 
-Note that some of the input parameters in the example of the Fermi/LAT [Lightcurve.ipynb](https://renkulab.io/projects/astronomy/mmoda/fermi/files/blob/Lightcurve.ipynb) notebook appear as multiple choice parameters with pre-defined values, while others are query fields. For some of the parameters, units are specified just below the query window. The names of the parameters are the names of the variables defined in the `parameters` cell of the notebook (see the screenshot of the parameters cell in the [section above](#build-a-repeatable-parameterized-workflow) of this help page. Have a look in the example how this is regulated with parameter annotations.
+Note that some of the input parameters in the example of the Fermi/LAT [Lightcurve.ipynb](https://renkulab.io/projects/astronomy/mmoda/fermi/files/blob/Lightcurve.ipynb) notebook appear as multiple choice parameters with pre-defined values, while others are query fields. For some of the parameters, units are specified just below the query window. The names of the parameters are the names of the variables defined in the `parameters` cell of the notebook (see the screenshot of the parameters cell in the [section above](#build-a-repeatable-parameterized-workflow) of this help page). Have a look in the example how this is regulated with parameter annotations. Finally, when annoting an argument either as a `oda:PosixPATH` or as a `oda:FileURL`, as a result, on the [MMODA](https://www.astro.unige.ch/mmoda) frontend a selector for choosing either a file to upload, or directly input the url of a file,  will be displayed, as shown in the example below:
 
-If the `outputs` cell of your notebook contains multiple data products, they will be shown as a list at the [MMODA](https://www.astro.unige.ch/mmoda) frontend, as shown above. The names of the list items correspond to the names of the variables defined in the `outputs` cell. Each item of the list can be previewed or downloaded by clicking on the "View" button. The preview will depend on the type of the data product that has been specified after the comment  hash `#` tag in the `outputs` cell. 
+![image](tmp15_2.png)
 
-You can explore different examples of the notebooks converted to services in the `astronomy/mmoda` domain on renkulab.io, to see how to format the inputs and outputs. If unsure, first take a look on [this simple repository](https://renkulab.io/projects/astronomy/mmoda/mmoda-nb2workflow-example). You can also experiment with further possibilities exploring the [ontology](https://odahub.io/ontology/) of the [MMODA](https://www.astro.unige.ch/mmoda) parameters and data products. 
+If the `outputs` cell of your notebook contains multiple data products, they will be shown as a list at the [MMODA](https://www.astro.unige.ch/mmoda) frontend, as shown above. The names of the list items correspond to the names of the variables defined in the `outputs` cell. Each item of the list can be previewed or downloaded by clicking on the "View" button. The preview will depend on the type of the data product that has been specified after the comment  hash `#` tag in the `outputs` cell. Eventually, it is worth mentioning that the annotations `oda:PosixPATH` and `oda:FileURL` are not meant to be used as output, so, not appearing in the `outputs` cell of the notebook.
+
+You can explore different examples of the notebooks converted to services in the `astronomy/mmoda` domain on [renkulab.io](https://renkulab.io/projects), to see how to format the inputs and outputs. If unsure, first take a look on [this simple repository](https://renkulab.io/projects/astronomy/mmoda/mmoda-nb2workflow-example). You can also experiment with further possibilities exploring the [ontology](https://odahub.io/ontology/) of the [MMODA](https://www.astro.unige.ch/mmoda) parameters and data products. 
 
 By default, all notebooks residing in the root of the repository (except the ones named as `test_*.ipynb`) will be converted to separate data-products. If notebooks are in the subdirectory, one needs to add the configuration file `mmoda.yaml` with
 `notebook_path: "subfolder/path"`. It's also possible to include only some notebooks by putting into `mmoda.yaml` e.g. `filename_pattern: "prefix_.*"` to define the notebook name regex pattern.
