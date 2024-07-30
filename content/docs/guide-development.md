@@ -136,7 +136,7 @@ This is used to reference a file locally available in the repository to be uploa
 ```python
 img_file_path = 'image.png' # oda:POSIXPath
 ```
-In the frontend, an uplload widget will be displayed. It is advisable to put an example file in the repository matching the default file name ( `'image.png'`  in the example above) to allow easy testing of the notebook.
+In the frontend, an upload widget will be displayed. It is advisable to put an example file in the repository matching the default file name ( `'image.png'`  in the example above) to allow easy testing of the notebook.
 #### `oda:FileURL`
 
 This annotation is instead used when the notebook expects parameter to be a URL of a file. For example:
