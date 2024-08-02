@@ -232,6 +232,8 @@ You will need to choose the name of the new project. This name will be the name 
 
 ![image](tmp5.png)
 
+If you have no rights to create your project in this namespace, please contact the namespace maintainers, for example by writing to `contact@odahub.io`.
+
 Choose the "Python 3" template for the project and then click "Create project" button:
 
 ![image](tmp6.png)
