@@ -76,8 +76,8 @@ For example, in the code below we declare the S3 storage:
 
 ```
 # oda:usesRequiredResource oda:MyS3 .
-# oda: MyS3 a oda:S3 .
-# oda: MyS3 oda:resourceBindingEnvVarName "MY_S3_CREDENTIALS" .
+# oda:MyS3 a oda:S3 .
+# oda:MyS3 oda:resourceBindingEnvVarName "MY_S3_CREDENTIALS" .
 ```  
 In the code below we initialize the S3 storage session using the credentials provided by means of the environment variable:
 
@@ -101,10 +101,10 @@ In the example below we declare dask cluster resource requirements in the parame
 
 ```
 # oda:usesRequiredResource oda:MyDaskCluster .
-# oda: MyDaskCluster a oda:Dask .
-# oda: MyDaskCluster oda:memory_per_process "2G" .
-# oda: MyDaskCluster oda:n_processes "16" .
-# oda: MyDaskCluster oda:resourceBindingEnvVarName "MY_DASK_CREDENTIALS" .
+# oda:MyDaskCluster a oda:Dask .
+# oda:MyDaskCluster oda:memory_per_process "2G" .
+# oda:MyDaskCluster oda:n_processes "16" .
+# oda:MyDaskCluster oda:resourceBindingEnvVarName "MY_DASK_CREDENTIALS" .
 ``` 
 
 Here `memory_per_process` and `n_processes` define minimal requirements to the resource. 
