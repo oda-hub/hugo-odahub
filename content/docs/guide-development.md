@@ -28,10 +28,7 @@ The variables defined in the dedicated "parameters" cell, will be the input para
   * otherwise, it is possible to customize the parameter by adding annotation the input parameter with an MMODA [ontology](https://odahub.io/docs/guide-ontology) item as a comment (after the hash sign, `#http://odahub.io/ontology#AngleDegrees` in the reference example of the `Source_region_radius` parameter. This may be useful for checking the validity of the user inputs. For example, the sky angle in degrees (defined by the `#http://odahub.io/ontology#AngleDegrees`) should be a float number and can take values between 0 and 360. 
   * it also possible to directly express additional restrictions on the parameter value by using annotation properties `oda:lower_limit`, `oda:upper_limit`, `oda:allowed_value`. For example, to define an angle with maximum value of 10deg, the annotation will be `# oda:AngleDegrees; oda:upper_limit 10.` Another example is a string parameter with possible values of "b", "g", "r": `oda:String; oda:allowed_value 'b','g','r'.`
   * to explicitly express units of the parameter, one can use predefined `oda:ExpressedInUnit` subclasses, like `# oda:Float; oda:GeV` or annotation property, like `# oda:Float; oda:unit unit:GeV`.
-  * a set of additional annotations for the correspondent visualization over the mmoda frontend:
-    * `oda:label`: to specify the title for the parameter
-    * `oda:description`: to specify a tooltip for the parameter
-    * `oda:group`: to visually group together a set of parameters
+
 
 ### Default parameters
 
@@ -124,6 +121,25 @@ if credentials_env:
 	client = Client(address=credentials["address"])
 
 ```
+
+## Adding extra annotations
+
+A set of additional annotations for the correspondent visualization over the mmoda frontend:
+  * `oda:label`: to specify the title for the parameter
+  * `oda:description`: to specify a tooltip displayed when we over with the mouse
+  * `oda:group`: to visually group together a set of parameters
+
+In the example below, these additional metadata annotations are set:
+
+```
+param_1 = '' # http://odahub.io/ontology#String ; oda:label "First" ; oda:group "Group of parameters" ; oda:description "first"
+param_2 = '' # http://odahub.io/ontology#String ; oda:label "Second" ; oda:group "Group of parameters" ; oda:description "second"
+param_3 = '' # http://odahub.io/ontology#String ; oda:label "Third" ; oda:group "Group of parameters" ; oda:description "third"
+``` 
+
+Which will result, over the Mmoda interface, the ayout of parameters displayed in the imae below:
+
+![image](grouped_params.png)
 
 ### How to upload a file to be used for the notebook execution
 
