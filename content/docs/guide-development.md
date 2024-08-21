@@ -127,7 +127,7 @@ if credentials_env:
 A number of annotations, for the correspondent visualization over the mmoda frontend, are available:
 
   * `oda:label`: to specify the title for the parameter
-  * `oda:description`: to specify a tooltip displayed when we over with the mouse
+  * `oda:description`: to specify a tooltip, displayed when we over, with the mouse, over the parameter itself 
   * `oda:group`: to visually group together a set of parameters
 
 In the example code below we add these additional metadata annotations:
