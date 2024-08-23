@@ -122,6 +122,26 @@ if credentials_env:
 
 ```
 
+## Annotations for the visualization over the Mmoda interface
+
+A number of annotations, for the correspondent visualization over the mmoda frontend, are available:
+
+  * `oda:label`: to specify the title for the parameter
+  * `oda:description`: to specify a tooltip, displayed when we over, with the mouse, over the parameter itself 
+  * `oda:group`: to visually group together a set of parameters horizontally
+
+In the example code below we add these additional metadata annotations:
+
+```
+param_1 = '' # http://odahub.io/ontology#String ; oda:label "First" ; oda:group "Group of parameters" ; oda:description "first"
+param_2 = '' # http://odahub.io/ontology#String ; oda:label "Second" ; oda:group "Group of parameters" ; oda:description "second"
+param_3 = '' # http://odahub.io/ontology#String ; oda:label "Third" ; oda:group "Group of parameters" ; oda:description "third"
+``` 
+
+Which, over the Mmoda interface, will result in the layout displayed in the image below:
+
+![image](grouped_params.png)
+
 ### How to upload a file to be used for the notebook execution
 
 In order to define a file as one of the input notebook parameters, two possible annotations (from the MMODA [ontology](https://odahub.io/ontology/)) are available:
