@@ -128,7 +128,7 @@ A number of annotations, for the correspondent visualization over the mmoda fron
 
   * `oda:label`: to specify the title for the parameter
   * `oda:description`: to specify a tooltip, displayed when we over, with the mouse, over the parameter itself 
-  * `oda:group`: to visually group together a set of parameters
+  * `oda:group`: to visually group together a set of parameters horizontally
 
 In the example code below we add these additional metadata annotations:
 
