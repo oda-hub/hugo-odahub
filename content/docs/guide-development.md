@@ -222,6 +222,24 @@ It can happen that your analysis workflow is expected to produce no data product
 
 Don't worry if you do not succeed to foresee all possible exceptions at the initial development stage. If unforeseen exceptions would occur when the service is already deployed and available to users, each time an unforeseen exception occurs, you will be notified and invited to patch your notebook to handle this exception (perhaps raising a new `RuntimeError()` case in the appropriate cell).
 
+### Using renku secret storage
+
+For the tasks running on renku platform there is a standard [way](https://renku.readthedocs.io/en/latest/topic-guides/secrets/secrets.html#add-and-change-secrets) to define and access secrets.  The secret can be accessed using ODA API function `get_secret`, which takes secret name as a string parameter and returnes the secret as string or `None` if the secret is not found:
+
+```
+from oda_api.secret import get_secret
+secret = get_secret('my-secret')
+if secret is None:
+	print('secret is not defined')
+```
+
+Here we asssume that the default secret mount path `/secrets` was used in the renku project settings. In case a custom secret mount path was used, `ODA_SECRET_STORAGE` environment variable should be set prior to running the above code:
+
+```
+import os
+os.environ['ODA_SECRET_STORAGE'] = '/secrets_custom'
+```  
+
 ### How to add a test to the notebook
 
 It is a good practice to test the developed notebook. This allows to make sure that the code remains valid in the future.
