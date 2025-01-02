@@ -146,9 +146,9 @@ Which, over the Mmoda interface, will result in the layout displayed in the imag
 Instead, in the snippet below, we add the same notations for three outputs (the `oda:group` annotation is not available for the output):
 
 ```
-result = astroim # http://odahub.io/ontology#Image ; oda:description "restul test tooltip" .
-test_image = bin_image # http://odahub.io/ontology#ODAPictureProduct .
-test_long = test_long # http://odahub.io/ontology#String ; oda:label "Result" ; oda:description "test tooltip" .
+result = astroim # http://odahub.io/ontology#Image ; oda:description "restul test tooltip"
+test_image = bin_image # http://odahub.io/ontology#ODAPictureProduct
+test_long = test_long # http://odahub.io/ontology#String ; oda:label "Result" ; oda:description "test tooltip"
 ```
 
 And those, over the Mmoda interface, will result in the following layout:
