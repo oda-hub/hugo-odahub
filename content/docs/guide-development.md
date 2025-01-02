@@ -126,21 +126,35 @@ if credentials_env:
 
 A number of annotations, for the correspondent visualization over the mmoda frontend, are available:
 
-  * `oda:label`: to specify the title for the parameter
-  * `oda:description`: to specify a tooltip, displayed when we over, with the mouse, over the parameter itself 
+  * `oda:label`: to specify the title for a parameter as well as for an output
+  * `oda:description`: to specify a tooltip, displayed when, with the mouse, we over the parameter or the output itself 
   * `oda:group`: to visually group together a set of parameters horizontally
 
-In the example code below we add these additional metadata annotations:
+In the example code below we add these additional metadata annotations, for three parameters:
 
 ```
 param_1 = '' # http://odahub.io/ontology#String ; oda:label "First" ; oda:group "Group of parameters" ; oda:description "first"
 param_2 = '' # http://odahub.io/ontology#String ; oda:label "Second" ; oda:group "Group of parameters" ; oda:description "second"
 param_3 = '' # http://odahub.io/ontology#String ; oda:label "Third" ; oda:group "Group of parameters" ; oda:description "third"
-``` 
+```
 
 Which, over the Mmoda interface, will result in the layout displayed in the image below:
 
 ![image](grouped_params.png)
+
+
+Instead, in the snippet below, we add the same notations for three outputs (the `oda:group` annotation is not available for the output):
+
+```
+result = astroim # http://odahub.io/ontology#Image ; oda:description "restul test tooltip"
+test_image = bin_image # http://odahub.io/ontology#ODAPictureProduct
+test_long = test_long # http://odahub.io/ontology#String ; oda:label "Result" ; oda:description "test tooltip"
+```
+
+And those, over the Mmoda interface, will result in the following layout:
+
+
+![image](labeled_outputs.png)
 
 ### How to upload a file to be used for the notebook execution
 
