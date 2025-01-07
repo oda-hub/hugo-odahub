@@ -30,17 +30,21 @@ jobs:
     - name: Compile Ontology
       run: make -B ontology-web
 
-    - name: Compile and Publish Site
-      env:
-        PUSH_SECRET: ${{ secrets.PUSH_SECRET }} 
+    - name: Compile Hugo Site
       run: |
         hugo
         cp public/ontology/index-en.html public/ontology/index.html
         rm -rfv oda-hub.github.io
+
+    - name: Publish Site
+      if: ${{ ! github.event.pull_request }}
+      env:
+        PUSH_SECRET: ${{ secrets.PUSH_SECRET }} 
+      run: |
         git clone https://mmoda-bot:$PUSH_SECRET@github.com/oda-hub/oda-hub.github.io/
         rsync -av public/ oda-hub.github.io/
         cd oda-hub.github.io/
         git add *
         git commit -a -m "update"
         git push
-          
+  
