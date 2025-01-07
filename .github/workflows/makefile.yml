@@ -37,7 +37,7 @@ jobs:
         rm -rfv oda-hub.github.io
 
     - name: Publish Site
-      if: ! github.event.pull_request
+      if: ${{ ! github.event.pull_request }}
       env:
         PUSH_SECRET: ${{ secrets.PUSH_SECRET }} 
       run: |
