@@ -266,7 +266,7 @@ The test consists of:
 4. accessing results from `test_result`, which is a dictionary whose keys are the names of the output variables (e.g. `result = test_result['result']`)
 5. Make possible assessments on results
 
-By default, tests do not include output processing by nb2workflow, which is achieved through the [dispatcher-plugin-nb2workflow](https://github.com/oda-hub/dispatcher-plugin-nb2workflow). To test the output ontology and formatting, it is necessary to add some dependencies to the basic environment: in `environment.yml`, add libmagic to the dependencies; in `requirements.txt` add the dispatcher and the`dispatcher-plugin-nb2workflow` from the corresponding git repositories as shown below
+By default, tests do not include output processing by the MMODA dispatcher, which is achieved through the [dispatcher-plugin-nb2workflow](https://github.com/oda-hub/dispatcher-plugin-nb2workflow). To test the output ontology and formatting, it is necessary to add some dependencies to the basic environment: in `environment.yml`, add libmagic to the dependencies; in `requirements.txt` add the dispatcher and the`dispatcher-plugin-nb2workflow` from the corresponding git repositories as shown below
 ```
 git+https://github.com/oda-hub/dispatcher-app.git#egg=cdci_data_analysis
 git+https://github.com/oda-hub/dispatcher-plugin-nb2workflow.git#egg=dispatcher-plugin-nb2workflow
