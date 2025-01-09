@@ -234,7 +234,7 @@ It can happen that your analysis workflow is expected to produce no data product
 
 ![image](screen-analysiserror.png)
 
-Any exception raised in the backend will propagate and shown by the MMODA platform.
+Any exception raised during the worfklow execution will propagate and shown by the MMODA platform.
 The `AnalysisError` that we consider to define is a special class that designates the "expected" exception.
 
 Don't worry if you do not succeed to foresee all possible exceptions at the initial development stage. If unforeseen exceptions would occur when the service is already deployed and available to users, each time an unforeseen exception occurs, you will be notified and invited to patch your notebook to handle this exception (perhaps raising a new `AnalysisError()` case in the appropriate cell).
