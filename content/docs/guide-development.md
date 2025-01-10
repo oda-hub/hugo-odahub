@@ -259,6 +259,19 @@ os.environ['ODA_SECRET_STORAGE'] = '/secrets_custom'
 It is a good practice to test the developed notebook. This allows to make sure that the code remains valid in the future.
 A test is implemented as another notebook, except that name of the notebook starts with "test_". The notebook should call other notebooks and check that the output matches expectations. See an example of such a test [here](https://gitlab.renkulab.io/astronomy/mmoda/mmoda-nb2workflow-example/-/blob/master/notebooks/test_lightcurve.ipynb). 
 
+The test consists of:
+1. load the nb2workflow runner (`from nb2workflow.nbadapter import run`)
+2. prepare a dictionary of the input parameters (`par_dict={...}`)
+3. running a notebook (`test_result = run('my_notebook.ipynb', par_dict)`)
+4. accessing results from `test_result`, which is a dictionary whose keys are the names of the output variables (e.g. `result = test_result['result']`)
+5. Make possible assessments on results
+
+By default, tests do not include output processing by the MMODA dispatcher, which is achieved through the [dispatcher-plugin-nb2workflow](https://github.com/oda-hub/dispatcher-plugin-nb2workflow). To test the output ontology and formatting, it is necessary to add some dependencies to the basic environment: in `environment.yml`, add libmagic to the dependencies; in `requirements.txt` add the dispatcher and the`dispatcher-plugin-nb2workflow` from the corresponding git repositories as shown below
+```
+git+https://github.com/oda-hub/dispatcher-app.git#egg=cdci_data_analysis
+git+https://github.com/oda-hub/dispatcher-plugin-nb2workflow.git#egg=dispatcher-plugin-nb2workflow
+```
+
 ### Reporting progress for long running tasks
 
 In case your computation task runs considerable amount of time and can be split into stages
