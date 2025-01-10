@@ -230,9 +230,9 @@ the same result every time but still be reproducible (see motivation on [the dif
 
 ### Handling exceptions
 
-It can happen that your analysis workflow is expected to produce no data products in some cases, for example, if there is no data for a specified source and time interval, if the parameters specified by the user have a wrong format, or in other exceptional cases. Because of that, it would be good to inform the user of what happened. This can be done by defining a special class for the purpose (eg `AnalysisError`), directly in the notebook, and this designates the "expected" exception. An example of definition and usage is show below is shown below: 
+It can happen that your analysis workflow is expected to produce no data products in some cases, for example, if there is no data for a specified source and time interval, if the parameters specified by the user have a wrong format, or in other exceptional cases. Because of that, it would be good to inform the user of what happened. This can be done by defining a special class for the purpose (eg `AnalysisError`), directly in the notebook, and this designates the "expected" exception. An example of definition and usage is shown below:
 
-![image](screen-analysiserror.png)
+![image](analysiserror.png)
 
 Any exception raised during the worfklow execution will propagate and shown by the MMODA platform.
 
