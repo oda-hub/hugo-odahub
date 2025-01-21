@@ -230,11 +230,13 @@ the same result every time but still be reproducible (see motivation on [the dif
 
 ### Handling exceptions
 
-It can happen that your analysis workflow is expected to produce no data products in some cases, for example, if there is no data for a specified source and time interval, if the parameters specified by the user have wrong format, or in other "exceptions"  In this case, it would be good to inform the user what happened. This can be done using the raise `RuntimeError()` method directly in the notebook, as shown below: 
+It can happen that your analysis workflow is expected to produce no data products in some cases, for example, if there is no data for a specified source and time interval, if the parameters specified by the user have a wrong format, or in other exceptional cases. Because of that, it would be good to inform the user of what happened. This can be done by defining a special class for the purpose (eg `AnalysisError`), directly in the notebook, and this designates the "expected" exception. An example of definition and usage is shown below:
 
-![image](tmp21.png)
+![image](analysiserror.png)
 
-Don't worry if you do not succeed to foresee all possible exceptions at the initial development stage. If unforeseen exceptions would occur when the service is already deployed and available to users, each time an unforeseen exception occurs, you will be notified and invited to patch your notebook to handle this exception (perhaps raising a new `RuntimeError()` case in the appropriate cell).
+Any exception raised during the worfklow execution will propagate and shown by the MMODA platform.
+
+Don't worry if you do not succeed to foresee all possible exceptions at the initial development stage. If unforeseen exceptions would occur when the service is already deployed and available to users, each time an unforeseen exception occurs, you will be notified and invited to patch your notebook to handle this exception (perhaps raising a new `AnalysisError()` case in the appropriate cell).
 
 ### Using renku secret storage
 
