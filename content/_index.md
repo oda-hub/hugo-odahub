@@ -9,3 +9,5 @@
 To learn how to add a workflow to MMODA, see [Development Guide](docs/guide-development).
 
 To understand a bit better the ontology of MMODA, see [Ontology Guide](docs/guide-ontology).
+
+To learn how to convert an MMODA workflow to Galaxy tool, see [Galaxy guide](docs/guide-galaxy).
