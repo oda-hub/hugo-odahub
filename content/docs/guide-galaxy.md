@@ -12,7 +12,22 @@ In the end, all dependencies are resolved together to obtain fixed versions of t
 
 ## Additional configuration
 
-A Galaxy ToolShed definition file `.shed.yml` can be manually included. If this file is not present, one is auto-generated with default options (see below).
+A Galaxy ToolShed definition file `.shed.yml` can be manually included. If this file is not present, one is auto-generated with default options.
+Here is an example of minimal, automatically generated shed file:
+
+```yaml
+categories:
+- Astronomy
+description: Tool Name
+homepage_url: null
+long_description: Tool Name
+name: tool_name_astro_tool
+owner: astroteam
+remote_repository_url: https://github.com/esg-epfl-apc/tools-astro/tree/main/tools
+type: unrestricted
+```
+
+The two keys to be preferably edited are `description` and `long_description`, these values can be set besides other Galaxy-tool-related options (see below).
 
 The tool documentation is automatically extracted from the `galaxy_help.md` file - located in the root directory of the repository - and then added the tool XML file. The same markdown file may begin with a YAML frontmatter block (delimited by `---`) for additional configuration options:
 
