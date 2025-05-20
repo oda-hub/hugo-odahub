@@ -1,26 +1,24 @@
-# Converting notebook repository into the Galaxy tool.
+# Converting a notebook repository into a Galaxy tool.
 
-The workflow that's prepared following [Development Guide](docs/guide-development) can also be easily converted to the [Galaxy](https://github.com/galaxyproject/galaxy) tool.
+A workflow prepared following the [Development Guide](docs/guide-development) can be easily converted into a [Galaxy](https://github.com/galaxyproject/galaxy) tool.
 
-To trigger the automatic creation of the tool, add the `galaxy-tool` as a topic at the project Gitlab. This will trigger the bot, that monitors the GitLab group. It will try to convert the repo to the Galaxy tool and create a corresponding PR in the https://github.com/esg-epfl-apc/tools-astro repository. The bot uses `galaxy.py` module of the [nb2workflow](https://github.com/oda-hub/nb2workflow) package to do the conversion. If automatic conversion is failed for some reason you can debug it by using `nb2galaxy` cli directly. Call `nb2galaxy --help` to see the comand-line options.
+To trigger the automatic creation of the tool, add `galaxy-tool` as a "Project topic" in the GitLab project. This triggers the bot that monitors the [GitLab group](https://gitlab.renkulab.io/astronomy/mmoda). The bot attempts to convert the repository into a Galaxy tool and creates a corresponding pull request in the [tools-astro repository](https://github.com/esg-epfl-apc/tools-astro). The conversion process is handled by the `galaxy.py` module from the [nb2workflow](https://github.com/oda-hub/nb2workflow) package. If the automatic process fails for any reason, you can debug it using `nb2galaxy` cli directly. Run `nb2galaxy --help` to see the command-line options.
 
 ## Resolution of the dependencies
 
-Because galaxy tool can only have conda packages as dependencies, not pypi packages, the conversion module tries to reconcile both packages from `requirements.txt` and `environment.yml` with conda. First, every package from `requirements.txt` is searched by conda. If the package with the same name exists in the configured conda channels (only `conda-forge` by default), the package will be added to the final list of packages for reconciliation. Otherwise, the package is ignored, and a comment will be added to the tool xml file.
+The dependencies of a Galaxy tool must be conda packages (not PyPI packages). Therefore, the conversion module tries to reconcile the dependencies listed in both `requirements.txt` and `environment.yml` using Conda. First, each package from `requirements.txt` is searched by Conda. If the package with the same name exists in the configured conda channels (only `conda-forge` by default), it is included in the final list of packages for reconciliation. Otherwise, the package is ignored and a comment is added to the generated tool represented as an XML file.
 
-In the end, all dependencies are resolved together to obtain fixed versions of the requirements in the tool xml.
+In the end, all dependencies are resolved together to obtain fixed versions of the required packages that are written in the tool's XML file.
 
 ## Additional configuration
 
-You can add manual Galaxy toolshed definition file `.shed.yml`. If not exist, it will be generated with default options (see below).
+You can manually include a Galaxy toolshed definition file `.shed.yml`. If this file is not present, one is auto-generated with default options (see below).
 
-The tool help will be converted and added to the tool xml from the `galaxy_help.md` file in the root of the repository.
+The tool documentation is automatically extracted from the `galaxy_help.md` file - located in the root of the repository - and then added the tool xml file. In addition to the documentation, this markdown file may begin with a YAML frontmatter block (delimited by `---`) for additional configuration options:
 
-Apart from help text, this markdown file may contain a frontmatter (yaml block at the beginning of the file, separated by `---`) with additional configuration options:
-
-- `description: <string>` will be added to the `.shed.yml` if this file is not explicitly provided (the default value is just a tool name).
-- `long_description: <string>` -- the same for the `long_description`.
-- `additional_files: <list|string>` is used if the tool needs additionsl files from the repo to function. By default, `nb2galaxy` only converts notebooks to script and adds them to the tool directory. If you define helper modules, or notebooks need some additional data files from the repo, be sure to specify them here. The specification can be a single string or a list of strings, each having [glob](https://docs.python.org/3/library/glob.html#glob.glob) syntax (with `recursive=True`). Be aware, that the tool dir and the workdir, from where the tool is executed are different in Galaxy. The conversion module sets two environment variables: `GALAXY_TOOL_DIR` and `BASEDIR` both pointing to the tool root directory.
+- `description: <string>` - sets the tool description which can be used in `.shed.yml` if this file is not explicitly provided (default value: the tool name);
+- `long_description: <string>` - similar to `description: <string>`, but provides a more detailed explanation;
+- `additional_files: <list|string>` - specifies extra files from the repository required by the tool. By default, `nb2galaxy` converts only the notebooks to scripts and adds them to the tool directory. Therefore, if you define helper modules or the notebooks depend on data files from the GitLab repository, list them here. The specification (a single string or a list of strings) should follow the [glob](https://docs.python.org/3/library/glob.html#glob.glob) syntax (with `recursive=True`). **Note**: that the tool dir and the workdir, from where the tool is executed are different in Galaxy. The conversion module sets two environment variables: `GALAXY_TOOL_DIR` and `BASEDIR` both pointing to the tool root directory.
 
 You also need to define the `citations.bib` bibtex file containing tool references. If an entry contains DOI, only this DOI will be used in the Galaxy tool xml (preferred way), otherwise, full cictation in the bibtex format will be added.
 
