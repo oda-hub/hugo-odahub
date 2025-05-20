@@ -1,6 +1,6 @@
 # Converting notebook repository into the Galaxy tool.
 
-The workflow that's prepared following [Development guide] can also be easily converted to the [Galaxy](https://github.com/galaxyproject/galaxy) tool.
+The workflow that's prepared following [Development Guide](docs/guide-development) can also be easily converted to the [Galaxy](https://github.com/galaxyproject/galaxy) tool.
 
 To trigger the automatic creation of the tool, add the `galaxy-tool` as a topic at the project Gitlab. This will trigger the bot, that monitors the GitLab group. It will try to convert the repo to the Galaxy tool and create a corresponding PR in the https://github.com/esg-epfl-apc/tools-astro repository. The bot uses `galaxy.py` module of the [nb2workflow](https://github.com/oda-hub/nb2workflow) package to do the conversion. If automatic conversion is failed for some reason you can debug it by using `nb2galaxy` cli directly. Call `nb2galaxy --help` to see the comand-line options.
 
