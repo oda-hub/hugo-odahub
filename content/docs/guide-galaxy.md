@@ -26,7 +26,7 @@ owner: astroteam
 remote_repository_url: https://github.com/esg-epfl-apc/tools-astro/tree/main/tools
 type: unrestricted
 ```
-It is recommended to provide the `description` and `long_description`, as they define how the tool appears in the Galaxy interface. However, these values - along with other Galaxy-specific options - can be configured via the YAML frontmatter block in `galaxy_help.md`, as well (see below).
+It is recommended to provide the `description` and `long_description`, as they define how the tool appears in the Galaxy ToolShed. However, these values - along with other Galaxy-specific options - can be configured via the YAML frontmatter block in `galaxy_help.md`, as well (see below).
 
 Additional configuration options part of the YAML frontmatter block are:
 - `description: <string>` - a short description of the tool which can be used in `.shed.yml` if this file is not explicitly provided (default value: the tool name);
