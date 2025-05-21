@@ -33,7 +33,7 @@ Additional configuration options part of the YAML frontmatter block are:
 - `long_description: <string>` - similar to `description: <string>`, but provides a more detailed explanation;
 - `additional_files: <list|string>` - specifies extra files (e.g. helper modules and data files) from the GitLab repository required by the tool, since by default, `nb2galaxy` converts only the notebooks to scripts and adds them to the tool directory. The paths can be a single string or a list of strings and should follow the [glob](https://docs.python.org/3/library/glob.html#glob.glob) syntax (with `recursive=True`). **Note**: In Galaxy, the tool directory and the workdir (i.e. from where the tool is executed) are different. To address this, the conversion module sets two environment variables: `GALAXY_TOOL_DIR` and `BASEDIR`, both pointing to the tool root directory.
 
-In addition to these configuration options, the `galaxy_help.md` file - located in the root directory of the repository - can include the tool documentation (delimited by `---` from the YAML block) that is automatically extracted and added into the tool XML file.
+In addition to these configuration options, the `galaxy_help.md` file - located in the root directory of the repository - has to include the tool documentation (delimited by `---` from the YAML block) that is automatically extracted and added into the tool XML file.
 
 Finally, a `citations.bib` file that contains tool references must be created. If an entry contains a DOI, only the DOI is used in the Galaxy tool XML file (this is the preferred method). Otherwise, the full BibTeX citation is included.
 
