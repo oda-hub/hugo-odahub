@@ -13,7 +13,7 @@ In the end, all dependencies are resolved together to obtain fixed versions of t
 ## Additional configuration
 
 A Galaxy ToolShed definition file `.shed.yml` can be manually included. If this file is not present, one is auto-generated with default options.
-Here is an example of minimal, automatically generated shed file:
+Here is an example of a minimal, automatically generated `.shed.yml` file:
 
 ```yaml
 categories:
@@ -26,14 +26,14 @@ owner: astroteam
 remote_repository_url: https://github.com/esg-epfl-apc/tools-astro/tree/main/tools
 type: unrestricted
 ```
+It is recommended to provide the `description` and `long_description`, as they define how the tool appears in the Galaxy interface. However, these values - along with other Galaxy-specific options - can be configured via the YAML frontmatter block in `galaxy_help.md`, as well (see below).
 
-The two keys to be preferably edited are `description` and `long_description`, these values can be set besides other Galaxy-tool-related options (see below).
-
-The tool documentation is automatically extracted from the `galaxy_help.md` file - located in the root directory of the repository - and then added the tool XML file. The same markdown file may begin with a YAML frontmatter block (delimited by `---`) for additional configuration options:
-
+Additional configuration options part of the YAML frontmatter block are:
 - `description: <string>` - a short description of the tool which can be used in `.shed.yml` if this file is not explicitly provided (default value: the tool name);
 - `long_description: <string>` - similar to `description: <string>`, but provides a more detailed explanation;
 - `additional_files: <list|string>` - specifies extra files (e.g. helper modules and data files) from the GitLab repository required by the tool, since by default, `nb2galaxy` converts only the notebooks to scripts and adds them to the tool directory. The paths can be a single string or a list of strings and should follow the [glob](https://docs.python.org/3/library/glob.html#glob.glob) syntax (with `recursive=True`). **Note**: In Galaxy, the tool directory and the workdir (i.e. from where the tool is executed) are different. To address this, the conversion module sets two environment variables: `GALAXY_TOOL_DIR` and `BASEDIR`, both pointing to the tool root directory.
+
+In addition to these configuration options, the `galaxy_help.md` file - located in the root directory of the repository - can include the tool documentation (delimited by `---` from the YAML block) that is automatically extracted and added into the tool XML file.
 
 Finally, a `citations.bib` file that contains tool references must be created. If an entry contains a DOI, only the DOI is used in the Galaxy tool XML file (this is the preferred method). Otherwise, the full BibTeX citation is included.
 
