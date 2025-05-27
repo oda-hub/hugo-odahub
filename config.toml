@@ -6,3 +6,9 @@ theme = ["hugo-notice", "hugo-book"]
 
 relativeURLs = true
 canonifyURLs = true
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderHooks]
+      [markup.goldmark.renderHooks.link]
+        enableDefault = true
