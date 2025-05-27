@@ -1,8 +1,13 @@
+# The Galaxy project
+
+[Galaxy](https://galaxyproject.org/) is a free, open-source platform for data analysis, workflow authoring, training and education, tool publication, infrastructure management, and more. Our goal is to develop astronomy-related software tools and make them publicly available on servers running the Galaxy system. Since Galaxy can be deployed on multiple servers, we maintain a dedicated [Galaxy staging server](https://galaxy.odahub.fr) where tools can be previewed and tested before being published more widely.
+
+
 # Converting a notebook repository into a Galaxy tool.
 
-A workflow prepared according to the [Development Guide](guide-development.md) can be easily converted into a [Galaxy](https://github.com/galaxyproject/galaxy) tool.
+A workflow developed following the [Development Guide](guide-development.md) can be automatically converted into a [Galaxy](https://github.com/galaxyproject/galaxy) tool.
 
-Once the `galaxy-tool` is added as a "Project topic" in the GitLab project settings, the automatic conversion is triggered, i.e. the bot that monitors the [GitLab group](https://gitlab.renkulab.io/astronomy/mmoda) attempts to convert the repository into a Galaxy tool and finally, it creates a corresponding pull request in the [tools-astro repository](https://github.com/esg-epfl-apc/tools-astro). The conversion process is handled by the `galaxy.py` module from the [nb2workflow](https://github.com/oda-hub/nb2workflow) package. If the automatic conversion process fails, one can debug it using `nb2galaxy` cli directly. Run `nb2galaxy --help` to see the command-line options.
+To trigger the conversion, one must add `galaxy-tool` as a "Project topic" in the GitLab project settings. The bot monitoring the [GitLab group](https://gitlab.renkulab.io/astronomy/mmoda) then attempts to convert the repository into a Galaxy tool and creates a corresponding pull request in the [tools-astro repository](https://github.com/esg-epfl-apc/tools-astro). This process is handled by the `galaxy.py` module from the [nb2workflow](https://github.com/oda-hub/nb2workflow) package. If the automatic conversion process fails, one can debug it using `nb2galaxy` CLI directly. Run `nb2galaxy --help` to see the available command-line options.
 
 ## Resolution of the dependencies
 
