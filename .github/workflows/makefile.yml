@@ -43,6 +43,7 @@ jobs:
       run: |
         git clone https://mmoda-bot:$PUSH_SECRET@github.com/oda-hub/oda-hub.github.io/
         rsync -av public/ oda-hub.github.io/
+        rsync -av --delete public/docs/ oda-hub.github.io/docs/
         cd oda-hub.github.io/
         git add *
         git commit -a -m "update"
