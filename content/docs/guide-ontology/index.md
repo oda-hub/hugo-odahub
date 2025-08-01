@@ -13,7 +13,7 @@ The tools we develop commit to implement the common understanding of the terms.
 
 The `terms` look like URLs, e.g. https://odahub.io/ontology/#AstrophysicalObject . These URLs can be directly pasted in the browser, leading to some description:
 
-![](../ontology-doc.png)
+![](ontology-doc.png)
 
 
 We advise to look into public ontologies like https://www.ivoa.net/rdf/object-type/2020-10-06/object-type.rdf and https://odahub.io/ontology/ for the available terms. If it looks like there is nothing suitable there - it may be necessary to introduce new `terms`.
